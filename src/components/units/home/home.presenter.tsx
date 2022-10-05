@@ -14,6 +14,8 @@ export default function HomePresenter(props){
     };
 
     return (
+       
+
         <S.Wrapper>
             <Slider {...settings}>
                 <div>
@@ -30,7 +32,7 @@ export default function HomePresenter(props){
 
             <S.ListWrapper>
                 <S.ProductListWrapper>
-                {props.data?.fetchUseditems.map((el) => (   
+                {props.data?.fetchUseditems.slice(0,8).map((el) => (   
                     <S.ProductWrapper key={el._id} id={el._id}>
                         <S.Image
                             src={
