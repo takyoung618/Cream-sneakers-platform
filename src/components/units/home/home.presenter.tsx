@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import InfiniteScroll from "react-infinite-scroller";
 
-export default function HomePresenter(){
+export default function HomePresenter(props){
     const settings = {
         dots: true,
         infinite: true,
@@ -27,31 +27,27 @@ export default function HomePresenter(){
                 </div>
             </Slider>
             <S.Title>New Arrival</S.Title>
-            <S.ListWrapper>
-                <S.ProductWrapper>
-                    <S.Image>
-                        <S.Heart src="/images/greyHeart.png"/>
-                    </S.Image>
-                    <S.PriceWrapper>
-                        <S.Tag>대표태그</S.Tag>
-                        <S.Price>27,500</S.Price>
-                    </S.PriceWrapper>
-                    <S.ProductName>조이조이</S.ProductName>
-                    <S.ProductContents>[당일출고/주문폭주] 노티드 캔버스 패브릭 가방 4col...</S.ProductContents>
-                </S.ProductWrapper>
 
-                <S.ProductWrapper>
-                    <S.Image>
-                        <S.Heart src="/images/greyHeart.png"/>
-                    </S.Image>
-                    <S.PriceWrapper>
-                        <S.Tag>대표태그</S.Tag>
-                        <S.Price>27,500</S.Price>
-                    </S.PriceWrapper>
-                    <S.ProductName>조이조이</S.ProductName>
-                    <S.ProductContents>[당일출고/주문폭주] 노티드 캔버스 패브릭 가방 4col...</S.ProductContents>
-                </S.ProductWrapper>
-                
+            <S.ListWrapper>
+                <S.ProductListWrapper>
+                {props.data?.fetchUseditems.map((el) => (   
+                    <S.ProductWrapper key={el._id} id={el._id}>
+                        <S.Image
+                            src={
+                                el.images?.[0] || el.images?.[1] || el.images?.[2]
+                                  ? `http://storage.googleapis.com/${el.images?.[0]}`
+                                  : `/today.jpg`
+                            }
+                        />
+                        <S.PriceWrapper>
+                            <S.Tag>#{el.tags}</S.Tag>
+                            <S.Price>{el.price}</S.Price>
+                        </S.PriceWrapper>
+                        <S.ProductName>{el.name}</S.ProductName>
+                        <S.ProductContents>{el.contents}</S.ProductContents>ProductContents>
+                    </S.ProductWrapper>
+                ))}    
+                </S.ProductListWrapper>
             </S.ListWrapper>
         </S.Wrapper>
     )

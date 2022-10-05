@@ -36,3 +36,9 @@ export const restoreAccessTokenLoadable = selector({
     return newAccessToken;
   },
 });
+
+
+export const TodayState = atom({
+  key: "TodayState",
+  default: false,
+});

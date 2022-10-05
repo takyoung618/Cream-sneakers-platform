@@ -34,7 +34,6 @@ export const Title = styled.div`
 export const ListWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 90px;
 `
 
 
@@ -45,11 +44,10 @@ export const ProductWrapper = styled.div`
 `
 
 
-export const Image = styled.div`
+export const Image = styled.img`
   width: 348px;
   height: 466px;
   background-color: #C4C4C4;
-  padding: 34px 0px 0px 294px;
 `
 
 export const Heart = styled.img`
@@ -123,8 +121,15 @@ export const SearchInput = styled.input`
     border-bottom: 3px solid black;
 `
 
+export const InfiniteScrollDiv = styled.div`
+  width: 1737.5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-left: 90px;
+`
 
-
-
-
-
+export const BestItemsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-left: 90px;
+`

@@ -1,9 +1,8 @@
-import MainContainer from "../../src/components/units/main/main.container";
-
+import MainContainer from "../../src/components/units/main/Main.container";
 
 export default function MainPage(){
 
     return (
-        <MainContainer></MainContainer>
+        <MainContainer/>
     )
 }
