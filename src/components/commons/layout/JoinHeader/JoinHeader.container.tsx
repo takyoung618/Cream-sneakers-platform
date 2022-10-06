@@ -14,6 +14,7 @@ export default function JoinHeader() {
         router.push("/login")
     }
 
+    
     return (
         <S.Wrapper>
            <S.Image src="/images/white-logo 1.png" onClick={onClickLogo}/>
