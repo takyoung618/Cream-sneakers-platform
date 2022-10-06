@@ -163,7 +163,7 @@ export const ButtonWrapper = styled.div`
     margin-left: 91px;
 `
 
-export const CancelButton = styled.div`
+export const CancelButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,7 +174,7 @@ export const CancelButton = styled.div`
     cursor: pointer;
 `
 
-export const CreateButton = styled.div`
+export const CreateButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -183,4 +183,9 @@ export const CreateButton = styled.div`
     background-color: black;
     color: white;
     cursor: pointer;
+`
+
+export const InputError = styled.div`
+    color: red;
+    font-size: 12px;
 `

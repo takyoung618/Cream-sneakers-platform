@@ -46,7 +46,7 @@ export default function HomePresenter(props){
                             <S.Price>{el.price}</S.Price>
                         </S.PriceWrapper>
                         <S.ProductName>{el.name}</S.ProductName>
-                        <S.ProductContents>{el.contents}</S.ProductContents>ProductContents>
+                        <S.ProductContents>{el.contents}</S.ProductContents>
                     </S.ProductWrapper>
                 ))}    
                 </S.ProductListWrapper>

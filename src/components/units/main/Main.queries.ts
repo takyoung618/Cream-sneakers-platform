@@ -3,14 +3,15 @@ import { gql } from "@apollo/client";
 
 export const FETCH_USEDITEMS_OF_THE_BEST = gql`
     query fetchUseditemsOfTheBest {
-        fetchUseditmesOfTheBest {
-            _id
-            images
-            tags
-            price
-            name
-            contents
-        }
+      fetchUseditemsOfTheBest {
+        _id
+        name
+        remarks
+        contents
+        price
+        tags
+        images
+      }
     }
 
 `

@@ -13,16 +13,14 @@ export default function ProductListContainer() {
   const router = useRouter();
   const date = new Date();
 
-  const [bestItems, setBestItems] = useState(["", "", "", ""]);
-
-  const { best } = useQuery<
+  const { data: useditemsBestData } = useQuery<
   Pick<IQuery, "fetchUseditemsOfTheBest">,
   IQueryFetchUseditemsArgs
   >(FETCH_USEDITEMS_OF_THE_BEST, {
     fetchPolicy: "network-only",
   });
 
-  const { data, fetchMore } = useQuery<
+  const { data: useditemsData, fetchMore } = useQuery<
     Pick<IQuery, "fetchUseditems">,
     IQueryFetchUseditemsArgs
   >(FETCH_USEDITEMS, {
@@ -30,11 +28,11 @@ export default function ProductListContainer() {
   });
 
   const FetchMoreUseditems = () => {
-    if (!data) return;
+    if (!useditemsData) return;
 
     fetchMore({
       variables: {
-        page: Math.ceil(data?.fetchUseditems.length / 10) + 1,
+        page: Math.ceil(useditemsData?.fetchUseditems.length / 10) + 1,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult.fetchUseditems) {
@@ -51,15 +49,16 @@ export default function ProductListContainer() {
     });
   };
 
-
-
-
+  const onClickCreate = () => {
+    router.push("/brand/create")
+  }
 
   return (
     <MainPresenter
-      bestItems={bestItems}
-      data={data}
+      useditemsBestData={useditemsBestData}
+      useditemsData={useditemsData}
       FetchMoreUseditems={FetchMoreUseditems}
+      onClickCreate={onClickCreate}
     ></MainPresenter>
   );
 }

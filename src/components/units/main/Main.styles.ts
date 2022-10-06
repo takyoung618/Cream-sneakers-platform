@@ -133,3 +133,7 @@ export const BestItemsWrapper = styled.div`
   flex-direction: row;
   margin-left: 90px;
 `
+
+export const BestItmesWrapper = styled.div`
+  
+`
