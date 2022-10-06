@@ -74,7 +74,7 @@ export const InputPassword = styled.input`
     }
 `
 
-export const LoginButton = styled.div`
+export const LoginButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,4 +86,9 @@ export const LoginButton = styled.div`
     font-weight: 700;
     font-size: 20px;
     cursor: pointer;
+`
+
+export const ErrorMessage = styled.div`
+    color: red;
+    font-size: 12px;
 `

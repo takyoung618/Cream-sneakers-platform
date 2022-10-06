@@ -1,11 +1,15 @@
 import * as S from "./LoginHeader.styles"
 import { useRouter } from "next/router";
 import { BrandLoginHeaderProps } from "./Login.types";
+import { useRecoilState } from "recoil";
+import { isEditState } from "../../../../commons/store";
 
 
 
 export default function LoginHeader(props: BrandLoginHeaderProps) {
     const router = useRouter();
+
+    const [isLogin, setIsLogin] = useRecoilState(isEditState);
 
     const onClickLogo = () => {
         router.push("/")

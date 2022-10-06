@@ -54,4 +54,19 @@ export const Count = styled.div`
     margin: 3px 0px 0px 6px;
 `
 
+export const Point = styled.div`
+    font-weight: 400;
+    font-size: 14px;
+`
 
+export const ChargeButton = styled.div`
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 16px;
+`
+
+export const LogOut = styled.div`
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0px 45px 0px 54px;
+`

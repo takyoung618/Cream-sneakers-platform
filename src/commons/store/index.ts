@@ -11,6 +11,12 @@ export const accessTokenState = atom({
   default: "",
 });
 
+export const logInStatusState = atom({
+  key: "logInStatus",
+  default: false,
+});
+
+
 export const userInfoState = atom({
   key: "userInfoState",
   default: {
