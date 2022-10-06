@@ -4,6 +4,6 @@ import CreateContainer from "../../../src/components/units/create/create.contain
 export default function CreatePage(){
 
     return (
-        <CreateContainer isEdit={false}></CreateContainer>
+        <CreateContainer isEdit={true}></CreateContainer>
     )
 }

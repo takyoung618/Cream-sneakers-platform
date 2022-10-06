@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import { Modal } from "antd";
 import { useRecoilState } from "recoil";
 import { isEditState } from "../../../commons/store";
+import { ICreateContainerProps } from "./create.types";
 
 const schema = yup.object({
     name: yup.string().required("상품명을 입력해주세요."),
@@ -21,7 +22,7 @@ const schema = yup.object({
       .typeError("숫자만 입력 가능합니다."),
   });
 
-export default function CreateContainer(){
+export default function CreateContainer(props: ICreateContainerProps){
     const [fileUrls, setFileUrls] = useState(["", ""]);
 
     const onChangeFileUrls = (fileUrl: string, index: number) => {
@@ -79,11 +80,11 @@ export default function CreateContainer(){
             contents: data.contents,
             price: data.price,
             tags: [...tags],
-            useditemAddress: {
-              zipcode: data.useditemAddress.zipcode,
-              address: data.useditemAddress.address,
-              addressDetail: data.useditemAddress.addressDetail,
-            },
+            // useditemAddress: {
+            //   zipcode: data.useditemAddress.zipcode,
+            //   address: data.useditemAddress.address,
+            //   addressDetail: data.useditemAddress.addressDetail,
+            // },
             images: [...fileUrls],
           },
         },
@@ -95,12 +96,14 @@ export default function CreateContainer(){
     }
   };
 
-
+  console.log(isEdit)
+  
 
 
 
     return (
         <CreatePresenter
+            data={props.data}
             fileUrls={fileUrls}
             onChangeFileUrls={onChangeFileUrls}
             register={register}

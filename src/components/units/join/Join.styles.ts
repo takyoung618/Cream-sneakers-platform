@@ -123,4 +123,8 @@ export const JoinButton = styled.button`
     margin-left: 21px;
 `
 
+export const ErrorMessage = styled.div`
+    color: red;
+    font-size: 12px;
+`
 

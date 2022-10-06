@@ -4,6 +4,7 @@ import UploadImageContainer from "../../commons/uploadImage/UploadImage.containe
 import { v4 as uuidv4 } from "uuid";
 
 export default function CreatePresenter(props) {
+    console.log(props.isEdit)
 
     return (
         <form

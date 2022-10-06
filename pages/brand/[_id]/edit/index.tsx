@@ -46,6 +46,6 @@ export default function DetailPage(){
     });
 
     return (
-        <CreateContainer isEdit={true} data={data}/>
+      <CreateContainer isEdit={true} data={data}/>
     )
 }
