@@ -1,8 +1,6 @@
 import * as S from "./JoinHeader.styles"
 import { useRouter } from "next/router";
 
-
-
 export default function JoinHeader() {
     const router = useRouter();
 
@@ -13,8 +11,7 @@ export default function JoinHeader() {
     const onClickLogin = () => {
         router.push("/login")
     }
-
-    
+ 
     return (
         <S.Wrapper>
            <S.Image src="/images/white-logo 1.png" onClick={onClickLogo}/>
@@ -35,5 +32,4 @@ export default function JoinHeader() {
             </S.ContentsWrapper>
         </S.Wrapper>
     )
-
 }

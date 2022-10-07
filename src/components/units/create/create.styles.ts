@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
+import { Modal } from "antd";
+import DaumPostcodeEmbed from "react-daum-postcode";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
@@ -8,6 +10,16 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+`
+
+export const InputWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1737.5px;
+    height: 116px;
+    border-bottom: 1px solid #999999;
+    margin-left: 91px;
 `
 
 export const HeaderWrapper = styled.div`
@@ -27,21 +39,27 @@ export const Header = styled.div`
 
 export const TitleWrapper = styled.div`
     display: flex;
+    flex-direction: row;
     width: 1737.5px;
-    margin-left: 91px;
-    border-bottom: 1px solid #999999;
+    
 `
 
 export const TitleName = styled.div`
     font-weight: 500;
     font-size: 24px;
-    margin: 57px 176px 49px 43px;
+    margin: 20px 176px 0px 43px;
+`
+
+export const TitleName4 = styled.div`
+    font-weight: 500;
+    font-size: 24px;
+    margin: 20px 150px 0px 43px;
 `
 
 export const input = styled.input`
     width: 1419px;
     height: 56px;
-    margin-top: 34px;
+    margin-top: 15px;
     background-color: #E9E9E9;
     border: 1px solid #E9E9E9;
     ::placeholder {
@@ -50,8 +68,12 @@ export const input = styled.input`
     }
 `
 
+export const ReactWrapper = styled.div`
+    margin-left: 90px;
+    display: flex;
+`
+
 export const React = styled(ReactQuill)`
-    width: 1419px;
     height: 431px;
     margin: 28px 0px 75px 0px;
 `
@@ -96,7 +118,7 @@ export const SerchWrapper = styled.div`
     margin: 17px 0px 0px 26px;
 `
 
-export const Zipcode = styled.div`
+export const Zipcode = styled.input`
     width: 77px;
     height: 52px;
     border: 1px solid #BDBDBD;
@@ -109,7 +131,7 @@ export const Zipcode = styled.div`
     margin-right: 16px;
 `
 
-export const ZipcodeSerch = styled.div`
+export const ZipcodeSerch = styled.button`
     width: 124px;
     height: 51px;
     background-color: black;
@@ -188,4 +210,10 @@ export const CreateButton = styled.button`
 export const InputError = styled.div`
     color: red;
     font-size: 12px;
+    width: 300px;
+    margin: 0px 0px 0px 280px;
 `
+
+export const AddressModal = styled(Modal)``;
+
+export const AddressSearch = styled(DaumPostcodeEmbed)``;

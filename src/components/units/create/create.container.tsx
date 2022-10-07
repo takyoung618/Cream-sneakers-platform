@@ -40,6 +40,20 @@ export default function CreateContainer(props: ICreateContainerProps){
         trigger("contents");
     };
 
+    const onClickAddressSearch = () => {
+      setIsOpen(true);
+    };
+
+    const onCompleteAddressSearch = (data: any) => {
+      setValue("useditemAddress.zipcode", data.zonecode);
+      setValue("useditemAddress.address", data.address);
+      trigger("useditemAddress.zipcode");
+      trigger("useditemAddress.address");
+      setIsOpen(false);
+    };
+
+    const [isOpen, setIsOpen] = useState(false);
+
     const router = useRouter();
 
     const [createUseditem] = useMutation<
@@ -80,11 +94,11 @@ export default function CreateContainer(props: ICreateContainerProps){
             contents: data.contents,
             price: data.price,
             tags: [...tags],
-            // useditemAddress: {
-            //   zipcode: data.useditemAddress.zipcode,
-            //   address: data.useditemAddress.address,
-            //   addressDetail: data.useditemAddress.addressDetail,
-            // },
+            useditemAddress: {
+              zipcode: data.useditemAddress.zipcode,
+              address: data.useditemAddress.address,
+              addressDetail: data.useditemAddress.addressDetail,
+            },
             images: [...fileUrls],
           },
         },
@@ -95,10 +109,7 @@ export default function CreateContainer(props: ICreateContainerProps){
       if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
-
-  console.log(isEdit)
   
-
 
 
     return (
@@ -115,6 +126,10 @@ export default function CreateContainer(props: ICreateContainerProps){
             tags={tags}
             onChangeTags={onChangeTags}
             isEdit={isEdit}
+            isOpen={isOpen}
+            address={getValues("useditemAddress.address")}
+            onClickAddressSearch={onClickAddressSearch}
+            onCompleteAddressSearch={onCompleteAddressSearch}
         />
     )
 }
