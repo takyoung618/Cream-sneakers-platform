@@ -3,10 +3,12 @@ import React from "react";
 import UploadImageContainer from "../../commons/uploadImage/UploadImage.container";
 import { v4 as uuidv4 } from "uuid";
 import KaKaoMap from "../../commons/kakaoMap-create";
+import { ICreatePresenterProps } from "./create.types";
+import { useRecoilState } from "recoil";
+import { isEditState } from "../../../commons/store";
 
-export default function CreatePresenter(props) {
-    console.log(props.isEdit)
-
+export default function CreatePresenter(props: ICreatePresenterProps) {
+   
     return (
         <form
             onSubmit={
@@ -15,7 +17,7 @@ export default function CreatePresenter(props) {
             : props.handleSubmit(props.onClickCreateButton)
             }
         >
-                {props.isOpen && (
+            {props.isOpen && (
             <S.AddressModal
             visible={true}
             onCancel={props.onClickCloseAddressSearch}
@@ -54,24 +56,22 @@ export default function CreatePresenter(props) {
             
             <S.ReactWrapper>
                 <S.Title>상품 내용</S.Title>
-                
                 {props.isEdit ? (
-                props.data?.fetchUseditem.contents && (
-                  <S.React
+                    props.data?.fetchUseditem.contents && (
+                    <S.React
+                        onChange={props.onChangeContents}
+                        placeholder="상품을 설명해주세요."
+                        style={{ width: "1117px", height: "431px" }}
+                        defaultValue={props.data?.fetchUseditem.contents}
+                    ></S.React>
+                    )
+                ) : (
+                    <S.React
                     onChange={props.onChangeContents}
                     placeholder="상품을 설명해주세요."
                     style={{ width: "1117px", height: "431px" }}
-                    defaultValue={props.data?.fetchUseditem.contents}
-                  ></S.React>
-                )
-              ) : (
-                <S.React
-                  onChange={props.onChangeContents}
-                  placeholder="상품을 설명해주세요."
-                  style={{ width: "1117px", height: "431px" }}
-                ></S.React>
-              )}
-                 
+                    ></S.React>
+                )}
             </S.ReactWrapper>
         
             <S.InputWrapper>

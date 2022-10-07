@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.div`
     margin: 68px 0px 0px 56px;
 `
 
-export const Image = styled.div`
+export const Image = styled.img`
     width: 863px;
     height: 611px;
     background-color: #A0A0A0;

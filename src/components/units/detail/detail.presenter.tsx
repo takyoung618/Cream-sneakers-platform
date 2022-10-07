@@ -1,22 +1,28 @@
 import { OmitProps } from "antd/lib/transfer/ListBody"
+import KaKaoMap from "../../commons/kakaoMap-detail"
 import CommentListContainer from "../comment/list/Commnet.List.container"
 import CommentWriteContainer from "../comment/write/Comment.Write.container"
 import * as S from "./detail.styles"
 
-export default function DetailPresenter(){
+export default function DetailPresenter(props){
 
     return(
         <S.Wrapper>
             <S.HeaderWrapper>
-                <S.Image/>
+                <S.Image
+                    src={
+                        props.data?.fetchUseditem.images?.[0] &&
+                        `http://storage.googleapis.com/${props.data.fetchUseditem.images?.[0]}`
+                    }
+                />
                 <S.WrapperColumn>
                     <S.TitleWrapper>
                         <S.Title>AVANDRESS</S.Title>
-                        <S.ProductName>[SET] HERO TRACK WIDE SET-UP PURPLE</S.ProductName>
+                        <S.ProductName>{props.data?.fetchUseditem.name}</S.ProductName>
                     </S.TitleWrapper>
                     <S.PriceWrapper>
                         <S.PriceTitle>판매가</S.PriceTitle>
-                        <S.Price>153,900</S.Price>
+                        <S.Price>{props.data?.fetchUseditem.price}</S.Price>
                         <S.PriceWon>원</S.PriceWon>
                         <S.GgimWrapper>
                             <S.GgimTitle>My</S.GgimTitle>
@@ -25,14 +31,11 @@ export default function DetailPresenter(){
                         </S.GgimWrapper>    
                     </S.PriceWrapper>
                     <S.Contents>
-                        폴리에스테르 100% 원사로 스퀘어미터 450 밀도있게 편직하여 중량감과 두께를 트레이닝복에 
-                        최적화시켰으며 덤블텐타가공으로 축율 및 뒤틀림을 최소화 하였습니다. 수분을 빠르게 흡수하고 
-                        건조되도록 하였고 내마모성이 좋습니다. 기계세탁이 가능하며 세탁 후 빠르게 건조되어 관리가 용이합니다.
-                        편직 가공에서 유연제 처리로 부드러운 터치감으로 편안합니다.
+                        {props.data?.fetchUseditem.contents}
                     </S.Contents>
                     <S.TagWrapper>
                         <S.Tag>
-                            #트랙자켓 #아우터 #자켓
+                            {props.data?.fetchUseditem.tags}
                         </S.Tag>
                     </S.TagWrapper>
                     <S.ButtonWrapper>
@@ -47,7 +50,7 @@ export default function DetailPresenter(){
                 <S.DetailWrapper>
                     <S.AsTitle>배송/교환/반품/AS 관련 유의사항</S.AsTitle>
                     <S.AsContents>상품상세설명에 배송/교환/반품/취소 관련 안내가 기재된 경우 다음 안내사항보다 우선 적용됩니다.</S.AsContents>
-                    <S.Map/>
+                    <KaKaoMap data={props.data}/>
                     <S.ExplaneWrapper>
                     <S.Explane>
                         • 상품별로 상품 특성 및 배송지에 따라 배송유형 및 소요기간이 달라집니다.

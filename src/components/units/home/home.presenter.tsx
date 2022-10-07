@@ -33,7 +33,9 @@ export default function HomePresenter(props){
             <S.ListWrapper>
                 <S.ProductListWrapper>
                 {props.data?.fetchUseditems.slice(0,8).map((el) => (   
-                    <S.ProductWrapper key={el._id} id={el._id}>
+                    <S.ProductWrapper key={el._id} id={el._id}
+                    onClick={props.onClickList}
+                    >
                         <S.Image
                             src={
                                 el.images?.[0] || el.images?.[1] || el.images?.[2]

@@ -13,7 +13,9 @@ export default function MainPresenter(
               <S.BestTitle>BEST</S.BestTitle>
               <S.BestItemsWrapper>
               {props.useditemsBestData?.fetchUseditemsOfTheBest.map((el) => (
-                    <S.BestItmesWrapper key={el._id} id={el._id}>
+                    <S.BestItmesWrapper key={el._id} id={el._id}
+                        onClick={props.onClickList}
+                    >
                         <S.ProductWrapper
                       >
                           <S.Image
@@ -52,7 +54,9 @@ export default function MainPresenter(
         >
             <S.InfiniteScrollDiv>
             {props.useditemsData?.fetchUseditems.map((el) => (        
-                <S.ListWrapper key={el._id} id={el._id}>
+                <S.ListWrapper key={el._id} id={el._id}
+                onClick={props.onClickList}
+                >
                 <S.ProductWrapper >
                     <S.Image
                     src={

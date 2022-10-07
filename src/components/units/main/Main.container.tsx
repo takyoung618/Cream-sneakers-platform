@@ -53,12 +53,17 @@ export default function ProductListContainer() {
     router.push("/brand/create")
   }
 
+  const onClickList = (event) => {
+    router.push(`/brand/${event.currentTarget.id}`);
+  }
+
   return (
     <MainPresenter
       useditemsBestData={useditemsBestData}
       useditemsData={useditemsData}
       FetchMoreUseditems={FetchMoreUseditems}
       onClickCreate={onClickCreate}
+      onClickList={onClickList}
     ></MainPresenter>
   );
 }
