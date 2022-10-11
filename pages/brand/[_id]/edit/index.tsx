@@ -45,5 +45,5 @@ export default function DetailPage(){
         variables: { useditemId: String(router.query._id) },
     });
 
-    return <CreateContainer isEdit={true} data={data}></CreateContainer>;
+    return <CreateContainer isEdit={false} data={data}/>
 }

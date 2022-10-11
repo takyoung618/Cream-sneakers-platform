@@ -76,6 +76,7 @@ export const ReactWrapper = styled.div`
 export const React = styled(ReactQuill)`
     height: 431px;
     margin: 28px 0px 75px 0px;
+    width: 1419px;
 `
 
 export const Title = styled.div`

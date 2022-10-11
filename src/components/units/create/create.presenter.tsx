@@ -1,5 +1,5 @@
 import * as S from "./create.styles"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import UploadImageContainer from "../../commons/uploadImage/UploadImage.container";
 import { v4 as uuidv4 } from "uuid";
 import KaKaoMap from "../../commons/kakaoMap-create";
@@ -8,14 +8,22 @@ import { useRecoilState } from "recoil";
 import { isEditState } from "../../../commons/store";
 
 export default function CreatePresenter(props: ICreatePresenterProps) {
+    const [defaultValue, setDefaultValue] = useState("");
+    const [isEdit, setIsEdit] = useRecoilState(isEditState);
+
+    useEffect(() => {
+        if (props.data?.fetchUseditem.contents) {
+          setDefaultValue(props.data?.fetchUseditem.contents);
+        }
+        setIsEdit(true);
+      }, [props.data?.fetchUseditem.contents]);
    
     return (
         <form
-            onSubmit={
-            props.isEdit
-            ? props.handleSubmit(props.onClickEditButton)
-            : props.handleSubmit(props.onClickCreateButton)
-            }
+            onSubmit = { 
+            props.isEdit 
+            ? props.handleSubmit(props.onClickEditButton) 
+            : props.handleSubmit(props.onClickCreateButton) }
         >
             {props.isOpen && (
             <S.AddressModal
@@ -29,7 +37,7 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
             )}
         <S.Wrapper>
             <S.HeaderWrapper>
-                <S.Header>{props.isEdit ? "상품수정" : "상품등록"}</S.Header>
+                <S.Header>{ props.isEdit ? "상품 수정" : "상품 등록" }</S.Header>
             </S.HeaderWrapper>
             <S.InputWrapper>
                 <S.TitleWrapper>
@@ -61,7 +69,6 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
                     <S.React
                         onChange={props.onChangeContents}
                         placeholder="상품을 설명해주세요."
-                        style={{ width: "1117px", height: "431px" }}
                         defaultValue={props.data?.fetchUseditem.contents}
                     ></S.React>
                     )
@@ -69,7 +76,6 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
                     <S.React
                     onChange={props.onChangeContents}
                     placeholder="상품을 설명해주세요."
-                    style={{ width: "1117px", height: "431px" }}
                     ></S.React>
                 )}
             </S.ReactWrapper>
@@ -89,10 +95,9 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
                 <S.TitleWrapper>
                     <S.TitleName4>태그 입력</S.TitleName4>
                     <S.input 
+                    type="text"
                     placeholder="#태그 #태그 #태그"
-                    value={props.tags}
-                    onChange={props.onChangeTags}
-                    name="tags"
+                    {...props.register("tags")}
                 />
                 </S.TitleWrapper>
             </S.InputWrapper>

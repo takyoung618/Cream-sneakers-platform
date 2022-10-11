@@ -8,7 +8,7 @@ import { IQuery } from "../../../commons/types/generated/types";
 
   
   export interface ICreateContainerProps {
-    isEdit: boolean;
+    isEdit: Boolean;
     data: Pick<IQuery, "fetchUseditem">;
   }
   
