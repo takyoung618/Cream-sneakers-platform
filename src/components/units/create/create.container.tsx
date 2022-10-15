@@ -56,9 +56,9 @@ export default function CreateContainer(props: ICreateContainerProps){
         setFileUrls(newFileUrls);
     };
  
-      const onChangeContents = (value: string) => {
-        setValue("contents", value === "<p><br></p>" ? "" : value);
-        trigger("contents");
+    const onChangeContents = (value: string) => {
+      setValue("contents", value === "<p><br></p>" ? "" : value);
+      trigger("contents");
     };
 
     const onClickAddressSearch = () => {
@@ -134,19 +134,6 @@ export default function CreateContainer(props: ICreateContainerProps){
   const onClickEditButton = async (data: any) => {
     setIsEdit(true);
 
-    // const currentFiles = JSON.stringify(fileUrls);
-    // const defaultFiles = JSON.stringify(props.data?.fetchUseditem.images);
-    // const isChangedFiles = currentFiles !== defaultFiles;
-
-    // const updateProductInput: IUpdateUseditemInput = {};
-
-    // if (isChangedFiles) updateProductInput.images = fileUrls;
-
-    // if (!data.name && !data.remarks && !data.contents && !isChangedFiles) {
-    //   message.warning("수정한 내용이 없습니다.");
-    //   return;
-    // }
-
     try {
       const result = await updateUseditem({
         variables: {
@@ -171,9 +158,6 @@ export default function CreateContainer(props: ICreateContainerProps){
       if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
-  
-
-
   
     return (
         <CreatePresenter

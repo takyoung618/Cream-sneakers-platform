@@ -129,7 +129,7 @@ export const BuyButton = styled.div`
     font-size: 30px;
 `
 
-export const ShoppingButton = styled.div`
+export const ShoppingButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,10 +1,10 @@
 import { useMutation } from "@apollo/client";
 import { message, Modal } from "antd";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { getUserInfo } from "../../../../commons/libraries/getUserInfo";
-import { logInStatusState } from "../../../../commons/store";
+import { isBucketActiveState, logInStatusState } from "../../../../commons/store";
 import HeaderPresenter from "./header.presenter";
 import { CREATE_POINT_TRANSACTION_OF_LOADING, LOGOUT_USER } from "./header.queries";
 
@@ -21,6 +21,9 @@ export default function HeaderContainer() {
         CREATE_POINT_TRANSACTION_OF_LOADING
     );
 
+    const [bucketIsActive, setBucketIsActive] = useRecoilState(isBucketActiveState)
+    const [bucketList, setBucketList] = useState([])
+
     const deleteCookie = (name) => {
         document.cookie =
           name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=C.kr;path=/;";
@@ -33,6 +36,11 @@ export default function HeaderContainer() {
           setLogInStatus(false);
         }
     }, [logInStatus]);
+
+    useEffect(() => {
+      const result = JSON.parse(localStorage.getItem("bucketList") || "[]")
+      setBucketList(result)
+  }, [bucketIsActive])
 
     const onClickLogOut = () => {
         try {
@@ -68,6 +76,7 @@ export default function HeaderContainer() {
         onClickLogin={onClickLogin}
         onClickJoin={onClickJoin}
         onClickLogOut={onClickLogOut}
+        bucketList = {bucketList}
         />
     )
 }

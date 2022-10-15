@@ -1,6 +1,7 @@
 import { useRecoilState } from "recoil";
 import { getUserInfo } from "../../../../commons/libraries/getUserInfo";
 import { logInStatusState } from "../../../../commons/store";
+import {temp} from "../../../units/detail/detail.container"
 import * as S from "./header.styles"
 
 export default function HeaderPresenter(props) {
@@ -31,7 +32,7 @@ export default function HeaderPresenter(props) {
                     )}       
                     <S.Basket>장바구니</S.Basket>
                     <S.BasketCount>
-                        <S.Count>0</S.Count>
+                        <S.Count>{ props.bucketList.length }</S.Count>
                     </S.BasketCount>
                 </S.HeaderWrapper>
             </S.Wrapper>

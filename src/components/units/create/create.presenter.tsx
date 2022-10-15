@@ -16,7 +16,7 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
           setDefaultValue(props.data?.fetchUseditem.contents);
         }
         setIsEdit(true);
-      }, [props.data?.fetchUseditem.contents]);
+    }, [props.data?.fetchUseditem.contents]);
    
     return (
         <form

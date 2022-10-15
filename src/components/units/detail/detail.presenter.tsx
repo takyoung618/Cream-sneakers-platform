@@ -40,7 +40,9 @@ export default function DetailPresenter(props){
                     </S.TagWrapper>
                     <S.ButtonWrapper>
                         <S.BuyButton>BUY NOW</S.BuyButton>
-                        <S.ShoppingButton>SHOPPING BAG</S.ShoppingButton>
+                        <S.ShoppingButton
+                            onClick={props.onClickBasket(props.data?.fetchUseditem)}
+                        >SHOPPING BAG</S.ShoppingButton>
                     </S.ButtonWrapper>
                 </S.WrapperColumn>
             </S.HeaderWrapper>
