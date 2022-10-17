@@ -1,7 +1,8 @@
 import { localStorageDate } from "../../../commons/libraries/utils"
 import * as S from "./Commnet.Edit.styles"
+import { ICommentEditPresenterProps } from "./Commnet.Edit.types"
 
-export default function CommentEditPresenter(props){
+export default function CommentEditPresenter(props: ICommentEditPresenterProps){
 
     return (
         <div key={props.el._id}>
@@ -15,7 +16,9 @@ export default function CommentEditPresenter(props){
                 <S.Date>{localStorageDate(props.el.createdAt)}</S.Date>
                 <S.IconWrapper>
                         <S.EditIcon src="/images/CommentEdit.png" />
-                        <S.DeleteIcon src="/images/CommentDelete.png"/>
+                        <S.DeleteIcon 
+                        onClick={props.onClickDeleteQuestionButton}
+                        src="/images/CommentDelete.png"/>
                 </S.IconWrapper>
                 </S.DateWrapper>
             </S.Wrapper>

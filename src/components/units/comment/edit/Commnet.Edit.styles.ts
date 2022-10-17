@@ -35,19 +35,19 @@ export const Qusetion = styled.div`
     font-weight: 400;
     font-size: 15px;
     margin: 9px 0px 0px 24px;
+    width: 1250px;
 `
 
 export const DateWrapper = styled.div`
     display: flex; 
-    margin-right: 60px;
+    margin-right: 0px;
     margin-top: 35px;
+    margin-right: 60px;
 `
 
 export const Date = styled.div`
     font-size: 15px;
     font-weight: 400;
-    width: 110px;
-    margin-left: 1250px;
 `
 
 export const EditIcon = styled.img`
