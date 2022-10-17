@@ -9,7 +9,7 @@ export default function HomeContainer(){
 
     const router = useRouter();
 
-    const onClickList = (event) => {
+    const onClickList = (event : any) => {
         router.push(`/brand/${event.currentTarget.id}`);
     }
 

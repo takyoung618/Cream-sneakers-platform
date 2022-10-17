@@ -32,7 +32,7 @@ export default function HomePresenter(props){
 
             <S.ListWrapper>
                 <S.ProductListWrapper>
-                {props.data?.fetchUseditems.slice(0,8).map((el) => (   
+                {props.data?.fetchUseditems.slice(0,8).map((el : any) => (   
                     <S.ProductWrapper key={el._id} id={el._id}
                     onClick={props.onClickList}
                     >

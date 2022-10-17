@@ -86,7 +86,7 @@ export default function DetailPresenter(props){
 
                 <CommentWriteContainer/>
                 
-                <CommentListContainer/>
+                <CommentListContainer data={props.data}/>
         </S.Wrapper>
     )
 }
