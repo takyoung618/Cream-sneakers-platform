@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import Modal from "react-modal";
 
 export const Wrapper = styled.div`
     display: flex;
@@ -70,3 +71,69 @@ export const LogOut = styled.div`
     font-size: 14px;
     margin: 0px 45px 0px 54px;
 `
+
+
+// 포인트 충전 모달
+
+
+export const ModalStyle = styled(Modal)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 464px;
+  height: 316px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background-color: #ffffff;
+  margin-top: 400px;
+  margin-left: 800px;
+`;
+
+export const ModalCloseButton = styled.button`
+  width: 16px;
+  height: 16px;
+
+  background-color: transparent;
+  border: none;
+  margin: 20px 0px 20px 400px;
+  cursor: pointer;
+`;
+
+export const ModalTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 464px;
+  height: 29px;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+`;
+
+export const ModalSelect = styled.select`
+  width: 384px;
+  height: 50px;
+  border: none;
+  border-bottom: 2px solid #000000;
+  margin-bottom: 30px;
+  ::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: #828282;
+  }
+`;
+
+export const ModalButton = styled.button`
+  width: 384px;
+  height: 51px;
+  background-color: ${(props) => (props.isActive ? "black" : "#bdbdbd")};
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+`;

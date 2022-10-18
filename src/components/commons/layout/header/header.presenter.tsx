@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil";
 import { getUserInfo } from "../../../../commons/libraries/getUserInfo";
 import { logInStatusState } from "../../../../commons/store";
-import {temp} from "../../../units/detail/detail.container"
+import { AiOutlineClose } from "react-icons/ai";
 import * as S from "./header.styles"
 
 export default function HeaderPresenter(props) {
@@ -35,6 +35,23 @@ export default function HeaderPresenter(props) {
                         <S.Count>{ props.bucketList.length }</S.Count>
                     </S.BasketCount>
                 </S.HeaderWrapper>
+
+                <S.ModalStyle isOpen={props.modalIsOpen}>
+                <S.ModalCloseButton onClick={() => props.setModalIsOpen(false)}>
+                    <AiOutlineClose style={{ width: "16px", height: "16px" }} />
+                </S.ModalCloseButton>
+                <S.ModalTitle>충전하실 금액을 선택해주세요!</S.ModalTitle>
+                <S.ModalSelect value={props.selected} onChange={props.onChangeSelect}>
+                    <option value="">포인트 선택</option>
+                    <option value="100">100</option>
+                    <option value="500">500</option>
+                    <option value="2000">2,000</option>
+                    <option value="5000">5,000</option>
+                </S.ModalSelect>
+                <S.ModalButton isActive={props.isActive} onClick={props.onClickCharge}>
+                    충전하기
+                </S.ModalButton>
+                </S.ModalStyle>
             </S.Wrapper>
     )
 }
