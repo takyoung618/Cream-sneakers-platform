@@ -198,3 +198,8 @@ export const FooterWrapper = styled.div `
     padding-bottom: 19px;
     width: 1784.5px;
 `
+
+export const CommentWriteWrapper = styled.div`
+    display: flex;
+    margin-left: 144px;
+`

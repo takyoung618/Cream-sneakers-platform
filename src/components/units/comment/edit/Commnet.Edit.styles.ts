@@ -66,3 +66,8 @@ export const IconWrapper = styled.div`
     justify-content: space-between;
     margin-left: 70px;
 `
+
+export const CommentEditWrapper = styled.div`
+    display: flex;
+    margin-right: 300px;
+`

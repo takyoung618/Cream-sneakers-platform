@@ -3,14 +3,13 @@ import styled from "@emotion/styled"
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 71px 0px 0px 133px;
+    margin: 71px 0px 0px 0px;
     width: 1652px;
     text-align: right;
 `
 
 export const InputWrapper = styled.div`
     display: flex;
-    text-align: st;
 `
 
 export const CommentBox = styled.input`
