@@ -1,7 +1,9 @@
+import { withAuth } from "../../../src/components/commons/hocs/withAuth";
 import CreateContainer from "../../../src/components/units/create/create.container";
 
 
-export default function CreatePage() {
+function CreatePage() {
 
   return <CreateContainer isEdit={false}></CreateContainer>;
 }
+export default withAuth(CreatePage)

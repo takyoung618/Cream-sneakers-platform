@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 import { ReactChild } from "react";
-import JoinContainer from "../../units/join/Join.container";
+
 import FooterContainer from "./footer/Footer.container";
 import HeaderContainer from "./header/header.container";
-import JoinHeader from "./JoinHeader/JoinHeader.container";
+
 import LoginHeader from "./LoginHeader/LoginHeader.container";
 import NavigationContainer from "./navigation/Navigation.container";
 

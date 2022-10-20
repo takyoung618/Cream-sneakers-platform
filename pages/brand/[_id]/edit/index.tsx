@@ -1,6 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { IQuery, IQueryFetchUseditemArgs } from "../../../../src/commons/types/generated/types";
+import { withAuth } from "../../../../src/components/commons/hocs/withAuth";
 import CreateContainer from "../../../../src/components/units/create/create.container";
 
 const FETCH_USED_ITEM = gql`
@@ -35,7 +36,7 @@ const FETCH_USED_ITEM = gql`
   }
 `;
 
-export default function DetailPage(){
+function DetailPage(){
     const router = useRouter();
 
     const { data } = useQuery<
@@ -46,4 +47,5 @@ export default function DetailPage(){
     });
 
     return <CreateContainer isEdit={false} data={data}/>
-}
+  }
+export default withAuth(DetailPage)  

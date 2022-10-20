@@ -1,8 +1,10 @@
+import { withAuth } from "../../src/components/commons/hocs/withAuth";
 import MainContainer from "../../src/components/units/main/Main.container";
 
-export default function MainPage(){
+function MainPage(){
 
     return (
         <MainContainer/>
     )
 }
+export default withAuth(MainPage)
