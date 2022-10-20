@@ -3,6 +3,10 @@ import { getUserInfo } from "../../../../commons/libraries/getUserInfo";
 import { logInStatusState } from "../../../../commons/store";
 import { AiOutlineClose } from "react-icons/ai";
 import * as S from "./header.styles"
+import styled from "@emotion/styled";
+
+
+
 
 export default function HeaderPresenter(props) {
     const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);

@@ -60,7 +60,7 @@ export default function LoginContainer() {
       localStorage.setItem("userInfo", JSON.stringify(userInfo));
 
       message.success(`${userInfo.name}님, 안녕하세요!`);
-      router.push("/");
+      router.push("/main");
       setLogInStatus(true);
     } catch (error) {
       if (error instanceof Error) Modal.error({ content: error.message });

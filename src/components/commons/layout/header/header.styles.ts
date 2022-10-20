@@ -74,8 +74,6 @@ export const LogOut = styled.div`
 
 
 // 포인트 충전 모달
-
-
 export const ModalStyle = styled(Modal)`
   display: flex;
   flex-direction: column;
@@ -137,3 +135,4 @@ export const ModalButton = styled.button`
   font-size: 16px;
   cursor: pointer;
 `;
+
