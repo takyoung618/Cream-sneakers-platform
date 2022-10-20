@@ -121,7 +121,7 @@ export const BuyButton = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 309px;
+    width: 223.5px;
     height: 100px;
     background-color: #000000;
     color: white;
@@ -133,7 +133,7 @@ export const ShoppingButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 436px;
+    width: 298px;
     height: 100px;
     color: white;
     font-weight: 400;
@@ -141,6 +141,19 @@ export const ShoppingButton = styled.button`
     background-color: #6C6C6C;
     margin-left: 20px;
 
+`
+
+export const DeleteButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 298px;
+    height: 100px;
+    background-color: #000000;
+    color: white;
+    font-weight: 400;
+    font-size: 30px;
+    margin-left: 20px;
 `
 
 export const DetailWrapper = styled.div`

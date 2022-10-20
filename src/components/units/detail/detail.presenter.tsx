@@ -45,6 +45,11 @@ export default function DetailPresenter(props){
                         <S.ShoppingButton
                             onClick={props.onClickBasket(props.data?.fetchUseditem)}
                         >SHOPPING BAG</S.ShoppingButton>
+                        <S.DeleteButton
+                            onClick={props.onClickDeleteUseditem}
+                        >
+                            DELETE PRODUCT
+                        </S.DeleteButton>
                     </S.ButtonWrapper>
                 </S.WrapperColumn>
             </S.HeaderWrapper>

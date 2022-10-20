@@ -2,11 +2,11 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
 import { getUserInfo } from "../../../commons/libraries/getUserInfo";
-import { IMutation, IMutationCreatePointTransactionOfBuyingAndSellingArgs, IQuery, IQueryFetchUseditemArgs } from "../../../commons/types/generated/types";
+import { IMutation, IMutationCreatePointTransactionOfBuyingAndSellingArgs, IMutationDeleteUseditemArgs, IQuery, IQueryFetchUseditemArgs } from "../../../commons/types/generated/types";
 import DetailPresenter from "./detail.presenter";
-import { CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING, FETCH_USED_ITEM } from "./detail.queries";
+import { CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING, DELETE_USED_ITEM, FETCH_USED_ITEM } from "./detail.queries";
 import { isBucketActiveState } from "../../../commons/store";
-import { Modal } from "antd";
+import { message, Modal } from "antd";
 
 export default function DetailContainer(){
     const router = useRouter();
@@ -21,6 +21,11 @@ export default function DetailContainer(){
             useditemId: String(router.query._id)
         },
     });
+
+    const [deleteUseditem] = useMutation<
+    Pick<IMutation, "deleteUseditem">,
+    IMutationDeleteUseditemArgs
+  >(DELETE_USED_ITEM);
 
     const [createPointTransactionOfBuyingAndSelling] = useMutation<
     Pick<IMutation, "createPointTransactionOfBuyingAndSelling">,
@@ -56,12 +61,25 @@ export default function DetailContainer(){
         }
     }
 
+    const onClickDeleteUseditem = async () => {
+        try {
+          await deleteUseditem({
+            variables: { useditemId: router.query._id },
+          });
+          message.success(`${data?.fetchUseditem.name} 삭제가 완료되었습니다.`);
+          router.push("/main");
+        } catch (error) {
+          if (error instanceof Error) console.log(error.message);
+        }
+      };
+
     return (
         <DetailPresenter
         data={data}
         UserInfo={UserInfo}
         onClickBasket={onClickBasket}
         onClickBuy={onClickBuy}
+        onClickDeleteUseditem={onClickDeleteUseditem}
         />
     )
 }
