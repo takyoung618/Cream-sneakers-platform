@@ -7,4 +7,5 @@ function MainPage(){
         <MainContainer/>
     )
 }
+
 export default withAuth(MainPage)

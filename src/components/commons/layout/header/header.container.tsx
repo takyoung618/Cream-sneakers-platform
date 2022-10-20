@@ -63,7 +63,6 @@ export default function HeaderContainer() {
           localStorage.removeItem("accessToken");
           localStorage.removeItem("userInfo");
           setLogInStatus(false);
-    
           deleteCookie("refreshToken");
           router.push("/");
           message.success("로그아웃 되었습니다.");

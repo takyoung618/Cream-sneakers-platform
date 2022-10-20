@@ -6,9 +6,10 @@ import { logInStatusState } from "../../../commons/store";
 
 export const withAuth = (Component) => (props) => {
     const [isLogout] = useRecoilState(logInStatusState);
+
     const router = useRouter();
     useEffect(() => {
-        if (isLogout) {
+        if (!isLogout) {
             Modal.error({ content: "로그인 후 이용 가능합니다!!" });
             router.push("/");
         }

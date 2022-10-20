@@ -3,7 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { useRecoilState } from "recoil";
-import { accessTokenState, logInStatusState } from "../../../commons/store";
+import { accessTokenState, logInStatusState, userInfoState } from "../../../commons/store";
 import LoginPresenter from "./Login.presenter";
 import * as yup from "yup";
 import { IMutation, IMutationLoginUserArgs } from "../../../commons/types/generated/types";
@@ -22,6 +22,7 @@ export const schema = yup.object({
 export default function LoginContainer() {
     const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
     const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
+    const [userInfo, setUserInfo] = useRecoilState(userInfoState);
 
     const router = useRouter();
     const client = useApolloClient();
@@ -57,6 +58,8 @@ export default function LoginContainer() {
         },
       });
       const userInfo = resultUserInfo.data?.fetchUserLoggedIn;
+      setAccessToken(accessToken || "");
+      setUserInfo(userInfo || {});
       localStorage.setItem("userInfo", JSON.stringify(userInfo));
 
       message.success(`${userInfo.name}님, 안녕하세요!`);
@@ -67,7 +70,6 @@ export default function LoginContainer() {
       router.push("/join");
     }
   };
-
 
     return (
         <LoginPresenter

@@ -12,10 +12,14 @@ export const accessTokenState = atom({
 });
 
 export const logInStatusState = atom({
-  key: "logInStatus",
+  key: "logInStatusState",
   default: false,
 });
 
+export const errorModalStatus = atom({
+  key: "errorModalStatusKey",
+  default: false
+})
 
 export const userInfoState = atom({
   key: "userInfoState",

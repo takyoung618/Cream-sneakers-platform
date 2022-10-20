@@ -36,7 +36,7 @@ const FETCH_USED_ITEM = gql`
   }
 `;
 
-function DetailPage(){
+function EditPage(){
     const router = useRouter();
 
     const { data } = useQuery<
@@ -48,4 +48,4 @@ function DetailPage(){
 
     return <CreateContainer isEdit={false} data={data}/>
   }
-export default withAuth(DetailPage)  
+export default withAuth(EditPage)  
