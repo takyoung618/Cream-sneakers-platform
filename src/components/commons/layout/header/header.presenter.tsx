@@ -4,11 +4,12 @@ import { logInStatusState } from "../../../../commons/store";
 import { AiOutlineClose } from "react-icons/ai";
 import * as S from "./header.styles"
 import styled from "@emotion/styled";
+import { ILayoutHeaderUIProps } from "./header.types";
 
 
 
 
-export default function HeaderPresenter(props) {
+export default function HeaderPresenter(props: ILayoutHeaderUIProps) {
     const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
 
     const UserInfo = getUserInfo();
@@ -23,6 +24,10 @@ export default function HeaderPresenter(props) {
                         <>
                             <S.Login onClick={props.onClickLogin}>로그인</S.Login>
                             <S.Signup onClick={props.onClickJoin}>회원가입</S.Signup>
+                            <S.Basket>장바구니</S.Basket>
+                            <S.BasketCount>
+                                <S.Count>0</S.Count>
+                            </S.BasketCount>
                         </>
                     ) : (
                         <>
@@ -32,12 +37,13 @@ export default function HeaderPresenter(props) {
                             </S.Point>
                             <S.ChargeButton onClick={() => props.setModalIsOpen(true)}>충전</S.ChargeButton>
                             <S.LogOut onClick={props.onClickLogOut}>로그아웃</S.LogOut>
+                            <S.Basket>장바구니</S.Basket>
+                            <S.BasketCount>
+                                <S.Count>{ props.bucketList.length }</S.Count>
+                            </S.BasketCount>
                         </>
                     )}       
-                    <S.Basket>장바구니</S.Basket>
-                    <S.BasketCount>
-                        <S.Count>{ props.bucketList.length }</S.Count>
-                    </S.BasketCount>
+                    
                 </S.HeaderWrapper>
 
                 <S.ModalStyle isOpen={props.modalIsOpen}>

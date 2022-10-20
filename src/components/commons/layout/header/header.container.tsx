@@ -50,7 +50,8 @@ export default function HeaderContainer() {
     useEffect(() => {
       const result = JSON.parse(localStorage.getItem("bucketList") || "[]")
       setBucketList(result)
-    }, [bucketIsActive])
+  }, [bucketIsActive])
+
 
     useEffect(() => {
       setCharged(UserInfo);
@@ -143,7 +144,7 @@ export default function HeaderContainer() {
           onClickLogin={onClickLogin}
           onClickJoin={onClickJoin}
           onClickLogOut={onClickLogOut}
-          bucketList = {bucketList}
+          bucketList = { bucketList }
           modalIsOpen={modalIsOpen}
           isActive={isActive}
           setModalIsOpen={setModalIsOpen}

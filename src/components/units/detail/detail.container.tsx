@@ -35,17 +35,33 @@ export default function DetailContainer(){
     const [isActive, setIsActive] = useRecoilState(isBucketActiveState)
 
     //장바구니
-    const onClickBasket = (el: any) => (event: any) => {
-      const bucketList = JSON.parse(localStorage.getItem("bucketList") || "[]")
+    // const onClickBasket = (el: any) => (event: any) => {
+    //   console.log(el)
+    //   const bucketList = JSON.parse(localStorage.getItem("bucketList") || "[]")
 
-      const temp = bucketList.filter((data: any) => data.fetchUseditem._id === el.fetchUseditem._id)
-      if(temp.length === 1) {
-          return
+    //   const temp = bucketList.filter((data: any) => data.fetchUseditem._id === el.fetchUseditem._id)
+    //   if(temp.length === 1) {
+    //       return
+    //   }
+    //   setIsActive((prev) => !prev)
+    //   bucketList.push(el)
+    //   localStorage.setItem("bucketList", JSON.stringify(bucketList))
+    // }
+
+    const onClickBasket = (el: any) => () => {
+      const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
+      const temp = baskets.filter((basketEl: any) => basketEl._id === el._id);
+      if (temp.length === 1) {
+        message.error("이미 담으신 물품입니다!!!");
+        return;
       }
+    
       setIsActive((prev) => !prev)
-      bucketList.push(el)
-      localStorage.setItem("bucketList", JSON.stringify(bucketList))
-    }
+      baskets.push(el);
+      localStorage.setItem("baskets", JSON.stringify(baskets));
+      message.success("장바구니에 상품이 추가되었습니다.")
+    };
+
 
     const onClickBuy = async () => {
         try {
