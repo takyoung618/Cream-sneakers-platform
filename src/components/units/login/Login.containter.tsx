@@ -9,6 +9,7 @@ import * as yup from "yup";
 import { IMutation, IMutationLoginUserArgs } from "../../../commons/types/generated/types";
 import { FETCH_USER_LOGGED_IN, LOGIN_USER } from "./Login.queries";
 import { message, Modal } from "antd";
+import { Session } from "inspector";
 
 export const schema = yup.object({
   email: yup
@@ -19,7 +20,10 @@ export const schema = yup.object({
 });
 
 
+
 export default function LoginContainer() {
+  sessionStorage.clear()
+  
     const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
     const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
     const [userInfo, setUserInfo] = useRecoilState(userInfoState);
@@ -70,6 +74,7 @@ export default function LoginContainer() {
       router.push("/join");
     }
   };
+  
 
     return (
         <LoginPresenter

@@ -9,7 +9,7 @@ import { ILayoutHeaderUIProps } from "./header.types";
 
 
 
-export default function HeaderPresenter(props: ILayoutHeaderUIProps) {
+export default function HeaderPresenter(props) {
     const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
 
     const UserInfo = getUserInfo();
