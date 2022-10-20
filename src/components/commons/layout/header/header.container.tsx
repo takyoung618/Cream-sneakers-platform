@@ -24,7 +24,7 @@ export default function HeaderContainer() {
 
     const [bucketIsActive, setBucketIsActive] = useRecoilState(isBucketActiveState)
 
-    const [bucketList, setBucketList] = useState([])
+    const [baskets, setBaskets] = useState([])
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -48,8 +48,8 @@ export default function HeaderContainer() {
     }, [logInStatus]);
 
     useEffect(() => {
-      const result = JSON.parse(localStorage.getItem("bucketList") || "[]")
-      setBucketList(result)
+      const result = JSON.parse(localStorage.getItem("baskets") || "[]")
+      setBaskets(result)
   }, [bucketIsActive])
 
 
@@ -144,7 +144,7 @@ export default function HeaderContainer() {
           onClickLogin={onClickLogin}
           onClickJoin={onClickJoin}
           onClickLogOut={onClickLogOut}
-          bucketList = { bucketList }
+          baskets = { baskets }
           modalIsOpen={modalIsOpen}
           isActive={isActive}
           setModalIsOpen={setModalIsOpen}

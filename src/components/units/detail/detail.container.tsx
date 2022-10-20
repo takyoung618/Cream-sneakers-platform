@@ -52,7 +52,7 @@ export default function DetailContainer(){
       const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
       const temp = baskets.filter((basketEl: any) => basketEl._id === el._id);
       if (temp.length === 1) {
-        message.error("이미 담으신 물품입니다!!!");
+        message.error("이미 담으신 상품입니다!!!");
         return;
       }
     

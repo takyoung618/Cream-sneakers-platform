@@ -39,7 +39,7 @@ export default function HeaderPresenter(props: ILayoutHeaderUIProps) {
                             <S.LogOut onClick={props.onClickLogOut}>로그아웃</S.LogOut>
                             <S.Basket>장바구니</S.Basket>
                             <S.BasketCount>
-                                <S.Count>{ props.bucketList.length }</S.Count>
+                                <S.Count>{ props.baskets.length }</S.Count>
                             </S.BasketCount>
                         </>
                     )}       
