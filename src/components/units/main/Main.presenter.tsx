@@ -1,5 +1,5 @@
 import InfiniteScroll from "react-infinite-scroller";
-import {BiSearch} from "react-icons/Bi"
+import {BiSearch} from "react-icons/bi"
 import { getDate } from "../../commons/libraries/utils";
 import * as S from "./Main.styles";
 import { IMainPresenterProps } from "./Main.types";
