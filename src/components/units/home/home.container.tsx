@@ -1,6 +1,5 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import { FETCH_USEDITEMS} from "../main/Main.queries";
 import HomePresenter from "./home.presenter";
 

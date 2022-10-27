@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import InfiniteScroll from "react-infinite-scroller";
 
-export default function HomePresenter(props){
+export default function HomePresenter(props: any){
     const settings = {
         dots: true,
         infinite: true,
@@ -14,7 +14,6 @@ export default function HomePresenter(props){
     };
 
     return (
-       
 
         <S.Wrapper>
             <Slider {...settings}>
@@ -33,14 +32,15 @@ export default function HomePresenter(props){
             <S.ListWrapper>
                 <S.ProductListWrapper>
                 {props.data?.fetchUseditems.slice(0,8).map((el : any) => (   
+                    // key는 react가 어떤 항목을 변경, 추가 또는 삭제할지 식별하는 것을 돕는다.
                     <S.ProductWrapper key={el._id} id={el._id}
                     onClick={props.onClickList}
                     >
                         <S.Image
                             src={
-                                el.images?.[0] || el.images?.[1] || el.images?.[2]
+                                el.images?.[0] || el.images?.[1]
                                   ? `http://storage.googleapis.com/${el.images?.[0]}`
-                                  : `/today.jpg`
+                                  : `images/프로필 이미지.png`
                             }
                         />
                         <S.PriceWrapper>
