@@ -48,8 +48,13 @@ export default function DetailPresenter(props){
                         <S.DeleteButton
                             onClick={props.onClickDeleteUseditem}
                         >
-                            DELETE PRODUCT
+                            DELETE
                         </S.DeleteButton>
+                        <S.EditButton
+                            onClick={props.onClickEdit}
+                        >
+                            EDIT
+                        </S.EditButton>
                     </S.ButtonWrapper>
                 </S.WrapperColumn>
             </S.HeaderWrapper>

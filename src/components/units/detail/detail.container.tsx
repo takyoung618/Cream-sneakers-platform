@@ -74,6 +74,12 @@ export default function DetailContainer(){
         }
       };
 
+    const onClickEdit = () => {
+      router.push(`/brand/${router.query._id}/edit`);
+    }  
+
+
+
     return (
         <DetailPresenter
         data={data}
@@ -81,6 +87,7 @@ export default function DetailContainer(){
         onClickBasket={onClickBasket}
         onClickBuy={onClickBuy}
         onClickDeleteUseditem={onClickDeleteUseditem}
+        onClickEdit={onClickEdit}
         />
     )
 }

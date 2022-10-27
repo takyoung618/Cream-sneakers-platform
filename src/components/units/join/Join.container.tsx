@@ -8,7 +8,6 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { message, Modal } from "antd";
 
-
 export const schema = yup.object({
     email: yup
       .string()
@@ -27,7 +26,6 @@ export const schema = yup.object({
       .oneOf([yup.ref("password"), null], "비밀번호가 일치하지 않습니다."),
     name: yup.string().required("이름을 입력해주세요."),
   });
-  
 
 export default function JoinContainer () {
     const router = useRouter();
