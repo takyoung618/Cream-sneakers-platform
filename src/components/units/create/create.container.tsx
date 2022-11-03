@@ -30,7 +30,7 @@ export default function CreateContainer(props: ICreateContainerProps){
         name: props.data.fetchUseditem.name,
         remarks: props.data.fetchUseditem.remarks,
         contents: props.data.fetchUseditem.contents,
-        tags: props.data.fetchUseditem.tags?.join(),
+        tags: props.data.fetchUseditem.tags,
         price: props.data.fetchUseditem.price,
         useditemAddress: {
           zipcode: props.data.fetchUseditem.useditemAddress?.zipcode,
@@ -138,17 +138,7 @@ export default function CreateContainer(props: ICreateContainerProps){
       const result = await updateUseditem({
         variables: {
           updateUseditemInput: {
-            name: data.name,
-            remarks: data.remarks,
-            contents: data.contents,
-            price: data.price,
-            tags: [...tags],
-            useditemAddress: {
-              zipcode: data.useditemAddress.zipcode,
-              address: data.useditemAddress.address,
-              addressDetail: data.useditemAddress.addressDetail,
-            },
-            images: [...fileUrls],
+            ...data,
           },
           useditemId: String(router.query._id),
         },
