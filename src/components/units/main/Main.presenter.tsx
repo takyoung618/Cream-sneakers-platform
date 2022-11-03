@@ -11,21 +11,20 @@ export default function MainPresenter(
       <S.Wrapper>
           <S.BestWrapper>
               <S.BestTitle>BEST</S.BestTitle>
-              <S.BestItemsWrapper>
+              <S.HeaderWrapper>
               {props.useditemsBestData?.fetchUseditemsOfTheBest.map((el) => (
-                    <S.BestItmesWrapper key={el._id} id={el._id}
+                    <S.BestItemsWrapper key={el._id} id={el._id}
                         onClick={props.onClickList}
                     >
                         <S.ProductWrapper
                       >
                           <S.Image
                           src={
-                            el.images?.[0] || el.images?.[1] || el.images?.[2]
+                            el.images?.[0] || el.images?.[1]
                               ? `http://storage.googleapis.com/${el.images?.[0]}`
-                              : `/today.jpg`
+                              : `images/프로필 이미지.png`
                           }
                           />
-                          {/* <S.Heart src="/images/greyHeart.png"/> */}
                           <S.PriceWrapper>
                               <S.Tag>{el.tags}</S.Tag>
                               <S.Price>{el.price}</S.Price>
@@ -33,11 +32,11 @@ export default function MainPresenter(
                           <S.ProductName>{el.name}</S.ProductName>
                           <S.ProductContents>{el.contents}</S.ProductContents>
                       </S.ProductWrapper>
-                    </S.BestItmesWrapper>
+                    </S.BestItemsWrapper>
                 ))}        
-              </S.BestItemsWrapper>
-
+              </S.HeaderWrapper>
           </S.BestWrapper>
+
           <S.CreateWrapper>
               <S.CreateButton onClick={props.onClickCreate}>상품 등록</S.CreateButton>
               <S.SearchWrapper>
@@ -65,7 +64,6 @@ export default function MainPresenter(
                           : `/today.jpg`
                       }
                     />
-                    {/* <S.Heart src="/images/greyHeart.png"/> */}
                     <S.PriceWrapper>
                         <S.Tag>{el.tags}</S.Tag>
                         <S.Price>{el.price}</S.Price>
@@ -78,5 +76,5 @@ export default function MainPresenter(
             </S.InfiniteScrollDiv>
         </InfiniteScroll>
       </S.Wrapper>
-  )
+    )
 }

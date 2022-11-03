@@ -141,7 +141,7 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
             </S.ImageWrapper>
             <S.ButtonWrapper>
                 <S.CancelButton type="button" onClick={props.onClickCancelButton}>취소</S.CancelButton>
-                <S.CreateButton type="submit">등록</S.CreateButton>
+                <S.CreateButton>{props.isEdit ? "수정" : "등록" }</S.CreateButton>
             </S.ButtonWrapper>
         </S.Wrapper>
     </form>   

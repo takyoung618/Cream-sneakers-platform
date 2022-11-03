@@ -1,28 +1,24 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `
 
 export const BestWrapper = styled.div`
-    width: 1920px;
+  width: 1920px;
 `
 
 export const BestTitle = styled.div`
-    font-weight: 700;
-    font-size: 22px;
-    margin: 73px 0px 86px 935px;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 73px 0px 86px 935px;
 `   
 
-
-
 export const Img = styled.img `
-    width: 1920px;
-    height: 750px;
+  width: 1920px;
+  height: 750px;
 `
-
-
 
 export const Title = styled.div`
   font-weight: 700;
@@ -30,12 +26,10 @@ export const Title = styled.div`
   margin: 92px 0px 98px 898px;
 `
 
-
 export const ListWrapper = styled.div`
   display: flex;
   flex-direction: row;
 `
-
 
 export const ProductWrapper = styled.div`
   display: flex;
@@ -128,12 +122,11 @@ export const InfiniteScrollDiv = styled.div`
   margin-left: 90px;
 `
 
-export const BestItemsWrapper = styled.div`
+export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin-left: 90px;
 `
 
-export const BestItmesWrapper = styled.div`
-  
+export const BestItemsWrapper = styled.div`
 `

@@ -46,6 +46,6 @@ function EditPage(){
         variables: { useditemId: String(router.query._id) },
     });
 
-    return <CreateContainer isEdit={false} data={data}/>
+    return <CreateContainer isEdit={true} data={data}/>
   }
 export default withAuth(EditPage)  
