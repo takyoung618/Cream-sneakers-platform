@@ -3,8 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import InfiniteScroll from "react-infinite-scroller";
+import { IHomePagePresenterProps } from "./home.types";
 
-export default function HomePresenter(props: any){
+export default function HomePresenter(props: IHomePagePresenterProps){
     const settings = {
         dots: true,
         infinite: true,

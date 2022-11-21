@@ -7,9 +7,9 @@ import { IMutation, IMutationDeleteUseditemQuestionArgs } from "../../../../comm
 import { FETCH_USED_ITEM_QUESTIONS } from "../list/Commnet.List.queries";
 import CommentEditPresenter from "./Commnet.Edit.presenter";
 import { DELETE_USED_ITEM_QUESTION } from "./Commnet.Edit.queries";
+import { ICommentEditContainerProps } from "./Commnet.Edit.types";
 
-
-export default function CommentEditContainer(props){
+export default function CommentEditContainer(props: ICommentEditContainerProps){
     const router = useRouter();
 
     const UserInfo = getUserInfo();
@@ -21,7 +21,6 @@ export default function CommentEditContainer(props){
         setIsEdit(true)
     }
     
-
     const [deleteUseditemQuestion] = useMutation<
     Pick<IMutation, "deleteUseditemQuestion">,
     IMutationDeleteUseditemQuestionArgs
@@ -46,8 +45,6 @@ export default function CommentEditContainer(props){
     const onChangeEditContents = (event: any) => {
         setEditContents(event.target.value);
     }
-
-
 
     return (
         <CommentEditPresenter

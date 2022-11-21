@@ -3,9 +3,9 @@ import { useRouter } from "next/router";
 import { IQuery, IQueryFetchUseditemQuestionsArgs } from "../../../../commons/types/generated/types";
 import CommentListPresenter from "./Commnet.List.presenter";
 import { FETCH_USED_ITEM_QUESTIONS } from "./Commnet.List.queries";
+import { ICommentListContainerProps } from "./Commnet.List.types";
 
-
-export default function CommentListContainer(props){
+export default function CommentListContainer(props: ICommentListContainerProps){
     const router = useRouter();
 
     const { data: QuestionsData, fetchMore } = useQuery<

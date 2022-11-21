@@ -10,6 +10,7 @@ import { IMutation, IMutationLoginUserArgs } from "../../../commons/types/genera
 import { FETCH_USER_LOGGED_IN, LOGIN_USER } from "./Login.queries";
 import { message, Modal } from "antd";
 import { Session } from "inspector";
+import { ILoginContainerProps } from "./Login.types";
 
 export const schema = yup.object({
   email: yup
@@ -19,9 +20,7 @@ export const schema = yup.object({
   password: yup.string().required("비밀번호를 입력해주세요."),
 });
 
-
-
-export default function LoginContainer() {
+export default function LoginContainer(props: ILoginContainerProps) {
   sessionStorage.clear()
   
     const [accessToken, setAccessToken] = useRecoilState(accessTokenState);

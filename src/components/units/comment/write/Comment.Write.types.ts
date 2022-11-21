@@ -10,7 +10,7 @@ export interface ICommentWriteContainerProps {
 export interface ICommentWritePresenter {
   contents: string;
   contentsError: string;
-  onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  onChangeContents: (event: ChangeEvent) => void;
   onClickCreateComment: () => void;
   isEdit: boolean;
   el: IUseditemQuestion;

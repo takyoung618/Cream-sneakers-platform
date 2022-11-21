@@ -20,7 +20,6 @@ mutation createUseditemQuestion(
 }
 `;
 
-
 export const UPDATE_USED_ITEM_QUESTION = gql`
   mutation updateUseditemQuestion(
     $updateUseditemQuestionInput: UpdateUseditemQuestionInput!

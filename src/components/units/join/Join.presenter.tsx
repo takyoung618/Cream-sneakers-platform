@@ -1,6 +1,7 @@
 import * as S from "./Join.styles"
+import { IJoinPresenterProps } from "./Join.types"
 
-export default function JoinPresenter(props) {
+export default function JoinPresenter(props: IJoinPresenterProps) {
 
     return (
         <form onSubmit={props.handleSubmit(props.onClickJoin)}>

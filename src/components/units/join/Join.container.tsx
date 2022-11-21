@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
-import { IMutation, IMutationCreateUserArgs } from "../../../commons/types/generated/types";
+import { ICreateUserInput, IMutation, IMutationCreateUserArgs } from "../../../commons/types/generated/types";
 import JoinPresenter from "./Join.presenter";
 import { CREATE_USER } from "./Join.queries";
 import * as yup from "yup";
@@ -41,7 +41,7 @@ export default function JoinContainer () {
     });
 
 
-  const onClickJoin = async (data) => {
+  const onClickJoin = async (data: ICreateUserInput) => {
     try {
       await createUser({
         variables: {

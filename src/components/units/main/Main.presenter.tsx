@@ -3,6 +3,8 @@ import {BiSearch} from "react-icons/bi"
 import { getDate } from "../../commons/libraries/utils";
 import * as S from "./Main.styles";
 import { IMainPresenterProps } from "./Main.types";
+import Searchbars01 from "../../commons/searchbars/01/Searchbars01.container";
+import { v4 as uuidv4 } from "uuid";
 
 export default function MainPresenter(
   props: IMainPresenterProps
@@ -40,9 +42,10 @@ export default function MainPresenter(
           <S.CreateWrapper>
               <S.CreateButton onClick={props.onClickCreate}>상품 등록</S.CreateButton>
               <S.SearchWrapper>
-                  <S.SearchInput> 
-                  </S.SearchInput>
-                  <BiSearch style={{ marginTop: "20px"}}/>
+                  <Searchbars01
+                    refetch={props.refetch}
+                    onChangeKeyword={props.onChangeKeyword}
+                  />
               </S.SearchWrapper>
           </S.CreateWrapper>
 
@@ -68,7 +71,17 @@ export default function MainPresenter(
                         <S.Tag>{el.tags}</S.Tag>
                         <S.Price>{el.price}</S.Price>
                     </S.PriceWrapper>
-                    <S.ProductName>{el.name}</S.ProductName>
+                    <S.ProductName>
+                        {el.name
+                            .replaceAll(props.keyword, `@#$%${props.keyword}@#$%`)
+                            .split("@#$%")
+                            .map((el) => (
+                                <S.TextToken key={uuidv4()} isMatched={props.keyword === el}>
+                                    {el}
+                                </S.TextToken>
+
+                        ))}
+                    </S.ProductName>
                     <S.ProductContents>{el.contents}</S.ProductContents>
                 </S.ProductWrapper>
                 </S.ListWrapper>

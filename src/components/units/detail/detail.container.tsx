@@ -7,8 +7,9 @@ import DetailPresenter from "./detail.presenter";
 import { CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING, DELETE_USED_ITEM, FETCH_USED_ITEM } from "./detail.queries";
 import { isBucketActiveState } from "../../../commons/store";
 import { message, Modal } from "antd";
+import { IDetailContainerProps } from "./detail.types";
 
-export default function DetailContainer(){
+export default function DetailContainer(props: IDetailContainerProps){
     const router = useRouter();
 
     const UserInfo = getUserInfo();

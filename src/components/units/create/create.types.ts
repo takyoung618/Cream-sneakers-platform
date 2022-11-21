@@ -8,7 +8,7 @@ import { IQuery } from "../../../commons/types/generated/types";
 
   
   export interface ICreateContainerProps {
-    isEdit: Boolean;
+    isEdit: boolean;
     data: Pick<IQuery, "fetchUseditem">;
   }
   
@@ -25,11 +25,9 @@ import { IQuery } from "../../../commons/types/generated/types";
     onClickCloseAddressSearch: () => void;
     isOpen: boolean;
     address: string;
-    onClickCancel: () => void;
+    onClickCancelButton: () => void;
     isEdit: boolean;
     data: Pick<IQuery, "fetchUseditem">;
     onClickEditButton: (data: any) => void;
-    tags: never[];
-    onChangeTags: (value: string) => void;
   }
   

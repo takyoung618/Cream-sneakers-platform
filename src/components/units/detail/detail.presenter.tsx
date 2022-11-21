@@ -3,8 +3,9 @@ import KaKaoMap from "../../commons/kakaoMap-detail"
 import CommentListContainer from "../comment/list/Commnet.List.container"
 import CommentWriteContainer from "../comment/write/Comment.Write.container"
 import * as S from "./detail.styles"
+import { IDetailPresenterProps } from "./detail.types"
 
-export default function DetailPresenter(props){
+export default function DetailPresenter(props: IDetailPresenterProps){
 
     return(
         <S.Wrapper>
@@ -99,7 +100,6 @@ export default function DetailPresenter(props){
                 <S.CommentWriteWrapper>
                     <CommentWriteContainer/>
                 </S.CommentWriteWrapper>
-                
                 
                 <CommentListContainer data={props.data}/>
         </S.Wrapper>

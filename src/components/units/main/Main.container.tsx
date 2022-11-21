@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import {
   IQuery,
   IQueryFetchUseditemsArgs,
@@ -11,6 +12,7 @@ import { FETCH_USEDITEMS, FETCH_USEDITEMS_OF_THE_BEST } from "./Main.queries";
 export default function ProductListContainer() {
   const router = useRouter();
   const date = new Date();
+  const [keyword, setKeyWord] = useState("");
 
   const { data: useditemsBestData } = useQuery<
   Pick<IQuery, "fetchUseditemsOfTheBest">,
@@ -52,8 +54,12 @@ export default function ProductListContainer() {
     router.push("/brand/create")
   }
 
-  const onClickList = (event) => {
+  const onClickList = (event: any) => {
     router.push(`/brand/${event.currentTarget.id}`);
+  }
+
+  const onChangeKeyword = (value: string) => {
+    setKeyWord(value)
   }
 
   return (
@@ -63,6 +69,9 @@ export default function ProductListContainer() {
       FetchMoreUseditems={FetchMoreUseditems}
       onClickCreate={onClickCreate}
       onClickList={onClickList}
+      refetch={fetch}
+      keyword={keyword}
+      onChangeKeyword={onChangeKeyword}
     ></MainPresenter>
   );
 }

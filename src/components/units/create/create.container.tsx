@@ -161,12 +161,10 @@ export default function CreateContainer(props: ICreateContainerProps){
             onClickEditButton={onClickEditButton}
             onClickCancelButton={onClickCancelButton}
             onChangeContents={onChangeContents}
-            // tags={tags}
             isEdit={ props.isEdit}
             isOpen={isOpen}
             address={getValues("useditemAddress.address")}
             onClickAddressSearch={onClickAddressSearch}
-            onCompleteAddressSearch={onCompleteAddressSearch}
         />
     )
 }

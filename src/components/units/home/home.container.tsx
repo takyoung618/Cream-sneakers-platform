@@ -2,8 +2,9 @@ import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { FETCH_USEDITEMS} from "../main/Main.queries";
 import HomePresenter from "./home.presenter";
+import { IHomePageContainerProps } from "./home.types";
 
-export default function HomeContainer(){
+export default function HomeContainer(props: IHomePageContainerProps){
     const { data } = useQuery(FETCH_USEDITEMS)
 
     const router = useRouter();

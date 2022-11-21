@@ -18,4 +18,5 @@ export interface ICommentEditPresenterProps {
   onChangeEditContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   el: IUseditemQuestion;
   data: Pick<IQuery, "fetchUseditem"> | undefined;
+  UserInfo: any
 }

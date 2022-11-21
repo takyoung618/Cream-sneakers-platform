@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { ITextTokenProps } from "./Main.types";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -130,3 +131,7 @@ export const HeaderWrapper = styled.div`
 
 export const BestItemsWrapper = styled.div`
 `
+
+export const TextToken = styled.span`
+  color: ${(props: ITextTokenProps) => (props.isMatched ? "red" : "black")};
+`;
