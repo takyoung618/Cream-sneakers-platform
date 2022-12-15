@@ -1,8 +1,5 @@
-import HomeContainer from "../src/components/units/home/home.container";
+import LandingPageUi from "../src/components/units/landing/landingPage.presenter";
 
-export default function HomePage(){
-
-    return (
-        <HomeContainer></HomeContainer>
-    )
+export default function LandingPage() {
+  return <LandingPageUi/>
 }
