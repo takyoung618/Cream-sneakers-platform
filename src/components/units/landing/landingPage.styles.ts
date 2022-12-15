@@ -44,18 +44,19 @@ export const MainTextBox = styled.div`
   padding-bottom: 10rem;
 `;
 
-export const MainText = styled.p`
+export const MainText = styled.div`
   font-size: 3.2rem;
   font-weight: 400;
   color: black;
 `;
 
-export const CrewFindBtn = styled.button`
+export const ShopBtn = styled.button`
   cursor: pointer;
   border: none;
   color: white;
   background-color: transparent;
   padding: 2rem 5rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 1rem;
   transition: all 0.3s ease-in-out;
   letter-spacing: 2px;
@@ -92,6 +93,7 @@ export const ScrollIcon = styled.img`
 `;
 
 export const Logo = styled.div`
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 70px;
   color: white;
   margin-bottom: 50px;
@@ -158,10 +160,12 @@ export const TextBox = styled.div`
 `
 
 export const TextTitle = styled.div`
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 50px;
 `
 
 export const Text = styled.div`
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 20px;
 `
 
@@ -170,16 +174,19 @@ export const TopButton = styled.button`
   height: 70px;
   margin: 30px 0px 0px 40px;
   background-color: #F1F1F1;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 20px;
   border: solid 1.5px;
 `
 
 export const TextTitle2 = styled.div`
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 50px;
   color: white;
 `
 
 export const Text2 = styled.div`
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 20px;
   color: white;
 `
@@ -189,6 +196,7 @@ export const BottomButton = styled.button`
   height: 70px;
   margin: 30px 0px 0px 40px;
   background-color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 20px;
   color: white;
   border: solid 1.5px white;
@@ -197,6 +205,7 @@ export const BottomButton = styled.button`
 export const MainTitle = styled.div`
   width: 31.25rem;
   height: 12.5rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 50px;
   font-weight: 1000;
   display: flex;
@@ -217,6 +226,7 @@ export const MainTitle = styled.div`
     opacity: 1;
   }
   }
+
 `
 
 

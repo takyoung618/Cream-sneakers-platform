@@ -19,7 +19,7 @@ const LandingPageB = () => {
         <S.TopImage src="/images/landingPage/sneakers.png" />
       </S.TopContents>
       <S.BottomContents>
-        <S.TopImage src="/images/landingPage/fashion.png"/>
+        <S.TopImage src="/images/landingPage/HPB5I7.jpeg"/>
         <S.BottomRight>
           <S.TextBox>
               <S.TextTitle2>Trading</S.TextTitle2>
