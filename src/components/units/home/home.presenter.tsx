@@ -19,13 +19,16 @@ export default function HomePresenter(props: IHomePagePresenterProps){
         <S.Wrapper>
             <Slider {...settings}>
                 <div>
-                    <S.Img src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"></S.Img>
+                    <S.Img src="https://kream-phinf.pstatic.net/MjAyMjEyMTVfNzYg/MDAxNjcxMDkyMTA0ODQ3.cwNhir1L0b89EoIBIGSQAkGHESXuBDKVxu4uwXGBxiQg.f2-BK56BSHBD9FTx__bU-HLpB_zf4H75FRgPzNzhZI0g.JPEG/a_eafbf93890f14019b166bb494d090512.jpg?type=m_2560"></S.Img>
                 </div>
                 <div>
-                    <S.Img src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).webp"></S.Img>
+                    <S.Img src="https://kream-phinf.pstatic.net/MjAyMjEyMTJfMjI5/MDAxNjcwODIwOTE0MzIy.rTtS2Rs9JJOnPKF1tNaMErY4DpFE6ktOyATwbqMJKyog.3CGAG8iY97dgpPdT5WZeI1fZAbvXprLY8xvRSsIQkrQg.JPEG/a_bcda0224a3a8441486071624947bce73.jpg?type=m_2560"></S.Img>
                 </div>
                 <div>
-                    <S.Img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp"></S.Img>
+                    <S.Img src="https://kream-phinf.pstatic.net/MjAyMjExMzBfMTcy/MDAxNjY5Nzc2NjUwMjE1.lqwCkD1RiAci3dwMa1jZU_FietiberaL09O8xVq1kswg.b9Tf_wjeeEkLZxsay6LnMngJ4s9hS_bdUeuxtskxYQIg.JPEG/a_785a59d8b7ee4721ad9eabade6702206.jpg?type=m_2560"></S.Img>
+                </div>
+                <div>
+                    <S.Img src="https://kream-phinf.pstatic.net/MjAyMjEyMTJfMjY1/MDAxNjcwODIyMDIxODAx.RZJSbjUIovov624Sce5K27IJdr3c0cn4STtFI_ImxoUg.ebR7osAQFCjUwfcaYByc0XCJI9D9NND-GLUzgE3TlaMg.JPEG/a_f17b30e5dac64a789de2ee037df4be0e.jpg?type=m_2560"></S.Img>
                 </div>
             </Slider>
             <S.Title>New Arrival</S.Title>

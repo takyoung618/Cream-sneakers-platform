@@ -16,9 +16,6 @@ export default function HeaderPresenter(props) {
 
     return (
             <S.Wrapper>
-                <S.LogoImage src="/images/dingco-logo.png"
-                    onClick={props.onClickHome}
-                />
                 <S.HeaderWrapper>
                     {!logInStatus ? (
                         <>
@@ -43,7 +40,6 @@ export default function HeaderPresenter(props) {
                             </S.BasketCount>
                         </>
                     )}       
-                    
                 </S.HeaderWrapper>
 
                 <S.ModalStyle isOpen={props.modalIsOpen}>

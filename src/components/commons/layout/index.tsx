@@ -21,8 +21,7 @@ const Body = styled.div`
 `
 
 const HIDDEN_LAYOUTS = [
-    "/login",
-    "/join"
+    "/",
 ]
 
 
@@ -31,7 +30,6 @@ export default function Layout(props: ILayoutProps) {
     const router = useRouter();
     const isHiddenLayouts = HIDDEN_LAYOUTS.includes(router.asPath)
     
-
     return (
         <Wrapper>
             {!isHiddenLayouts && (
@@ -40,7 +38,6 @@ export default function Layout(props: ILayoutProps) {
                     <NavigationContainer/>
                 </Wrapper> 
             )}
-            {isHiddenLayouts && <LoginHeader/>}
             <Body>{props.children}</Body>
             <FooterContainer/>
         </Wrapper>

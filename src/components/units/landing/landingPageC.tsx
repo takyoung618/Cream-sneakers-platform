@@ -5,7 +5,7 @@ const LandingPageC = () => {
   const router = useRouter();
 
   const onClickToCrewList = () => {
-    void router.push("/crews");
+    void router.push("/home");
   };
   return (
     <S.Container>

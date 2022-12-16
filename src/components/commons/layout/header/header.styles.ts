@@ -4,24 +4,30 @@ import Modal from "react-modal";
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
-    width: 1920px;
-    height: 100px;
+    width: 100%;
+    height: 31px;
     justify-content: space-between;
     align-items: center;
     margin-right: 1500px;
 `
 
-export const LogoImage = styled.img`
+export const LogoImage = styled.div`
     margin-left: 90px;
     width: 181px;
     height: 49px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    font-size: 40px;
 `
 
 export const HeaderWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    margin-right: 60px;
-    margin-bottom: 20px;
+  /* display: flex;
+  align-items: center;
+  margin-right: 60px;
+  margin-bottom: 20px; */
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-left: auto;
 `
 
 export const Login = styled.div`
@@ -43,10 +49,12 @@ export const Basket = styled.div`
 `
 
 export const BasketCount = styled.div`
-    background-color: red;
-    height: 20px;
-    width: 20px;
-    border-radius: 10px;
+  background-color: red;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  margin-right: 2rem;
+  margin: 0 2rem 0.1rem 0;
 `
 export const Count = styled.div`
     color: white;

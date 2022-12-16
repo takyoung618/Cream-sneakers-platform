@@ -3,16 +3,16 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    width: 1920px;
+    width: 100%;
     height: 317px;
     border-top: 1px solid #555555;
     background-color: #F1F1F1;
 `
 
-export const LogoIcon = styled.img`
-    width: 169px;
-    height: 52px;
+export const LogoIcon = styled.div`
     margin: 53px 0px 0px 107px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
 `
 
 export const InfoWrapper = styled.div`
