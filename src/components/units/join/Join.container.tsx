@@ -24,7 +24,7 @@ export const schema = yup.object({
       .string()
       .required("비밀번호를 한번 더 입력해주세요.")
       .oneOf([yup.ref("password"), null], "비밀번호가 일치하지 않습니다."),
-    name: yup.string().required("이름을 입력해주세요."),
+    name: yup.string().required("이름을 입력해주세요.")
   });
 
 export default function JoinContainer () {

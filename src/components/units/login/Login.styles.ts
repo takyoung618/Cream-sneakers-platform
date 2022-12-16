@@ -2,93 +2,127 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
     display: flex;
-    text-align: center;
     flex-direction: column;
-    height: 870px;
+    text-align: center;
+    width: 400px;
+    margin: auto;
 `
 
-export const HeaderWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 3px solid #555555;
-    width: 1737.5px;
-    height: 249px;
-    margin-left: 91px;
-    
+export const LogoWrapper = styled.div`
+    margin-top: 2rem;
 `
 
-export const Login = styled.div`
-    font-weight: 400;
+export const LogoImage = styled.div`
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
 `
 
-export const LoginWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin: 197px 0px 0px 490px;
+export const LogoTitle = styled.div`
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 `
 
-export const TitleWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
+export const EmailWrapper = styled.div`
+    margin-top: 30px;
+    width: 400px;
+    justify-content: start;
 `
 
-export const TitleId = styled.div`
-    font-weight: 400;
-    font-size: 24px;
-    margin: 0px 40px 45px 0px;
+export const PasswordWrapper = styled.div`
+    margin-top: 30px;
+    width: 400px;
+    justify-content: start;
 `
 
-export const TitlePassword = styled.div`
-    font-weight: 400;
-    font-size: 24px;
-    margin: 0px 40px 0px 15px;
+export const EmailTitle = styled.div`
+    font-weight: 700;
+    width: 65px;
 `
 
-export const InputWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
+export const PasswordTitle = styled.div`
+    font-weight: 700;
+    width: 50px;
 `
 
-export const InputId = styled.input`
-    width: 611px;
-    height: 56px;
-    background-color: #E9E9E9;
-    border: 1px solid #E9E9E9;
-    margin: -23px 0px 24px 0px;
+export const EmailInput = styled.input`
+    width: 400px;
+    height: 40px;
+    border: 1px solid white;
+    border-bottom: 1px solid #C2C2C2;
+    padding-top: 10;
     ::placeholder {
-        color: #A9A9A9;
-        padding-left: 18px;
+        color: #C2C2C2;
+        font-weight: 400;
     }
 `
 
-export const InputPassword = styled.input`
-    width: 611px;
-    height: 56px;
-    background-color: #E9E9E9;
-    border: 1px solid #E9E9E9;
-    ::placeholder {
-        color: #A9A9A9;
-        padding-left: 18px;
-    }
+export const EmailErrorMessage = styled.div`
+    color: red;
+    width: 105px;
+    margin-top: 2px;
 `
 
-export const LoginButton = styled.button`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+export const PasswordErrorMessage = styled.div`
+    color: red;
+    width: 146px;
+    margin-top: 2px;
+`
+
+export const LoginBtn = styled.button`
     background-color: black;
     color: white;
-    width: 186px;
-    height: 136px;
-    margin: -24px 0px 0px 31px;
     font-weight: 700;
-    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    border-radius: 13px;
     cursor: pointer;
 `
 
-export const ErrorMessage = styled.div`
-    color: red;
-    font-size: 12px;
+export const SignUpWrapper = styled.div`
+    display: flex;
+    width: 400px;
+    justify-content: space-evenly;
+    cursor: pointer;
+    margin: auto;
 `
+
+export const SignUp = styled.div`
+    margin: 20px 0px 35px 0;
+`
+
+export const FooterWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12rem;
+`
+
+export const BtnWrapper = styled.div`
+    display: flex;
+    font-weight: 700;
+    width: 400px;
+    height: 50px;
+    border-radius: 13px;
+    border: 1px solid #C2C2C2;
+    cursor: pointer;
+    margin-top: 10px;
+`
+
+export const Icon = styled.img`
+    width: 30px;
+    height: 30px;
+    margin: 10px 100px 0 20px;
+`
+
+export const Kakao = styled.img`
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin: 10px 90px 0 20px;
+`
+
+export const LoginText = styled.div`
+    display: inline-flex;
+    margin-top: 13px;
+`
+

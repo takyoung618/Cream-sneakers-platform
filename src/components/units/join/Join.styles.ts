@@ -1,130 +1,134 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
+    width: 400px;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    text-align: center;
 `
 
-
-export const HeaderWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 3px solid #555555;
-    width: 1737.5px;
-    height: 249px;
-    margin-left: 91px;
-    
+export const LogoWrapper = styled.div`
+    margin-top: 2rem;
 `
 
-export const Title = styled.div`
-    font-weight: 400;
+export const LogoImage = styled.div`
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
+    font-weight: 600;
 `
 
-export const JoinWrapper = styled.div`
+export const LogoTitle = styled.div`
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+`
+
+export const EmailWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 41px 0px 0px 144px;
+    justify-content: start;
+    margin-top: 30px;
 `
 
-export const InputWrapper = styled.div`
+export const PasswordWrapper = styled.div`
+    margin-top: 15px;
     display: flex;
+    flex-direction: column;
+    justify-content: start;
 `
 
-export const Id = styled.div`
-    display: flex;
-    width: 113px;
-    font-weight: 400;
-    font-size: 24px;
-    margin-top: 13px;
-`
-
-export const Password = styled.div`
-    width: 113px;
-    font-weight: 400;
-    font-size: 24px;
-    margin-top: 13px;
-`
-
-export const PasswordCheck = styled.div`
-    width: 170px;
-    font-weight: 400;
-    font-size: 24px;
-    margin-top: 13px;
-`
-
-export const InputCheck = styled.input`
-    width: 611px;
-    height: 56px;
-    background-color: #E9E9E9;
-    border: 1px solid #E9E9E9;
-    margin: 0px 0px 31px 3px;
-    ::placeholder {
-        color: #A9A9A9;
-        padding-left: 18px;
-    }
-`
-
-export const Name = styled.div`
-    width: 113px;
-    font-weight: 400;
-    font-size: 24px;
-    margin-top: 13px;
-`
-
-export const Input = styled.input`
-    width: 611px;
-    height: 56px;
-    background-color: #E9E9E9;
-    border: 1px solid #E9E9E9;
-    margin: 0px 0px 31px 60px;
-    ::placeholder {
-        color: #A9A9A9;
-        padding-left: 18px;
-    }
-`
-
-export const FooterWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1737.5px;
-    height: 225px;
-    border-top: 1px solid black;
-    margin: 39px 0px 0px 91px;
-`
-
-export const cancelButton = styled.button`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    width: 186px;
-    height: 56px;
+export const EmailTitle = styled.div`
     font-weight: 700;
-    font-size: 20px;
-    cursor: pointer;
+    width: 75px;
 `
 
-export const JoinButton = styled.button`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    width: 186px;
-    height: 56px;
+export const PasswordTitle = styled.div`
     font-weight: 700;
-    font-size: 20px;
-    cursor: pointer;
-    margin-left: 21px;
+    display: inline-flex;
+`
+
+export const SizeTitle = styled.div`
+    font-weight: 700;
+    width: 60px;
+`
+
+export const EmailInput = styled.input`
+    width: 400px;
+    height: 50px;
+    border: 1px solid white;
+    border-bottom: 1px solid #C2C2C2;
+    padding-top: 10;
+    ::placeholder {
+        color: #C2C2C2;
+        font-weight: 400;
+    }
 `
 
 export const ErrorMessage = styled.div`
     color: red;
-    font-size: 12px;
+    margin-top: 2px;
+    display: inline-flex;
 `
 
+export const LoginBtn = styled.button`
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    width: 400px;
+    height: 50px;
+    border-radius: 13px;
+    cursor: pointer;
+    margin-bottom: 15rem;
+`
+
+export const SignUpWrapper = styled.div`
+    display: flex;
+    width: 400px;
+    justify-content: space-evenly;
+`
+
+export const SignUp = styled.div`
+    
+`
+
+export const FooterWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+`
+
+export const BtnWrapper = styled.div`
+    display: flex;
+    width: 400px;
+    height: 50px;
+    border: 1px solid gray;
+`
+
+export const Icon = styled.div`
+`
+
+export const ToLogin = styled.div`
+`
+
+export const AgreeWrapper = styled.div`
+    margin: auto;
+`
+
+export const FirstCheckWrapper = styled.div`
+    display: flex;
+    width: 400px;
+    margin: 2rem 0 1rem 0;
+`
+
+export const SecondCheckWrapper = styled.div`
+    display: flex;
+    width: 400px;
+`
+
+export const CheckBox = styled.input`
+    width: 30px;
+`
+
+export const Agree = styled.div`
+    margin-left: 0.2rem;
+`

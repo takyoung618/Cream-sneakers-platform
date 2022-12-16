@@ -21,7 +21,7 @@ export const schema = yup.object({
 });
 
 export default function LoginContainer(props: ILoginContainerProps) {
-  sessionStorage.clear()
+  // sessionStorage.clear()
   
     const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
     const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
@@ -73,6 +73,10 @@ export default function LoginContainer(props: ILoginContainerProps) {
       router.push("/join");
     }
   };
+
+  const onClickMoveJoin = () => {
+    router.push("join")
+  }
   
 
     return (
@@ -81,6 +85,7 @@ export default function LoginContainer(props: ILoginContainerProps) {
             handleSubmit={handleSubmit}
             formState={formState}
             onClickLogin={onClickLogin}
+            onClickMoveJoin={onClickMoveJoin}
         />
     )
 }

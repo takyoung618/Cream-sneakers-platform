@@ -6,30 +6,51 @@ export default function LoginPresenter(props: ILoginPresenterProps) {
     return (
         <form onSubmit={props.handleSubmit(props.onClickLogin)}>
             <S.Wrapper>
-                <S.HeaderWrapper>
-                    <S.Login>LOGIN</S.Login>
-                </S.HeaderWrapper>
-                <S.LoginWrapper>
-                    <S.TitleWrapper>
-                        <S.TitleId>아이디</S.TitleId>
-                        <S.TitlePassword>비밀번호</S.TitlePassword>
-                    </S.TitleWrapper>
-                    <S.InputWrapper>
-                        <S.InputId 
-                        placeholder="이메일 아이디를 @까지 정확하게 입력하세요"
+                <S.LogoWrapper>
+                    <S.LogoImage>CREAM</S.LogoImage>
+                    <S.LogoTitle>KICKS RULE EVERYTHING AROUND ME</S.LogoTitle>
+                </S.LogoWrapper>
+                <S.EmailWrapper>
+                    <S.EmailTitle>이메일 주소</S.EmailTitle>
+                    <S.EmailInput
+                        placeholder="예) Cream@Cream.co.kr"
                         {...props.register("email")}
-                        />
-                        <S.ErrorMessage>{props.formState.errors.email?.message}</S.ErrorMessage>
-                        <S.InputPassword
-                        placeholder="영문+숫자 조합 8~16자리를 입력해주세요."
-                        {...props.register("password")}
-                        />
-                         <S.ErrorMessage>
+                    />
+                    <S.EmailErrorMessage>
+                        {props.formState.errors.email?.message}
+                    </S.EmailErrorMessage>
+                </S.EmailWrapper>
+                <S.PasswordWrapper>
+                    <S.PasswordTitle>비밀번호</S.PasswordTitle>
+                    <S.EmailInput
+                        {...props.register("password")}    
+                    />
+                    <S.PasswordErrorMessage>
                         {props.formState.errors.password?.message}
-                        </S.ErrorMessage>
-                    </S.InputWrapper>
-                    <S.LoginButton type="submit">로그인</S.LoginButton>
-                </S.LoginWrapper>
+                    </S.PasswordErrorMessage>
+                </S.PasswordWrapper>
+                <S.LogoWrapper>
+                    <S.LoginBtn type="submit">로그인</S.LoginBtn>
+                </S.LogoWrapper>
+                <S.SignUpWrapper
+                    onClick={props.onClickMoveJoin}
+                >
+                    <S.SignUp>이메일 가입</S.SignUp>
+                    <S.SignUp>|</S.SignUp>
+                    <S.SignUp>이메일 찾기</S.SignUp>
+                    <S.SignUp>|</S.SignUp>
+                    <S.SignUp>비밀번호 찾기</S.SignUp>
+                </S.SignUpWrapper>
+                <S.FooterWrapper>
+                    <S.BtnWrapper>
+                        <S.Icon src="images/login/naver.png"/>
+                        <S.LoginText>네이버로 로그인</S.LoginText>
+                    </S.BtnWrapper>
+                    <S.BtnWrapper>
+                        <S.Kakao src="images/login/kakaotalk.png"/>
+                        <S.LoginText>카카오톡으로 로그인</S.LoginText>
+                    </S.BtnWrapper>
+                </S.FooterWrapper>
             </S.Wrapper>
         </form> 
     )
