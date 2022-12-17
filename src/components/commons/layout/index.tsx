@@ -1,12 +1,9 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 import { ReactChild } from "react";
-
-import FooterContainer from "./footer/Footer.container";
 import HeaderContainer from "./header/header.container";
-
-import LoginHeader from "./LoginHeader/LoginHeader.container";
 import NavigationContainer from "./navigation/Navigation.container";
+import FooterContainer from "./footer/Footer.container";
 
 interface ILayoutProps {
     children: ReactChild;
@@ -23,8 +20,6 @@ const Body = styled.div`
 const HIDDEN_LAYOUTS = [
     "/",
 ]
-
-
 
 export default function Layout(props: ILayoutProps) {
     const router = useRouter();

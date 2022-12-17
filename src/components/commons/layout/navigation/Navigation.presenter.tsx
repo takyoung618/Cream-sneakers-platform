@@ -17,7 +17,7 @@ export default function NavigationPresenter(props) {
                 >SHOP
                 </S.Category>
                 <S.Category
-                    onClick={props.MoveToList}
+                    onClick={props.MoveToHome}
                 >HOME
                 </S.Category>
             </S.CategoryWrapper>

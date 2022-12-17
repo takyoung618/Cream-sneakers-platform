@@ -10,7 +10,7 @@ export default function NavigationContainer(){
     }
 
     const MoveToHome = () => {
-        router.push("home")
+        router.push("/home")
     }
     
     return (

@@ -50,6 +50,7 @@ export const ProductListWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: fit-content;
+  margin-bottom: 12rem;
 `
 
 export const ProductWrapper = styled.div`
