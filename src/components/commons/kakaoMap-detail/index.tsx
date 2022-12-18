@@ -7,8 +7,8 @@ declare const window: typeof globalThis & {
 };
 
 const Map = styled.div`
-  width: 860px;
-  height: 448px;
+  width: 50rem;
+  height: 30rem;
 `;
 
 interface IKakaoMapProps {

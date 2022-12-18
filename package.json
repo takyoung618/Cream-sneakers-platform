@@ -17,7 +17,7 @@
     "@hookform/resolvers": "^2.9.7",
     "antd": "^4.22.6",
     "apollo-upload-client": "^17.0.0",
-    "dompurify": "^2.3.10",
+    "dompurify": "^2.4.1",
     "graphql": "^16.6.0",
     "graphql-request": "^4.3.0",
     "lodash": "^4.17.21",

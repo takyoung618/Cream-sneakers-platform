@@ -3,20 +3,22 @@ import styled from "@emotion/styled"
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 71px 0px 0px 0px;
-    width: 1652px;
     text-align: right;
+    margin-top: 60px;
 `
 
-export const InputWrapper = styled.div`
+export const CommentWrapper = styled.div`
     display: flex;
+    flex-direction: column;
+    width: 70rem;
+    justify-content: end;
 `
 
 export const CommentBox = styled.input`
-    width: 1652px;
+    width: 70rem;
     height: 231px;
-    background-color: #E9E9E9;
-    border: 1px solid #E9E9E9;
+    background-color: #F1F1F1;
+    border: 1px solid #F1F1F1;;
     display: flex;
     padding: 0px 0px 115px 40px;
     ::placeholder {
@@ -25,8 +27,8 @@ export const CommentBox = styled.input`
 `
 
 export const CommentCreateButton = styled.div`
-    width: 195px;
-    height: 77px;
+    width: 170px;
+    height: 60px;
     background-color: black;
     color: white;
     display: flex;
@@ -35,6 +37,9 @@ export const CommentCreateButton = styled.div`
     font-weight: 700;
     font-size: 20px;
     cursor: pointer;
-    margin: 17px 0px 0px 1455px;
+    margin: 17px 0px 0px 0;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 59.5rem;
 `
 
