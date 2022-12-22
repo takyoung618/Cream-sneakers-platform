@@ -2,11 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
     display: flex;
-    justify-content: space-between;
-    width: 1651px;
-    margin-left: 143px;
-    margin-top: 18px;
-    border-top: 1px solid #C0C0C0;
+    justify-content: center;
 `
 
 export const HeaderWrapper = styled.div`

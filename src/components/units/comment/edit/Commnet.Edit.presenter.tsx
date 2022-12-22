@@ -11,8 +11,8 @@ export default function CommentEditPresenter(props: ICommentEditPresenterProps){
                  <div key={props.el._id}>
                  <S.Wrapper>
                      <S.UserWrapper>
-                     <S.User>{props.el.user.name}</S.User>
-                     <S.Qusetion>{props.el.contents}</S.Qusetion>
+                        <S.User>{props.el.user.name}</S.User>
+                        <S.Qusetion>{props.el.contents}</S.Qusetion>
                      </S.UserWrapper>
                      
                      <S.DateWrapper>

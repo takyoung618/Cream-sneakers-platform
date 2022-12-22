@@ -41,11 +41,7 @@ export default function DetailPresenter(props: IDetailPresenterProps){
                         <S.PriceWon>원</S.PriceWon>  
                     </S.PriceWrapper>
 
-                    <S.Contents>
-                        dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(props.data?.fetchUseditem.contents)
-                        }}
-                    </S.Contents>
+                    <S.Contents>{props.data?.fetchUseditem.contents}</S.Contents>
                     <S.ButtonsWrapper>
                         <S.ButtonWrapper>
                             <S.BuyButton

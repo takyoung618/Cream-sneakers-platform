@@ -2,10 +2,10 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
     display: flex;
-    width: 1651px;
     justify-content: space-between;
-    margin-bottom: 20px;
-    border-top: 1px solid #C0C0C0;
+    border-top: 3px solid #F1F1F1;
+    width: 71rem;
+    margin: 30px 9rem 20px 9rem;
 `
 
 export const HeaderWrapper = styled.div`
@@ -16,12 +16,14 @@ export const HeaderWrapper = styled.div`
 
 export const UserWrapper = styled.div`
     display: flex;
+    justify-content: space-between;
     margin-top: 30px;
 `
 
 export const User = styled.div`
-    width: 103px;
+    width: 100px;
     height: 27px;
+    border-radius: 5px;
     background-color: black;
     color: white;
     font-weight: 400;
@@ -32,15 +34,14 @@ export const User = styled.div`
 `
 
 export const Qusetion = styled.div`
+    width: 700px;
     font-weight: 400;
     font-size: 15px;
-    margin: 9px 0px 0px 24px;
-    width: 1250px;
+    margin-left: 40px;
 `
 
 export const DateWrapper = styled.div`
     display: flex; 
-    margin-right: 0px;
     margin-top: 35px;
     margin-right: 60px;
 `
@@ -68,6 +69,7 @@ export const IconWrapper = styled.div`
 `
 
 export const CommentEditWrapper = styled.div`
+    margin-left: 9rem;
+    width: 70rem;
     display: flex;
-    margin-right: 300px;
 `
