@@ -10,25 +10,27 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: auto;
 `
 
 export const InputWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 1737.5px;
+    width: 80rem;
     height: 116px;
     border-bottom: 1px solid #999999;
-    margin-left: 91px;
+    margin: auto;
 `
 
 export const HeaderWrapper = styled.div`
     display: flex;
     align-items: flex-end;
     height: 175px;
-    width: 1737.5px;
-    border-bottom: 3px solid #555555;
+    width: 80rem;
+    border-bottom: 3px solid #999999;
     margin-left: 91px;
+    margin: auto;
 `
 
 export const Header = styled.div`
@@ -40,17 +42,18 @@ export const Header = styled.div`
 export const TitleWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    width: 1737.5px;
     
 `
 
 export const TitleName = styled.div`
+    width: 100px;
     font-weight: 500;
     font-size: 24px;
     margin: 20px 176px 0px 43px;
 `
 
 export const TitleName4 = styled.div`
+    width: 140px;
     font-weight: 500;
     font-size: 24px;
     margin: 20px 150px 0px 43px;
@@ -69,20 +72,25 @@ export const input = styled.input`
 `
 
 export const ReactWrapper = styled.div`
-    margin-left: 90px;
     display: flex;
+    justify-content: center;
+    
+    width: 76rem;
+    margin: auto;
+    margin-bottom: 57px;
 `
 
 export const React = styled(ReactQuill)`
     height: 431px;
-    margin: 28px 0px 75px 0px;
-    width: 1419px;
+    margin: 28px 0px 0px 105px;
+    width: 1000px;
 `
 
 export const Title = styled.div`
+    width: 100px;
     font-weight: 500;
     font-size: 24px;
-    margin: 57px 148px 49px 43px;
+    margin: 57px 50px 0px 10px;
 `
 
 export const TitlePrice = styled.div`
@@ -95,15 +103,21 @@ export const TitleTag = styled.div`
 
 export const MapWrapper = styled.div`
     display: flex;
-    width: 1737.5px;
-    margin: 0px 0px 37px 98px;
+    width: 80rem;
+    margin: 0px 0px 37px 12rem;
     border-bottom: 1px solid #999999;
+    margin: auto;
+`
+
+export const LocationTitleWrapper = styled.div`
+    width: 80rem;
+    margin: auto;
 `
 
 export const TitleLocation = styled.div`
     font-weight: 500;
     font-size: 24px;
-    margin: 41px 0px 38px 134px;
+    margin: 41px 0px 38px 2.5rem;
 `
 
 export const Map = styled.div`
@@ -145,7 +159,7 @@ export const ZipcodeSerch = styled.button`
     cursor: pointer;
 `
 export const LocationInput = styled.input`
-    width: 1241px;
+    width: 850px;
     height: 56px;
     background-color: #E9E9E9;
     border: 1px solid #E9E9E9;
@@ -160,12 +174,13 @@ export const LocationWrapper = styled.div`
 export const TitlePicture = styled.div`
     font-weight: 500;
     font-size: 24px;
-    margin: 0px 0px 38px 134px;
+    margin: 50px 0px 38px 40px;
 `
 
 export const ImageWrapper = styled.div`
+    width: 75rem;
+    margin: auto;
     display: flex;
-    margin-left: 134px;
     margin-bottom: 76px;
 `
 
@@ -177,13 +192,13 @@ export const Image = styled.div`
 `
 
 export const ButtonWrapper = styled.div`
+    width: 80rem;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1737.5px;
     height: 263px;
     border-top: 3px solid #555555;
-    margin-left: 91px;
 `
 
 export const CancelButton = styled.button`

@@ -29,10 +29,10 @@ export default function MainPresenter(
                           />
                           <S.PriceWrapper>
                               <S.Tag>{el.tags}</S.Tag>
-                              <S.Price>{el.price}</S.Price>
                           </S.PriceWrapper>
                           <S.ProductName>{el.name}</S.ProductName>
-                          <S.ProductContents>{el.contents}</S.ProductContents>
+                          <S.Price>{el.price}</S.Price>
+                          <S.PriceTag>즉시 구매가</S.PriceTag>
                       </S.ProductWrapper>
                     </S.BestItemsWrapper>
                 ))}        
@@ -69,20 +69,10 @@ export default function MainPresenter(
                     />
                     <S.PriceWrapper>
                         <S.Tag>{el.tags}</S.Tag>
-                        <S.Price>{el.price}</S.Price>
                     </S.PriceWrapper>
-                    <S.ProductName>
-                        {el.name
-                            .replaceAll(props.keyword, `@#$%${props.keyword}@#$%`)
-                            .split("@#$%")
-                            .map((el) => (
-                                <S.TextToken key={uuidv4()} isMatched={props.keyword === el}>
-                                    {el}
-                                </S.TextToken>
-
-                        ))}
-                    </S.ProductName>
-                    <S.ProductContents>{el.contents}</S.ProductContents>
+                    <S.ProductName>{el.name}</S.ProductName>
+                    <S.Price>{el.price}원</S.Price>
+                    <S.PriceTag>즉시 구매가</S.PriceTag>
                 </S.ProductWrapper>
                 </S.ListWrapper>
             ))}

@@ -51,7 +51,7 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
 
             <S.InputWrapper>
                 <S.TitleWrapper>
-                    <S.TitleName4>상품 요약</S.TitleName4>
+                    <S.TitleName4>브랜드명</S.TitleName4>
                     <S.input placeholder="상품요약을 작성해주세요"
                     {...props.register("remarks")}
                 />
@@ -101,8 +101,10 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
                 />
                 </S.TitleWrapper>
             </S.InputWrapper>
-
-            <S.TitleLocation>브랜드 위치</S.TitleLocation>
+            <S.LocationTitleWrapper>
+                <S.TitleLocation>상품 위치</S.TitleLocation>
+            </S.LocationTitleWrapper>
+            
             <S.MapWrapper>
                 <KaKaoMap address={props.address} />
                 <S.LocationWrapper>
@@ -128,7 +130,10 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
                     />
                 </S.LocationWrapper>
             </S.MapWrapper>
-            <S.TitlePicture>사진첨부</S.TitlePicture>
+            <S.LocationTitleWrapper>
+                <S.TitlePicture>사진첨부</S.TitlePicture>
+            </S.LocationTitleWrapper>
+            
             <S.ImageWrapper>
             {props.fileUrls.map((el, index) => (
                 <UploadImageContainer

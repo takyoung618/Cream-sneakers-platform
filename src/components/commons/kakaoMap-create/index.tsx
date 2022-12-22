@@ -8,7 +8,7 @@ declare const window: typeof globalThis & {
 
 const Map = styled.div`
   width: 384px;
-  height: 252px;
+  height: 254px;
   margin: -17px 0px 30px 37px
 `;
 
