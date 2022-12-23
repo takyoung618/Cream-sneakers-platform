@@ -7,13 +7,16 @@ export const Wrapper = styled.div`
 `
 
 export const BestWrapper = styled.div`
-  width: 1920px;
+  margin: auto;
 `
 
 export const BestTitle = styled.div`
+  margin: auto;
+  margin-top: 45px;
+  margin-bottom: 60px;
   font-weight: 700;
-  font-size: 22px;
-  margin: 73px 0px 86px 935px;
+  font-size: 30px;
+  width: fit-content;
 `   
 
 
@@ -28,7 +31,7 @@ export const ProductWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
-  margin-right: 15px;
+  margin: 0 2rem 0 2rem;
 `
 
 export const Image = styled.img`
@@ -82,48 +85,6 @@ export const ListWrapper = styled.div`
   flex-direction: row;
 `
 
-// export const ProductWrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   margin: 0px 116px 50px 0px;
-// `
-
-
-// export const Image = styled.img`
-//   width: 348px;
-//   height: 466px;
-//   background-color: #C4C4C4;
-// `
-
-// export const Heart = styled.img`
-// `
-
-// export const PriceWrapper = styled.div`
-//   display: flex;
-//   margin: 18px 0px 0px 17px;
-// `
-
-
-// export const Tag = styled.div`
-//   font-weight: 700;
-//   font-size: 20px;
-//   color: #F65656;
-// `
-
-
-// export const Price = styled.div`
-//   font-weight: 700;
-//   font-size: 20px;
-//   margin-left: 14px;
-// `
-
-// export const ProductName = styled.div`
-//   font-weight: 500;
-//   font-size: 16px;
-//   margin: 14px 0px 0px 17px;
-//   color: #555555;
-// `
-
 export const ProductContents = styled.div`
   font-weight: 500;
   font-size: 14px;
@@ -133,11 +94,12 @@ export const ProductContents = styled.div`
 
 export const CreateWrapper = styled.div`
     display: flex;
-    width: 1737.5px;
-    margin-left: 97px;
-    border-bottom: 1px solid #555555;
+    width: 85rem;
+    margin: auto;
+    border-bottom: 1px solid gray;
     padding-bottom: 17.5px;
     justify-content: space-between;
+    margin-top: 3rem;
     margin-bottom: 45.5px;
 `
 
@@ -151,7 +113,7 @@ export const CreateButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 14.5px;
+    border-radius: 5px;
 `
 
 export const SearchWrapper = styled.div`
@@ -167,16 +129,15 @@ export const SearchInput = styled.input`
 `
 
 export const InfiniteScrollDiv = styled.div`
-  width: 1737.5px;
+  width: 89rem;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-left: 90px;
 `
 
 export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 90px;
 `
 
 export const BestItemsWrapper = styled.div`
