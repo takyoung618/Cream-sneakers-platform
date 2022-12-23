@@ -7,9 +7,9 @@ declare const window: typeof globalThis & {
 };
 
 const Map = styled.div`
-  width: 384px;
-  height: 254px;
-  margin: -17px 0px 30px 37px
+  width: 500px;
+  height: 300px;
+  margin: -17px 0px 30px 40px
 `;
 
 interface IKakaoMapProps {

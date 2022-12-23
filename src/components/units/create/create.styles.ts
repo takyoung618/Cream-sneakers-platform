@@ -17,7 +17,7 @@ export const InputWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 80rem;
+    width: 76rem;
     height: 116px;
     border-bottom: 1px solid #999999;
     margin: auto;
@@ -27,7 +27,7 @@ export const HeaderWrapper = styled.div`
     display: flex;
     align-items: flex-end;
     height: 175px;
-    width: 80rem;
+    width: 76rem;
     border-bottom: 3px solid #999999;
     margin-left: 91px;
     margin: auto;
@@ -46,21 +46,21 @@ export const TitleWrapper = styled.div`
 `
 
 export const TitleName = styled.div`
-    width: 100px;
+    width: 150px;
     font-weight: 500;
     font-size: 24px;
-    margin: 20px 176px 0px 43px;
+    margin: 20px 140px 0px 43px;
 `
 
 export const TitleName4 = styled.div`
-    width: 140px;
+    width: 180px;
     font-weight: 500;
     font-size: 24px;
-    margin: 20px 150px 0px 43px;
+    margin: 20px 130px 0px 43px;
 `
 
 export const input = styled.input`
-    width: 1419px;
+    width: 1900px;
     height: 56px;
     margin-top: 15px;
     background-color: #E9E9E9;
@@ -90,7 +90,7 @@ export const Title = styled.div`
     width: 100px;
     font-weight: 500;
     font-size: 24px;
-    margin: 57px 50px 0px 10px;
+    margin: 57px 20px 0px 40px;
 `
 
 export const TitlePrice = styled.div`
@@ -103,14 +103,14 @@ export const TitleTag = styled.div`
 
 export const MapWrapper = styled.div`
     display: flex;
-    width: 80rem;
+    width: 76rem;
     margin: 0px 0px 37px 12rem;
     border-bottom: 1px solid #999999;
     margin: auto;
 `
 
 export const LocationTitleWrapper = styled.div`
-    width: 80rem;
+    width: 76rem;
     margin: auto;
 `
 
@@ -130,7 +130,7 @@ export const Map = styled.div`
 
 export const SerchWrapper = styled.div`
     display: flex;
-    margin: 17px 0px 0px 26px;
+    margin: 65px 0px 0px 26px;
 `
 
 export const Zipcode = styled.input`
@@ -159,7 +159,7 @@ export const ZipcodeSerch = styled.button`
     cursor: pointer;
 `
 export const LocationInput = styled.input`
-    width: 850px;
+    width: 700px;
     height: 56px;
     background-color: #E9E9E9;
     border: 1px solid #E9E9E9;
@@ -178,7 +178,7 @@ export const TitlePicture = styled.div`
 `
 
 export const ImageWrapper = styled.div`
-    width: 75rem;
+    width: 71rem;
     margin: auto;
     display: flex;
     margin-bottom: 76px;
@@ -192,7 +192,7 @@ export const Image = styled.div`
 `
 
 export const ButtonWrapper = styled.div`
-    width: 80rem;
+    width: 76rem;
     margin: auto;
     display: flex;
     align-items: center;
