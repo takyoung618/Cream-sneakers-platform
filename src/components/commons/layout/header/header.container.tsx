@@ -50,7 +50,7 @@ export default function HeaderContainer() {
     useEffect(() => {
       const result = JSON.parse(localStorage.getItem("baskets") || "[]")
       setBaskets(result)
-  }, [bucketIsActive])
+    }, [bucketIsActive])
 
 
     useEffect(() => {
@@ -65,7 +65,7 @@ export default function HeaderContainer() {
           localStorage.removeItem("userInfo");
           setLogInStatus(false);
           deleteCookie("refreshToken");
-          router.push("/");
+          router.push("/home");
           message.success("로그아웃 되었습니다.");
         } catch (error) {
           if (error instanceof Error) Modal.error({ content: error.message });
@@ -73,7 +73,7 @@ export default function HeaderContainer() {
     };
 
     const onClickHome = () => {
-        router.push("/")
+        router.push("/home")
     }
 
     const onClickLogin = () => {
