@@ -39,7 +39,7 @@ export const CommentCreateButton = styled.div`
     cursor: pointer;
     margin: 17px 0px 0px 0;
     border-radius: 10px;
-    margin: 20px 0px 10px 59.5rem;
+    margin: 20px 0px 20px 59.5rem;
     /* margin-top: 20px;
     margin-left: 59.5rem; */
 `

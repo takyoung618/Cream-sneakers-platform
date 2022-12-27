@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     border-top: 3px solid #F1F1F1;
     width: 71rem;
-    margin: 30px 9rem 20px 9rem;
+    margin: 0px 9rem 20px 9rem;
 `
 
 export const HeaderWrapper = styled.div`
