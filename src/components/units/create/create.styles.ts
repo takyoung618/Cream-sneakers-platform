@@ -53,7 +53,7 @@ export const TitleName = styled.div`
 `
 
 export const TitleName4 = styled.div`
-    width: 180px;
+    width: 180.2px;
     font-weight: 500;
     font-size: 24px;
     margin: 20px 130px 0px 43px;
@@ -67,8 +67,8 @@ export const input = styled.input`
     border: 1px solid #E9E9E9;
     ::placeholder {
         color: #A9A9A9;
-        padding-left: 18px;
     }
+    padding-left: 18px;
 `
 
 export const ReactWrapper = styled.div`
@@ -144,6 +144,7 @@ export const Zipcode = styled.input`
     font-weight: 400;
     font-size: 16px;
     margin-right: 16px;
+    padding-left: 14px;
 `
 
 export const ZipcodeSerch = styled.button`
@@ -164,6 +165,7 @@ export const LocationInput = styled.input`
     background-color: #E9E9E9;
     border: 1px solid #E9E9E9;
     margin: 27px 0px 0px 26px;
+    padding-left: 18px;
 `
 
 export const LocationWrapper = styled.div`
@@ -225,9 +227,9 @@ export const CreateButton = styled.button`
 
 export const InputError = styled.div`
     color: red;
-    font-size: 12px;
-    width: 300px;
-    margin: 0px 0px 0px 280px;
+    font-size: 14px;
+    width: fit-content;
+    margin: 10px 0px 0px 260px;
 `
 
 export const AddressModal = styled(Modal)``;

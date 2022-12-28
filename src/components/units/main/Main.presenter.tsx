@@ -24,7 +24,7 @@ export default function MainPresenter(
                           src={
                             el.images?.[0] || el.images?.[1]
                               ? `http://storage.googleapis.com/${el.images?.[0]}`
-                              : `images/프로필 이미지.png`
+                              : `images/기본이미지.png`
                           }
                           />
                           <S.PriceWrapper>
@@ -41,12 +41,6 @@ export default function MainPresenter(
 
           <S.CreateWrapper>
               <S.CreateButton onClick={props.onClickCreate}>상품 등록</S.CreateButton>
-              <S.SearchWrapper>
-                  <Searchbars01
-                    refetch={props.refetch}
-                    onChangeKeyword={props.onChangeKeyword}
-                  />
-              </S.SearchWrapper>
           </S.CreateWrapper>
 
           <InfiniteScroll
@@ -64,7 +58,7 @@ export default function MainPresenter(
                     src={
                         el.images?.[0] || el.images?.[1] || el.images?.[2]
                           ? `http://storage.googleapis.com/${el.images?.[0]}`
-                          : `/today.jpg`
+                          : `images/기본이미지.png`
                       }
                     />
                     <S.PriceWrapper>

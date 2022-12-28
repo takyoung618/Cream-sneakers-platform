@@ -32,8 +32,8 @@ export default function DetailPresenter(props: IDetailPresenterProps){
                 
                 <S.WrapperColumn>
                     <S.BrandWrapper>
-                        <S.Brand>{props.data?.fetchUseditem.remarks}</S.Brand>
                         <S.ProductName>{props.data?.fetchUseditem.name}</S.ProductName>
+                        <S.Brand>{props.data?.fetchUseditem.remarks}</S.Brand>
                     </S.BrandWrapper>
                     <S.PriceWrapper>
                         <S.PriceTitle>판매가</S.PriceTitle>

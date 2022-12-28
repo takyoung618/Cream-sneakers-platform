@@ -57,14 +57,14 @@ export const EmailInput = styled.input`
 
 export const EmailErrorMessage = styled.div`
     color: red;
-    width: 105px;
-    margin-top: 2px;
+    width: fit-content;
+    margin-top: 5px;
 `
 
 export const PasswordErrorMessage = styled.div`
     color: red;
     width: 146px;
-    margin-top: 2px;
+    margin-top: 5px;
 `
 
 export const LoginBtn = styled.button`

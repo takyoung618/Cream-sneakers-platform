@@ -20,10 +20,6 @@ export const LogoImage = styled.div`
 `
 
 export const HeaderWrapper = styled.div`
-  /* display: flex;
-  align-items: center;
-  margin-right: 60px;
-  margin-bottom: 20px; */
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -34,18 +30,21 @@ export const Login = styled.div`
     font-weight: 400;
     font-size: 14px;
     margin-right: 66px;
+    cursor: pointer;
 `
 
 export const Signup = styled.div`
     font-weight: 400;
     font-size: 14px;
     margin-right: 56px;
+    cursor: pointer;
 `
 
 export const Basket = styled.div`
     font-weight: 400;
     font-size: 14px;
     margin-right: 10px;
+    cursor: pointer;
 `
 
 export const BasketCount = styled.div`

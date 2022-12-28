@@ -30,6 +30,7 @@ export const Category = styled.div`
     color: black;
     font-weight: 300;
     font-size: 22px;
+    cursor: pointer;
 `
 
 export const Line = styled.div`

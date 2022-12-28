@@ -36,13 +36,14 @@ const FETCH_USED_ITEM = gql`
   }
 `;
 
+// interface ICreateEditPage {
+  
+// }
+
 function EditPage(){
     const router = useRouter();
 
-    const { data } = useQuery<
-        Pick<IQuery, "fetchUseditem">,
-        IQueryFetchUseditemArgs
-    >(FETCH_USED_ITEM, {
+    const { data } = useQuery(FETCH_USED_ITEM, {
         variables: { useditemId: String(router.query._id) },
     });
 

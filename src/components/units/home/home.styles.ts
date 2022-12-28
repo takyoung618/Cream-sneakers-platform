@@ -17,6 +17,7 @@ export const SlideWrapper = styled.div`
 export const Img = styled.img `
     width: 100%;
     height: 60%;
+    cursor: pointer;
 `
 
 export const TitleWrapper = styled.div`

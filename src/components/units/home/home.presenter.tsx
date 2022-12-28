@@ -12,6 +12,8 @@ export default function HomePresenter(props: IHomePagePresenterProps){
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000
     };
 
     return (
@@ -38,10 +40,8 @@ export default function HomePresenter(props: IHomePagePresenterProps){
                     <S.Title>just Uploaded</S.Title>
                     <S.ProductTitle>발매 상품</S.ProductTitle>
                 </S.TitleWrapper>
-                {/* <S.Title>Just Uploaded</S.Title> */}
                 <S.ProductListWrapper>
                 {props.data?.fetchUseditems.slice(0,8).map((el : any) => (   
-                    // key는 react가 어떤 항목을 변경, 추가 또는 삭제할지 식별하는 것을 돕는다.
                     <S.ProductWrapper key={el._id} id={el._id}
                     onClick={props.onClickList}
                     >
@@ -49,7 +49,7 @@ export default function HomePresenter(props: IHomePagePresenterProps){
                             src={
                                 el.images?.[0] || el.images?.[1]
                                 ? `http://storage.googleapis.com/${el.images?.[0]}`
-                                : `images/프로필 이미지.png`
+                                : `images/기본이미지.png`
                             }
                         />
                         <S.PriceWrapper>

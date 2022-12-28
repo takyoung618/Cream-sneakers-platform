@@ -14,7 +14,7 @@ import { ICreateContainerProps } from "./create.types";
 
 const schema = yup.object({
     name: yup.string().required("상품명을 입력해주세요."),
-    remarks: yup.string().required("상품 요약을 입력해주세요."),
+    remarks: yup.string().required("브랜드명을 입력해주세요."),
     contents: yup.string().required("상품 설명을 입력해주세요."),
     price: yup
       .number()

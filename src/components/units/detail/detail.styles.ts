@@ -86,13 +86,13 @@ export const BrandWrapper = styled.div`
 `
 
 export const Brand = styled.div`
-    font-weight: 600;
-    font-size: 30px;
+    font-weight: 400;
+    font-size: 18px;
 `
 
 export const ProductName = styled.div`
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 30px;
 `
 
 export const PriceWrapper = styled.div`

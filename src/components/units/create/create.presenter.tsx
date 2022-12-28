@@ -28,6 +28,7 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
             {props.isOpen && (
             <S.AddressModal
             visible={true}
+            closable={true}
             onCancel={props.onClickCloseAddressSearch}
             >
             <S.AddressSearch
