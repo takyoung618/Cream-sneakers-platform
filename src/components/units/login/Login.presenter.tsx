@@ -15,6 +15,7 @@ export default function LoginPresenter(props: ILoginPresenterProps) {
                     <S.EmailInput
                         placeholder="예) Cream@Cream.co.kr"
                         {...props.register("email")}
+                        autoComplete="off"
                     />
                     <S.EmailErrorMessage>
                         {props.formState.errors.email?.message}
@@ -23,7 +24,9 @@ export default function LoginPresenter(props: ILoginPresenterProps) {
                 <S.PasswordWrapper>
                     <S.PasswordTitle>비밀번호</S.PasswordTitle>
                     <S.EmailInput
-                        {...props.register("password")}    
+                        type="password"
+                        {...props.register("password")}
+                        autoComplete="off"    
                     />
                     <S.PasswordErrorMessage>
                         {props.formState.errors.password?.message}

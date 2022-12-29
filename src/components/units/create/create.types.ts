@@ -22,4 +22,5 @@ import { IQuery } from "../../../commons/types/generated/types";
     onClickEditButton: (data: any) => void;
     onClickAddressSearch: () => void;
     onClickCloseAddressSearch: () => void;
+    onCompleteAddressSearch: () => void;
   }

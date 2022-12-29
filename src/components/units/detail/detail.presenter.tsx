@@ -38,7 +38,9 @@ export default function DetailPresenter(props: IDetailPresenterProps){
                     <S.PriceWrapper>
                         <S.PriceTitle>판매가</S.PriceTitle>
                         <S.Price>{props.data?.fetchUseditem.price}</S.Price>
-                        <S.PriceWon>원</S.PriceWon>  
+                        <S.PriceWon>원</S.PriceWon>
+                        <S.Heart src='/images/Heart.png'/>
+                        <S.Ggim>{props.data?.fetchUseditem.pickedCount}</S.Ggim>
                     </S.PriceWrapper>
 
                     { process.browser &&

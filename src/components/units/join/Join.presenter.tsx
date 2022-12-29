@@ -14,6 +14,7 @@ export default function JoinPresenter(props: IJoinPresenterProps) {
                     <S.EmailInput
                         placeholder="예)Kream@Kream.co.kr"
                         {...props.register("email")}
+                        autoComplete="off"
                     />
                     <S.ErrorMessage>
                         {props.formState.errors.email?.message}
@@ -24,7 +25,8 @@ export default function JoinPresenter(props: IJoinPresenterProps) {
                     <S.EmailInput
                         type="password"
                         {...props.register("password")}
-                        placeholder="영문, 숫자, 특수문자 조합 8~16자 "
+                        placeholder="영문, 숫자, 특수문자 조합 8~16자"
+                        autoComplete="off"
                     />
                     <S.ErrorMessage>
                         {props.formState.errors.password?.message}
@@ -33,6 +35,7 @@ export default function JoinPresenter(props: IJoinPresenterProps) {
                 <S.PasswordWrapper>
                     <S.PasswordTitle>비밀번호 확인*</S.PasswordTitle>
                     <S.EmailInput
+                        type="password"
                         {...props.register("passwordCheck")}
                         placeholder="영문, 숫자, 특수문자 조합 8~16자 "
                     />
@@ -45,6 +48,7 @@ export default function JoinPresenter(props: IJoinPresenterProps) {
                     <S.EmailInput
                         {...props.register("name")}
                         placeholder="입력하세요"
+                        autoComplete="off"
                     />
                     <S.ErrorMessage>
                         {props.formState.errors.name?.message}

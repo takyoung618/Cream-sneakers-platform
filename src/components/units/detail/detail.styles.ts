@@ -29,7 +29,7 @@ export const RowWrapper = styled.div`
 export const Image = styled.img`
     width: 30rem;
     height: 30rem;
-    background-color: #A0A0A0;
+    background-color: #ECF3F2;
 `
 
 export const WarnWrapper = styled.div`
@@ -118,6 +118,16 @@ export const PriceWon = styled.div`
     font-weight: 400;
     font-size: 12px;
     margin-left: 5px;
+`
+
+export const Heart = styled.img`
+    width: 20px;
+    height: 20px;
+    margin-left: 350px;
+`
+
+export const Ggim = styled.div`
+margin-left: 10px;
 `
 
 

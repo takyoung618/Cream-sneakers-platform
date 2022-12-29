@@ -13,7 +13,7 @@ export default function HomePresenter(props: IHomePagePresenterProps){
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000
+        autoplaySpeed: 5000
     };
 
     return (
@@ -53,7 +53,7 @@ export default function HomePresenter(props: IHomePagePresenterProps){
                             }
                         />
                         <S.PriceWrapper>
-                            <S.Tag>{el.tags}</S.Tag>
+                            <S.Tag>{el.remarks}</S.Tag>
                         </S.PriceWrapper>
                         <S.ProductName>{el.name}</S.ProductName>
                         {/* <S.ProductContents>{el.contents}</S.ProductContents> */}

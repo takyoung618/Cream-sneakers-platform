@@ -44,6 +44,7 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
                     <S.TitleName>상품명</S.TitleName>
                     <S.input placeholder="상품명을 작성해주세요"
                         {...props.register("name")}
+                        autoComplete="off"
                     />
                 </S.TitleWrapper>
                 <S.InputError>{props.formState.errors.name?.message}</S.InputError>
@@ -52,8 +53,9 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
             <S.InputWrapper>
                 <S.TitleWrapper>
                     <S.TitleName4>브랜드명</S.TitleName4>
-                    <S.input placeholder="상품요약을 작성해주세요"
+                    <S.input placeholder="브랜드명을 작성해주세요"
                     {...props.register("remarks")}
+                    autoComplete="off"
                 />
                 </S.TitleWrapper>
                 <S.InputError>
@@ -86,6 +88,7 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
                     <S.input 
                    placeholder="판매 가격을 입력해주세요"
                    {...props.register("price")}
+                   autoComplete="off"
                     />
                 </S.TitleWrapper>
                 <S.InputError>{props.formState.errors.price?.message}</S.InputError>
@@ -98,6 +101,7 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
                     type="text"
                     placeholder="#태그 #태그 #태그"
                     {...props.register("tags")}
+                    autoComplete="off"
                 />
                 </S.TitleWrapper>
             </S.InputWrapper>
