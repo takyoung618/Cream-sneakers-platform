@@ -66,7 +66,7 @@ export default function CommentWriteContainer(props: ICommentWriteContainerProps
             return;
         }
 
-        const updateUseditemQuestionInput: IUpdateUseditemQuestionInput = {};
+        const updateUseditemQuestionInput: IUpdateUseditemQuestionInput = {contents};
         if (contents) updateUseditemQuestionInput.contents = contents;  
  
         await updateUseditemQuestion({

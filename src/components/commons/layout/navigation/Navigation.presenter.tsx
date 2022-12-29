@@ -1,6 +1,6 @@
 import * as S from "./Navigation.styles"
 
-export default function NavigationPresenter(props) {
+export default function NavigationPresenter(props: any) {
 
     return (
         <S.Wrapper>

@@ -9,6 +9,12 @@ import HeaderPresenter from "./header.presenter";
 import { CREATE_POINT_TRANSACTION_OF_LOADING, LOGOUT_USER } from "./header.queries";
 import Head from "next/head";
 
+declare global {
+  interface Window {
+    IMP: any;
+  }
+}
+
 export default function HeaderContainer() {
     const router = useRouter();
 
@@ -34,7 +40,7 @@ export default function HeaderContainer() {
 
     const [selected, setSelected] = useState("");
 
-    const deleteCookie = (name) => {
+    const deleteCookie = (name: any) => {
         document.cookie =
           name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=C.kr;path=/;";
       };

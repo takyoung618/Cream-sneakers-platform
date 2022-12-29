@@ -10,7 +10,6 @@ import { useRouter } from "next/router";
 import { message, Modal } from "antd";
 import { useRecoilState } from "recoil";
 import { accessTokenState, isEditState } from "../../../commons/store";
-import { ICreateContainerProps } from "./create.types";
 
 const schema = yup.object({
     name: yup.string().required("상품명을 입력해주세요."),
@@ -22,7 +21,7 @@ const schema = yup.object({
       .typeError("숫자만 입력 가능합니다."),
   });
 
-export default function CreateContainer(props: ICreateContainerProps){
+export default function CreateContainer(props: any){
   
   useEffect(() => {
     if (props.data !== undefined) {
@@ -70,6 +69,10 @@ export default function CreateContainer(props: ICreateContainerProps){
       setValue("useditemAddress.address", data.address);
       trigger("useditemAddress.zipcode");
       trigger("useditemAddress.address");
+      setIsOpen(false);
+    };
+
+    const onClickCloseAddressSearch = () => {
       setIsOpen(false);
     };
 
@@ -165,6 +168,8 @@ export default function CreateContainer(props: ICreateContainerProps){
             isOpen={isOpen}
             address={getValues("useditemAddress.address")}
             onClickAddressSearch={onClickAddressSearch}
+            onClickCloseAddressSearch={onClickCloseAddressSearch}
+            onCompleteAddressSearch={onCompleteAddressSearch}
         />
     )
 }

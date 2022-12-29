@@ -7,9 +7,7 @@ import styled from "@emotion/styled";
 import { ILayoutHeaderUIProps } from "./header.types";
 
 
-
-
-export default function HeaderPresenter(props) {
+export default function HeaderPresenter(props: ILayoutHeaderUIProps) {
     const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
 
     const UserInfo = getUserInfo();

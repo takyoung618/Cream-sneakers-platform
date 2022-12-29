@@ -1,8 +1,8 @@
-export const getDate = (value) => {
+export const getDate = (value: any) => {
   const start = new Date(value);
   const end = new Date(); // 현재 날짜
 
-  const diff = end - start; // 경과 시간
+  // const diff = end - start; // 경과 시간
 
   const times = [
     { time: "분", milliSeconds: 1000 * 60 },
@@ -13,20 +13,20 @@ export const getDate = (value) => {
   ].reverse();
 
   // 년 단위부터 알맞는 단위 찾기
-  for (const value of times) {
-    const betweenTime = Math.floor(diff / value.milliSeconds);
+  // for (const value of times) {
+  //   const betweenTime = Math.floor(diff / value.milliSeconds);
 
-    // 큰 단위는 0보다 작은 소수 단위 나옴
-    if (betweenTime > 0) {
-      return `${betweenTime}${value.time} 전`;
-    }
-  }
+  //   // 큰 단위는 0보다 작은 소수 단위 나옴
+  //   if (betweenTime > 0) {
+  //     return `${betweenTime}${value.time} 전`;
+  //   }
+  // }
 
   // 모든 단위가 맞지 않을 시
   return "방금 전";
 };
 
-export const localStorageDate = (value) => {
+export const localStorageDate = (value: any) => {
   const date = new Date(value);
   const yyyy = date.getFullYear();
   const mm = String(date.getMonth() + 1).padStart(2, "0");

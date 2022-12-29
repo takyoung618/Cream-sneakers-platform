@@ -37,7 +37,7 @@ export default function KaKaoMap(props: IKakaoMapProps) {
         if (props.data?.fetchUseditem.useditemAddress?.address) {
           geocoder.addressSearch(
             props.data?.fetchUseditem.useditemAddress?.address,
-            function (result, status) {
+            function (result: any, status: any) {
               if (status === window.kakao.maps.services.Status.OK) {
                 const coords = new window.kakao.maps.LatLng(
                   result[0].y,

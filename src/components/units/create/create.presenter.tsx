@@ -27,9 +27,8 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
         >
             {props.isOpen && (
             <S.AddressModal
-            visible={true}
-            closable={true}
-            onCancel={props.onClickCloseAddressSearch}
+                visible={true}
+                onCancel={props.onClickCloseAddressSearch}
             >
             <S.AddressSearch
                 onComplete={props.onCompleteAddressSearch}
@@ -120,7 +119,8 @@ export default function CreatePresenter(props: ICreatePresenterProps) {
                         <S.ZipcodeSerch
                             type="button"
                             onClick={props.onClickAddressSearch}
-                        >우편번호 검색
+                        >
+                        우편번호 검색
                         </S.ZipcodeSerch>
                         </S.SerchWrapper>
                     <S.LocationInput

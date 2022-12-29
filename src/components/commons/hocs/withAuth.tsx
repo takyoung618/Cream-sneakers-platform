@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { logInStatusState } from "../../../commons/store";
 
-export const withAuth = (Component) => (props) => {
+export const withAuth = (Component: any) => (props: any) => {
     const [isLogout] = useRecoilState(logInStatusState);
 
     const router = useRouter();
