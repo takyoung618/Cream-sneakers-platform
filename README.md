@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Cream - 스니커즈 거래 플랫폼
+===========================================
 
-## Getting Started
+<p align="center">
+</p>
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<p align="center" display="inline-block">
+    <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white">
+    <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"> 
+     <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"> <br>
+   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"> 
+    <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
+ <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=GraphQL&logoColor=white">
+ <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white">
+<img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white">
+</p><br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📝 주요 페이지
+------------
+|[랜딩 페이지]|[홈페이지]|
+|--------|--------|
+|![랜딩페이지](https://user-images.githubusercontent.com/107944090/209990139-cd52de44-13aa-40a9-a21e-2158569b058f.gif)|![홈페이지](https://user-images.githubusercontent.com/107944090/209992079-e0b5af6b-a233-4a92-a053-970273069ca2.gif)|
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+|[메인 페이지]|[디테일 페이지]|
+|--------|--------|
+|![메인페이지](https://user-images.githubusercontent.com/107944090/209993719-9dbb090f-b2de-4ade-9c56-6f0ef82ac6d7.gif)|![디테일 페이지](https://user-images.githubusercontent.com/107944090/209993736-6ced952b-605b-410d-924e-dc86a9a3a77f.gif)|
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+|[로그인 페이지]|[회원가입 페이지]|
+|--------|--------|
+|![로그인페이지](https://user-images.githubusercontent.com/107944090/210010388-e1eac5fb-9399-47d6-b000-0bec4ad94730.gif)|![회원가입](https://user-images.githubusercontent.com/107944090/210010405-0e60d66c-664a-4d08-848e-5b10675363dc.gif)|
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+|[등록 페이지]|[수정 페이지]|
+|--------|--------|
+|![등록페이지](https://user-images.githubusercontent.com/107944090/210010477-b68a7d3e-328b-409f-a0d2-1a515bb03c89.gif)|![수정페이지](https://user-images.githubusercontent.com/107944090/210010499-2022189a-14d7-4844-98b8-983f3790b2be.gif)|
