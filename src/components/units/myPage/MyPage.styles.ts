@@ -26,7 +26,7 @@ export const ProfileImage = styled.img`
 `
 
 export const UserWrapper = styled.div`
-    margin: 0 0 0 3rem;
+    margin: 1.5rem 0 0 3rem;
 `
 
 export const UserId = styled.div`
@@ -42,8 +42,9 @@ export const ImageEditBtn = styled.button`
     height: 40px;
     width: 100px;
     background-color: white;
-    border: 1px solid #E3E3E3;
+    border: 1px solid #CFCFCF;
     border-radius: 10px;
+    color: #787878;
     cursor: pointer;
 `
 
@@ -51,9 +52,10 @@ export const ImageDeleteBtn = styled.button`
     height: 40px;
     width: 60px;
     background-color: white;
-    border: 1px solid #E3E3E3;
+    border: 1px solid #CFCFCF;
     border-radius: 10px;
     margin-left: 5px;
+    color: #787878;
     cursor: pointer;
 `
 
@@ -66,7 +68,7 @@ export const HeaderWrapper = styled.div`
 
 export const LoginHeader = styled.div`
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
 `
 
 export const LoginWrapper = styled.div`
@@ -75,7 +77,7 @@ export const LoginWrapper = styled.div`
 
 export const InfoHeader = styled.div`
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
     margin: 4rem 0 0 3.5rem;
 `
 
@@ -86,6 +88,8 @@ export const EmailWrapper = styled.div`
 `
 
 export const EmailTitle = styled.div`
+    color: #787878;
+    font-weight: 500;
 `
 
 export const InfoWrapper = styled.div`
@@ -95,7 +99,8 @@ export const InfoWrapper = styled.div`
 
 export const Email = styled.input`
     padding-right: 12rem;
-    border: 1px solid white;
+    border: none;
+    :focus {outline: none}
 `
 
 // 관심 상품
