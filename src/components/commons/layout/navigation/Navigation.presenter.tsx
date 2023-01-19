@@ -9,16 +9,16 @@ export default function NavigationPresenter(props: any) {
             >CREAM</S.LogoImage>
             <S.CategoryWrapper>
                 <S.Category
-                    onClick={props.MoveToList}
-                >STYLE
+                    onClick={props.MoveToHome}
+                >HOME
                 </S.Category>
                 <S.Category
                     onClick={props.MoveToList}
                 >SHOP
                 </S.Category>
                 <S.Category
-                    onClick={props.MoveToHome}
-                >HOME
+                    onClick={props.MoveToMy}
+                >MYPAGE
                 </S.Category>
             </S.CategoryWrapper>
         </S.Wrapper>

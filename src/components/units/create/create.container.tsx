@@ -11,7 +11,7 @@ import { message, Modal } from "antd";
 import { useRecoilState } from "recoil";
 import { accessTokenState, isEditState } from "../../../commons/store";
 
-const schema = yup.object({
+  const schema = yup.object({
     name: yup.string().required("상품명을 입력해주세요."),
     remarks: yup.string().required("브랜드명을 입력해주세요."),
     contents: yup.string().required("상품 설명을 입력해주세요."),
@@ -46,7 +46,7 @@ export default function CreateContainer(props: any){
     setIsEdit(true);
   }, [props.data]);
 
-  
+
     const [fileUrls, setFileUrls] = useState(["", ""]);
 
     const onChangeFileUrls = (fileUrl: string, index: number) => {

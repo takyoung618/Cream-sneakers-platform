@@ -4,6 +4,7 @@ import { ReactChild } from "react";
 import HeaderContainer from "./header/header.container";
 import NavigationContainer from "./navigation/Navigation.container";
 import FooterContainer from "./footer/Footer.container";
+import SideBar from "./sideBar";
 
 interface ILayoutProps {
     children: ReactChild;
@@ -17,17 +18,17 @@ const Wrapper = styled.div`
 const Body = styled.div`
 `
 
-const HIDDEN_LAYOUTS = [
+const HIDDEN_LANDING = [
     "/",
 ]
 
 export default function Layout(props: ILayoutProps) {
     const router = useRouter();
-    const isHiddenLayouts = HIDDEN_LAYOUTS.includes(router.asPath)
+    const isHiddenLanding = HIDDEN_LANDING.includes(router.asPath)
     
     return (
         <Wrapper>
-            {!isHiddenLayouts && (
+            {!isHiddenLanding && (
                 <Wrapper>
                     <HeaderContainer/>
                     <NavigationContainer/>
@@ -35,6 +36,7 @@ export default function Layout(props: ILayoutProps) {
             )}
             <Body>{props.children}</Body>
             <FooterContainer/>
+            {/* <SideBar/> */}
         </Wrapper>
     )
 }

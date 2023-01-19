@@ -66,6 +66,7 @@ export const Image = styled.img`
   height: 18rem;
   background-color: #ECF3F2;;
   border-radius: 20px;
+  margin-top: 2rem;
 `
 
 export const Heart = styled.img`
@@ -76,6 +77,7 @@ export const PriceWrapper = styled.div`
 `
 
 export const Tag = styled.div`
+  width: 18rem;
   font-weight: 700;
   font-size: 20px;
 `
@@ -91,6 +93,7 @@ export const PriceTag = styled.div`
 `
 
 export const ProductName = styled.div`
+  width: 18rem;
   font-size: 16px;
   color: #555555;
 `

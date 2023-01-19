@@ -9,13 +9,13 @@ declare const window: typeof globalThis & {
 const Map = styled.div`
   width: 500px;
   height: 300px;
-  margin: -17px 0px 30px 40px
+  margin: -17px 0px 30px 40px;
 `;
 
 interface IKakaoMapProps {
   address: string;
-  //   data: Pick<IQuery, "fetchUseditem">;
 }
+
 
 export default function KaKaoMap(props: IKakaoMapProps) {
   useEffect(() => {

@@ -37,12 +37,14 @@ export default function DetailContainer(props: IDetailContainerProps){
 
     const onClickBasket = (el: any) => () => {
       const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
+      // 1. 이미 담겼는지 확인하기
       const temp = baskets.filter((basketEl: any) => basketEl._id === el._id);
       if (temp.length === 1) {
         message.error("이미 담으신 상품입니다!!!");
         return;
       }
-    
+
+      // 2. 장바구니에 담기
       setIsActive((prev) => !prev)
       baskets.push(el);
       localStorage.setItem("baskets", JSON.stringify(baskets));

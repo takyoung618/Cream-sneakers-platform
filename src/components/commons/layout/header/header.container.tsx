@@ -42,15 +42,15 @@ export default function HeaderContainer() {
 
     const deleteCookie = (name: any) => {
         document.cookie =
-          name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=C.kr;path=/;";
+        name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=C.kr;path=/;";
       };
     
-      useEffect(() => {
-        if (localStorage.getItem("accessToken")) {
-          setLogInStatus(true);
-        } else if (!localStorage.getItem("accessToken")) {
-          setLogInStatus(false);
-        }
+    useEffect(() => {
+      if (localStorage.getItem("accessToken")) {
+        setLogInStatus(true);
+      } else if (!localStorage.getItem("accessToken")) {
+        setLogInStatus(false);
+      }
     }, [logInStatus]);
 
     useEffect(() => {

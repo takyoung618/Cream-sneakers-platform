@@ -12,11 +12,16 @@ export default function NavigationContainer(){
     const MoveToHome = () => {
         router.push("/home")
     }
+
+    const MoveToMy = () => {
+        router.push("/myPage")
+    }
     
     return (
         <NavigationPresenter
             MoveToHome={MoveToHome}
             MoveToList={MoveToList}
+            MoveToMy={MoveToMy}
         > 
         </NavigationPresenter>
     )

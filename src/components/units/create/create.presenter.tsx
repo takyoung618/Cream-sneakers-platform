@@ -8,15 +8,6 @@ import { useRecoilState } from "recoil";
 import { isEditState } from "../../../commons/store";
 
 export default function CreatePresenter(props: ICreatePresenterProps) {
-    const [defaultValue, setDefaultValue] = useState("");
-    const [isEdit, setIsEdit] = useRecoilState(isEditState);
-
-    useEffect(() => {
-        if (props.data?.fetchUseditem.contents) {
-          setDefaultValue(props.data?.fetchUseditem.contents);
-        }
-        setIsEdit(true);
-    }, [props.data?.fetchUseditem.contents]);
    
     return (
         <form

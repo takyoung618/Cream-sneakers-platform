@@ -32,6 +32,7 @@ export const ProductWrapper = styled.div`
   flex-direction: column;
   width: fit-content;
   margin: 0 2rem 0 2rem;
+  margin-top: 2rem;
 `
 
 export const Image = styled.img`
