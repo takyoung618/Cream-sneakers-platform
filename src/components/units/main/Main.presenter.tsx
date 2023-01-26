@@ -3,7 +3,6 @@ import {BiSearch} from "react-icons/bi"
 import { getDate } from "../../commons/libraries/utils";
 import * as S from "./Main.styles";
 import { IMainPresenterProps } from "./Main.types";
-import Searchbars01 from "../../commons/searchbars/01/Searchbars01.container";
 import { v4 as uuidv4 } from "uuid";
 
 export default function MainPresenter(
@@ -46,20 +45,22 @@ export default function MainPresenter(
           <InfiniteScroll
             pageStart={0}
             loadMore={props.FetchMoreUseditems}
-            hasMore={true || false}
+            hasMore={true}
         >
             <S.InfiniteScrollDiv>
             {props.useditemsData?.fetchUseditems.map((el) => (        
-                <S.ListWrapper key={el._id} id={el._id}
-                onClick={props.onClickList}
+                <S.ListWrapper 
+                    key={el._id} 
+                    id={el._id}
+                    onClick={props.onClickList}
                 >
                 <S.ProductWrapper >
                     <S.Image
-                    src={
-                        el.images?.[0] || el.images?.[1] || el.images?.[2]
-                          ? `http://storage.googleapis.com/${el.images?.[0]}`
-                          : `images/기본이미지.png`
-                      }
+                        src={
+                            el.images?.[0] || el.images?.[1] || el.images?.[2]
+                            ? `http://storage.googleapis.com/${el.images?.[0]}`
+                            : `images/기본이미지.png`
+                        }
                     />
                     <S.PriceWrapper>
                         <S.Tag>{el.tags}</S.Tag>

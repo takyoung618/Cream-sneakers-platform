@@ -12,6 +12,7 @@ import { message, Modal } from "antd";
 import { Session } from "inspector";
 import { ILoginContainerProps } from "./Login.types";
 
+
 export const schema = yup.object({
   email: yup
     .string()
@@ -77,6 +78,8 @@ export default function LoginContainer(props: ILoginContainerProps) {
   const onClickMoveJoin = () => {
     router.push("join")
   }
+
+
   
 
     return (

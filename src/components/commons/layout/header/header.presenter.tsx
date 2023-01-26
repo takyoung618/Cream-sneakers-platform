@@ -32,7 +32,7 @@ export default function HeaderPresenter(props: ILayoutHeaderUIProps) {
                             </S.Point>
                             <S.ChargeButton onClick={() => props.setModalIsOpen(true)}>충전</S.ChargeButton>
                             <S.LogOut onClick={props.onClickLogOut}>로그아웃</S.LogOut>
-                            <S.Basket>장바구니</S.Basket>
+                            <S.Basket onClick={props.onClickBucket}>장바구니</S.Basket>
                             <S.BasketCount>
                                 <S.Count>{ props.baskets.length }</S.Count>
                             </S.BasketCount>

@@ -64,7 +64,7 @@ export const ProductWrapper = styled.div`
 export const Image = styled.img`
   width: 18rem;
   height: 18rem;
-  background-color: #ECF3F2;;
+  background-color: #ECF3F2;
   border-radius: 20px;
   margin-top: 2rem;
 `

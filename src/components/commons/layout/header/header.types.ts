@@ -6,6 +6,7 @@ import { FieldValues, UseFormHandleSubmit, UseFormRegister } from "react-hook-fo
 export interface ILayoutHeaderUIProps {
     onClickLogin: () => void;
     onClickJoin: () => void;
+    onClickBucket: () => void;
     setModalIsOpen: any;
     baskets: any;
     modalIsOpen: boolean;
@@ -15,4 +16,5 @@ export interface ILayoutHeaderUIProps {
     onClickLogOut: () => void;
     onClickHome: () => void;
     onClickCharge: () => void;
+
 }

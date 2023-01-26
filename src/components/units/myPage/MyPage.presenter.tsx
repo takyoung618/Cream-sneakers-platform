@@ -55,7 +55,7 @@ export default function MyPagePresenter() {
                 </S.EmailWrapper>
             </S.LoginWrapper>
             <S.InfoHeader>
-                관심 상품
+                내 게시글
             </S.InfoHeader>
             <S.ProductListWrapper>
                 {/* {props.data?.fetchUseditems.slice(0,8).map((el : any) => (    */}
@@ -111,6 +111,9 @@ export default function MyPagePresenter() {
                         <S.PriceTag>즉시 구매가</S.PriceTag>
                     </S.ProductWrapper>
                 </S.ProductListWrapper>
+                <S.InfoHeader>
+                    내 댓글
+                </S.InfoHeader>
         </S.Wrapper>
     )
 }

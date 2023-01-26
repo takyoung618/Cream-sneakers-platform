@@ -79,15 +79,19 @@ export default function HeaderContainer() {
     };
 
     const onClickHome = () => {
-        router.push("/home")
+      router.push("/home")
     }
 
     const onClickLogin = () => {
-        router.push("/login")
+      router.push("/login")
     }
 
     const onClickJoin = () => {
-        router.push("/join")
+      router.push("/join")
+    }
+
+    const onClickBucket = () => {
+      router.push("/bucket")
     }
 
     const onChangeSelect = (event: any) => {
@@ -150,6 +154,7 @@ export default function HeaderContainer() {
           onClickLogin={onClickLogin}
           onClickJoin={onClickJoin}
           onClickLogOut={onClickLogOut}
+          onClickBucket={onClickBucket}
           baskets = { baskets }
           modalIsOpen={modalIsOpen}
           isActive={isActive}
@@ -157,7 +162,7 @@ export default function HeaderContainer() {
           onClickCharge={onClickCharge}
           selected={selected}
           onChangeSelect={onChangeSelect}
-        />
+          />
       </>
         
     )
