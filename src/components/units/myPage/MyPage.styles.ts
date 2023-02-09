@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
     margin-bottom: 10rem;
     border: 2px solid #E3E3E3;
     border-radius: 20px;
+    box-shadow: 10px;
 `
 
 export const ProfileWrapper = styled.div`
@@ -18,11 +19,27 @@ export const ProfileWrapper = styled.div`
     margin: 3rem 0 3rem 3.5rem;
 `
 
+export const ImageContainer = styled.div`
+
+`
+
+export const PhotoInput = styled.img`
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100px;
+  
+    
+`
+
+export const UploadFileHidden = styled.input`
+  display: none;
+`
+
 export const ProfileImage = styled.img`
     width: 8rem;
     height: 8rem;
-    background-image: "https://kream.co.kr/_nuxt/img/blank_profile.4347742.png";
     border-radius: 100px;
+    background-color: mintcream;
 `
 
 export const UserWrapper = styled.div`

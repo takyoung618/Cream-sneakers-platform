@@ -137,7 +137,7 @@ export const Product = styled.div`
 `
 
 export const Contents = styled.div`
-    width: fit-content;
+    width: 31rem;
     font-weight: 400;
     font-size: 20px;
     margin: 30px 0px 30px 40px;

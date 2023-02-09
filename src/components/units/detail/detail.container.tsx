@@ -19,7 +19,7 @@ export default function DetailContainer(props: IDetailContainerProps){
         IQueryFetchUseditemArgs
     >(FETCH_USED_ITEM, {
         variables: { 
-            useditemId: String(router.query._id)
+          useditemId: String(router.query._id)
         },
     });
 

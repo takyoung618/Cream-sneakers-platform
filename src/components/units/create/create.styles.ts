@@ -69,6 +69,7 @@ export const input = styled.input`
         color: #A9A9A9;
     }
     padding-left: 18px;
+    :focus {outline: none}
 `
 
 export const ReactWrapper = styled.div`
@@ -166,6 +167,7 @@ export const LocationInput = styled.input`
     border: 1px solid #E9E9E9;
     margin: 27px 0px 0px 26px;
     padding-left: 18px;
+    :focus {outline: none}
 `
 
 export const LocationWrapper = styled.div`

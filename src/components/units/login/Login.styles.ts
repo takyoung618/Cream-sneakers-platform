@@ -53,6 +53,7 @@ export const EmailInput = styled.input`
         color: #C2C2C2;
         font-weight: 400;
     }
+    :focus {outline: none}
 `
 
 export const EmailErrorMessage = styled.div`
@@ -75,6 +76,7 @@ export const LoginBtn = styled.button`
     height: 50px;
     border-radius: 13px;
     cursor: pointer;
+    border: 1px solid black;
 `
 
 export const SignUpWrapper = styled.div`

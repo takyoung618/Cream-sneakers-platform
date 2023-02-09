@@ -137,4 +137,5 @@ export const PaymentBtn = styled.button`
     color: white;
     margin-left: 1030px;
     margin-bottom: 80px;
+    cursor: pointer;
 `
