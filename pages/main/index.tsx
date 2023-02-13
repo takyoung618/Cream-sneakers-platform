@@ -1,5 +1,5 @@
 import { withAuth } from "../../src/components/commons/hocs/withAuth";
-import MainContainer from "../../src/components/units/main/Main.container";
+import MainContainer from "../../src/components/units/market/main/Main.container";
 
 function MainPage(){
 

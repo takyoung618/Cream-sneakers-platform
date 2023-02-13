@@ -1,4 +1,4 @@
-import HomeContainer from "../../src/components/units/home/home.container";
+import HomeContainer from "../../src/components/units/market/home/home.container";
 
 
 export default function HomePage(){

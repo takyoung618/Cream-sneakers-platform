@@ -2,7 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { IQuery, IQueryFetchUseditemArgs } from "../../../../src/commons/types/generated/types";
 import { withAuth } from "../../../../src/components/commons/hocs/withAuth";
-import CreateContainer from "../../../../src/components/units/create/create.container";
+import CreateContainer from "../../../../src/components/units/market/create/create.container";
 
 const FETCH_USED_ITEM = gql`
   query fetchUseditem($useditemId: ID!) {

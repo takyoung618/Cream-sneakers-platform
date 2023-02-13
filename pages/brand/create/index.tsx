@@ -1,5 +1,5 @@
 import { withAuth } from "../../../src/components/commons/hocs/withAuth";
-import CreateContainer from "../../../src/components/units/create/create.container";
+import CreateContainer from "../../../src/components/units/market/create/create.container";
 
 function CreatePage() {
 

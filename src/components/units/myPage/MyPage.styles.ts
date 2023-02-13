@@ -27,7 +27,7 @@ export const PhotoInput = styled.img`
   width: 8rem;
   height: 8rem;
   border-radius: 100px;
-  
+  cursor: pointer;
     
 `
 
@@ -39,7 +39,7 @@ export const ProfileImage = styled.img`
     width: 8rem;
     height: 8rem;
     border-radius: 100px;
-    background-color: mintcream;
+    cursor: pointer;
 `
 
 export const UserWrapper = styled.div`
@@ -118,6 +118,17 @@ export const Email = styled.input`
     padding-right: 12rem;
     border: none;
     :focus {outline: none}
+`
+
+export const ErrorMessage = styled.div`
+  color: red;
+  font-size: 12px;
+  margin: 0.5rem 0 0.5rem 3.5rem;
+`
+
+export const ColumnWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
 // 관심 상품

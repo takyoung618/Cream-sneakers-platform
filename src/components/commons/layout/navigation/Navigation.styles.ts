@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 `
 
 export const CategoryWrapper = styled.div`
-    width: 20rem;
+    width: 26rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
