@@ -2,7 +2,7 @@ import { useMutation } from "@apollo/client";
 import { message, Modal } from "antd";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { IMutation, IMutationCreateUseditemQuestionArgs, IMutationUpdateUseditemQuestionArgs, IUpdateUseditemQuestionInput } from "../../../../../commons/types/generated/types";
+import { IMutation, IMutationCreateUseditemQuestionArgs, IMutationUpdateUseditemQuestionArgs, IUpdateUseditemQuestionInput } from "../../../../commons/types/generated/types";
 import { FETCH_USED_ITEM_QUESTIONS } from "../list/Commnet.List.queries";
 import CommentWritePresenter from "./Comment.Write.presenter";
 import { CREATE_USED_ITEM_QUESTION, UPDATE_USED_ITEM_QUESTION } from "./Comment.Write.queries";
@@ -35,7 +35,9 @@ export default function CommentWriteContainer(props: ICommentWriteContainerProps
   }
 
   const onClickCreateComment = async () => {
-    contents ? setContentsError("") : setContentsError("댓글을 입력하세요.");
+    if(contents === ""){
+        message.error("댓글을 입력하세요")
+    }
 
     if(contents) {
         try {

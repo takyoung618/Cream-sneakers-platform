@@ -2,7 +2,7 @@ import { ChangeEvent, Dispatch, MouseEvent, SetStateAction } from "react";
 import {
   IQuery,
   IUseditemQuestion,
-} from "../../../../../commons/types/generated/types";
+} from "../../../../commons/types/generated/types";
 
 export interface ICommentEditContainerProps {
   el: IUseditemQuestion;

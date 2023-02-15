@@ -1,4 +1,4 @@
-import { localStorageDate } from "../../../../commons/libraries/utils"
+import { localStorageDate } from "../../../commons/libraries/utils"
 import CommentWriteContainer from "../write/Comment.Write.container"
 import * as S from "./Commnet.Edit.styles"
 import { ICommentEditPresenterProps } from "./Commnet.Edit.types"

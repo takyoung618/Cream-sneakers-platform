@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { IQuery, IQueryFetchUseditemQuestionsArgs } from "../../../../../commons/types/generated/types";
+import { IQuery, IQueryFetchUseditemQuestionsArgs } from "../../../../commons/types/generated/types";
 import CommentListPresenter from "./Commnet.List.presenter";
 import { FETCH_USED_ITEM_QUESTIONS } from "./Commnet.List.queries";
 import { ICommentListContainerProps } from "./Commnet.List.types";

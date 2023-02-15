@@ -1,5 +1,5 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
-import { IUseditemQuestion } from "../../../../../commons/types/generated/types";
+import { IUseditemQuestion } from "../../../../commons/types/generated/types";
 
 export interface ICommentWriteContainerProps {
   isEdit: boolean;
