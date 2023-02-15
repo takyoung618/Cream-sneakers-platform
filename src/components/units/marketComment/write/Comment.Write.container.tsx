@@ -23,15 +23,10 @@ export default function CommentWriteContainer(props: ICommentWriteContainerProps
     >(UPDATE_USED_ITEM_QUESTION);
 
   const [contents, setContents] = useState("");
-  const [contentsError, setContentsError] = useState("");
   const [isActive, setIsActive] = useState(false);
 
   const onChangeContents = (event: any) => {
     setContents(event.target.value);
-    event.target.value
-        ? setContentsError("")
-        : setContentsError("댓글을 입력해주세요.");
-    event.target.value ? setIsActive(true) : setIsActive(false);
   }
 
   const onClickCreateComment = async () => {
@@ -58,6 +53,7 @@ export default function CommentWriteContainer(props: ICommentWriteContainerProps
         } catch (error) {
             if (error instanceof Error) Modal.error({ content: error.message });  
         }
+        message.success("댓글이 작성되었습니다.")
         setContents("");
     }
   }
@@ -93,7 +89,6 @@ export default function CommentWriteContainer(props: ICommentWriteContainerProps
     return (
         <CommentWritePresenter
             contents={contents}
-            contentsError={contentsError}
             onChangeContents={onChangeContents}
             onClickCreateComment={onClickCreateComment}
             el={props.el}

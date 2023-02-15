@@ -1,5 +1,5 @@
 import InfiniteScroll from "react-infinite-scroller"
-import CommentEditContainer from "../edit/Commnet.Edit.container"
+import CommentEditContainer from "../listItem/Commnet.ListItem.container"
 import * as S from "./Commnet.List.styles"
 import { ICommentListPresenterProps } from "./Commnet.List.types"
 

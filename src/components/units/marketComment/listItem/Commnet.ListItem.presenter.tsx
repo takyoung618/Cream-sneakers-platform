@@ -1,7 +1,7 @@
 import { localStorageDate } from "../../../commons/libraries/utils"
 import CommentWriteContainer from "../write/Comment.Write.container"
-import * as S from "./Commnet.Edit.styles"
-import { ICommentEditPresenterProps } from "./Commnet.Edit.types"
+import * as S from "./Commnet.ListItem.styles"
+import { ICommentEditPresenterProps } from "./Commnet.ListItem.types"
 
 export default function CommentEditPresenter(props: ICommentEditPresenterProps){
 

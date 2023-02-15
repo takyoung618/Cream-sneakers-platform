@@ -5,9 +5,9 @@ import { useState } from "react";
 import { getUserInfo } from "../../../../commons/libraries/getUserInfo";
 import { IMutation, IMutationDeleteUseditemQuestionArgs } from "../../../../commons/types/generated/types";
 import { FETCH_USED_ITEM_QUESTIONS } from "../list/Commnet.List.queries";
-import CommentEditPresenter from "./Commnet.Edit.presenter";
-import { DELETE_USED_ITEM_QUESTION } from "./Commnet.Edit.queries";
-import { ICommentEditContainerProps } from "./Commnet.Edit.types";
+import CommentEditPresenter from "./Commnet.ListItem.presenter";
+import { DELETE_USED_ITEM_QUESTION } from "./Commnet.ListItem.queries";
+import { ICommentEditContainerProps } from "./Commnet.ListItem.types";
 
 export default function CommentEditContainer(props: ICommentEditContainerProps){
     const router = useRouter();
@@ -39,7 +39,7 @@ export default function CommentEditContainer(props: ICommentEditContainerProps){
             ]
         })
 
-        message.success("댓글이 삭제되었습니다.");
+        message.error("댓글이 삭제되었습니다.");
     }
 
     const onChangeEditContents = (event: any) => {
