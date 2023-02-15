@@ -39,7 +39,7 @@ export default function MyPagePresenter(props: any) {
                                 type="submit"
                             >
                             이미지 변경</S.ImageEditBtn>
-                            <S.ImageDeleteBtn>삭제</S.ImageDeleteBtn>
+                            <S.ImageDeleteBtn onClick={props.onClickImageDelete}>삭제</S.ImageDeleteBtn>
                         </S.ImageWrapper>
                     </S.UserWrapper>
                 </S.ProfileWrapper>

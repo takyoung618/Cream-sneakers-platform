@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
-import { Modal } from "antd";
+import { message, Modal } from "antd";
 import BoardCommentWrite from "../write/BoardCommentWrite.container";
 import {
   DELETE_BOARD_COMMENT,
@@ -44,7 +44,8 @@ export default function BoardCommentListUIItem(
             variables: { boardId: router.query.boardId },
           },
         ],
-      });
+      }); 
+      message.error("댓글이 삭제되었습니다")
     } catch (error) {
       if (error instanceof Error) Modal.error({ content: error.message });
     }

@@ -16,6 +16,7 @@ import {
   IBoardCommentWriteProps,
   IUpdateBoardCommentInput,
 } from "./BoardCommentWrite.types";
+import { message } from "antd";
 
 export default function BoardCommentWrite(props: IBoardCommentWriteProps) {
   const router = useRouter();
@@ -67,6 +68,7 @@ export default function BoardCommentWrite(props: IBoardCommentWriteProps) {
           },
         ],
       });
+      message.success("댓글이 작성되었습니다.")
     } catch (error) {
       if (error instanceof Error) alert(error.message);
     }
@@ -105,6 +107,7 @@ export default function BoardCommentWrite(props: IBoardCommentWriteProps) {
         ],
       });
       props.setIsEdit?.(false);
+      message.success("댓글이 수정되었습니다.")
     } catch (error) {
       if (error instanceof Error) alert(error.message);
     }

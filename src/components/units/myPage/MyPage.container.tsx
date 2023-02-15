@@ -18,10 +18,12 @@ import { FETCH_USER_LOGGED_IN } from "../join_login/login/Login.queries";
 export default function MyPageContainer(props: any) {
   useEffect(() => {
     if (props.data !== undefined) {
-      reset({
-        name: props.data.fetchUserLoggedIn.name
-      })
-
+      if(props.data?.fetchUserLoggedIn?.name) {
+        reset({
+          name: props.data.fetchUserLoggedIn.name
+        })
+      }
+      
       if (props.data?.fetchUserLoggedIn?.picture) {
         setFileUrl(props.data.fetchUserLoggedIn.picture)
       }
@@ -72,6 +74,16 @@ export default function MyPageContainer(props: any) {
     }
   };
 
+  // 이미지 삭제 
+  const onClickImageDelete = () => {
+    setFileUrl("")
+    refetchQueries: [
+      {
+        query: FETCH_USER_LOGGED_IN
+      }
+    ]
+  }
+
   // 유저 프로필 업데이트
   const { register, handleSubmit, formState, reset} = useForm({ resolver: yupResolver(schema), mode: "onChange"})
 
@@ -101,6 +113,7 @@ export default function MyPageContainer(props: any) {
       onClickUpload={onClickUpload}
       onChangeFile={onChangeFile}
       onChangeFileUrl={onChangeFileUrl}
+      onClickImageDelete={onClickImageDelete}
       onClickUpdateButton={onClickUpdateButton}
       register={register}
       handleSubmit={handleSubmit}
