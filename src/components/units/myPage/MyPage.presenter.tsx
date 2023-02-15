@@ -33,7 +33,7 @@ export default function MyPagePresenter(props: any) {
                         </S.UploadFileHidden>
                     
                     <S.UserWrapper>
-                        <S.UserId>{UserInfo?.fetchUserLoggedIn.name}</S.UserId>
+                        <S.UserId onChange={props.onChangeName}>{UserInfo?.fetchUserLoggedIn.name}</S.UserId>
                         <S.ImageWrapper>
                             <S.ImageEditBtn
                                 type="submit"

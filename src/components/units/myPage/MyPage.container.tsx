@@ -12,17 +12,18 @@ import { getUserInfo } from "../../../commons/libraries/getUserInfo";
 import { FETCH_USER_LOGGED_IN } from "../join_login/login/Login.queries";
 
   const schema = yup.object({
-    name: yup.string().required("이름을 입력해주세요.")  
+    name: yup.string()
   })
 
 export default function MyPageContainer(props: any) {
   useEffect(() => {
     if (props.data !== undefined) {
-      if(props.data?.fetchUserLoggedIn?.name) {
-        reset({
-          name: props.data.fetchUserLoggedIn.name
-        })
-      }
+      // reset({
+      //   name: props.data?.fetchUserLoggedIn?.name
+      // })
+
+      SetName(props.data.fetchUserLoggedIn.name)
+      
       
       if (props.data?.fetchUserLoggedIn?.picture) {
         setFileUrl(props.data.fetchUserLoggedIn.picture)
