@@ -17,8 +17,8 @@ export default function NavigationPresenter(props: any) {
                 >SHOP
                 </S.Category>
                 <S.Category
-                    onClick={props.MoveToCommunity}
-                >COMMUNITY
+                    onClick={props.MoveToBoard}
+                >BOARD
                 </S.Category>
                 <S.Category
                     onClick={props.MoveToMy}

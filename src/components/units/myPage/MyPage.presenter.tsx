@@ -7,8 +7,6 @@ import { useEffect } from "react";
 
 export default function MyPagePresenter(props: any) {
     const UserInfo = getUserInfo();
-    const len = UserInfo?.fetchUserLoggedIn.email.split('@')[0].length-3
-
 
     return (
        <form onSubmit = {props.handleSubmit(props.onClickUpdateButton)}> 
@@ -58,7 +56,7 @@ export default function MyPagePresenter(props: any) {
                             <S.EmailTitle>이름</S.EmailTitle>
                             <S.InfoWrapper>
                                 <S.Email
-                                    defaultValue={UserInfo?.fetchUserLoggedIn.name}
+                                    defaultValue={props.data?.fetchUserLoggedIn?.name}
                                     {...props.register("name")}
                                     onChange={props.onChangeName}
                                 />

@@ -17,8 +17,8 @@ export default function NavigationContainer(){
         router.push("/myPage")
     }
 
-    const MoveToCommunity = () => {
-        router.push("/community")
+    const MoveToBoard = () => {
+        router.push("/boards")
     }
     
     return (
@@ -26,7 +26,7 @@ export default function NavigationContainer(){
             MoveToHome={MoveToHome}
             MoveToList={MoveToList}
             MoveToMy={MoveToMy}
-            MoveToCommunity={MoveToCommunity}
+            MoveToBoard={MoveToBoard}
         > 
         </NavigationPresenter>
     )
