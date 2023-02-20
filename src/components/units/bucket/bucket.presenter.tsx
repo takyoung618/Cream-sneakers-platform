@@ -64,7 +64,7 @@ export default function BucketPresenter(props: any) {
                         <S.TotalTitle>최종 결제 금액</S.TotalTitle>
                         <S.TotalPrice>100000원</S.TotalPrice>
                     </S.PriceWrapper>
-                    <S.PaymentBtn>결제하기</S.PaymentBtn>
+                    <S.PaymentBtn onClick={props.onClickPay}>결제하기</S.PaymentBtn>
                 </>
             )}
         </S.Wrapper>
