@@ -1,6 +1,17 @@
+import { useRouter } from "next/router";
 import * as S from "./landingPage.styles";
 
 const LandingPageB = () => {
+  const router = useRouter();
+
+  const onClickMoveToBoard = () => {
+    router.push("/boards")
+  }
+
+  const onClickMoveToShop = () => {
+    router.push("/main")
+  }
+
   return (
 
     <S.ContainerB>
@@ -12,8 +23,10 @@ const LandingPageB = () => {
             Know your consumers and stay ahead of lifestyle shifts with unrivalled insight into the way they’ll think, feel and behave for years to come.
             </S.Text>
           </S.TextBox>
-          <S.TopButton>
-            Explore Consumer Items →
+          <S.TopButton
+            onClick={onClickMoveToBoard}
+          >
+            Explore Community →
           </S.TopButton>
         </S.TopLeft>
         <S.TopImage src="/images/landingPage/sneakers.png" />
@@ -27,7 +40,9 @@ const LandingPageB = () => {
               Accurately land products at the right time, in the right volumes with effective retail and communication strategies and predictive data analytics.
               </S.Text2>
             </S.TextBox>
-            <S.BottomButton>
+            <S.BottomButton
+              onClick={onClickMoveToShop}
+            >
               Explore Trading →
             </S.BottomButton>
         </S.BottomRight>

@@ -177,6 +177,7 @@ export const TopButton = styled.button`
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 20px;
   border: solid 1.5px;
+  cursor: pointer;
 `
 
 export const TextTitle2 = styled.div`
@@ -200,6 +201,7 @@ export const BottomButton = styled.button`
   font-size: 20px;
   color: white;
   border: solid 1.5px white;
+  cursor: pointer;
 `
 
 export const MainTitle = styled.div`
