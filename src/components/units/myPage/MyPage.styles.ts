@@ -129,6 +129,7 @@ export const ErrorMessage = styled.div`
 export const ColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  height: 11rem;
 `
 
 // 관심 상품
