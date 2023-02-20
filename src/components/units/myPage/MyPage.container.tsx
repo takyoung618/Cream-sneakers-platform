@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { UPLOAD_FILE } from "../../commons/uploadImage/UploadImage.queries";
 import { checkValidationImage } from "../../commons/uploadImage/UploadImage.validation";
 import MyPagePresenter from "./MyPage.presenter";
-import { UPDATE_USER } from "./Mypage.queries";
+import { FETCH_POINT_TRANSACTIONS, FETCH_POINT_TRANSACTIONS_OF_BUYING, RESET_USER_PASSWORD, UPDATE_USER } from "./Mypage.queries";
 import * as yup from "yup";
 import { getUserInfo } from "../../../commons/libraries/getUserInfo";
 import { FETCH_USER_LOGGED_IN } from "../join_login/login/Login.queries";
@@ -18,10 +18,6 @@ import { FETCH_USER_LOGGED_IN } from "../join_login/login/Login.queries";
 export default function MyPageContainer(props: any) {
   useEffect(() => {
     if (props.data !== undefined) {
-      // reset({
-      //   name: props.data?.fetchUserLoggedIn?.name
-      // })
-
       SetName(props.data.fetchUserLoggedIn.name)
       
       
@@ -32,8 +28,11 @@ export default function MyPageContainer(props: any) {
   }, [props.data])
 
   const [uploadFile] = useMutation(UPLOAD_FILE);
-  const [updateUser] = useMutation(UPDATE_USER)
-  const {data} = useQuery(FETCH_USER_LOGGED_IN)
+  const [updateUser] = useMutation(UPDATE_USER);
+  const [resetUserPassword] = useMutation(RESET_USER_PASSWORD);
+  const {data} = useQuery(FETCH_USER_LOGGED_IN);
+  // const [fetchPointTransactions] = useQuery(FETCH_POINT_TRANSACTIONS);
+  // const [fetchPointTransactionsOfBuying] = useQuery(FETCH_POINT_TRANSACTIONS_OF_BUYING)
 
   const UserInfo = getUserInfo();
 
@@ -97,12 +96,11 @@ export default function MyPageContainer(props: any) {
         }
       }
     })
-
-    // console.log(data?.updateUser)
     console.log(UserInfo?.picture)
     message.success("프로필 수정이 완료되었습니다!")
   }
 
+  // 비밀번호 변경
   
 
   

@@ -13,6 +13,39 @@ export const BucketTitle = styled.div`
     margin: 2rem 0 2rem 0;
 `
 
+export const ShoppingBucketBtn = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    margin: auto;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+`
+
+export const BucketEmptyWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+
+`
+
+export const BucketEmptyTitle = styled.div`
+    text-align: center;
+    font-size: 2rem;
+    margin: 0rem 0 2rem 0;
+`
+
+export const BucketIcon = styled.img`
+    width: 510px;
+    margin: 0 0 0 28%;
+    /* margin: auto; */
+`
+
 export const HeaderWrapper = styled.div`
     height: 4rem;
     display: flex;

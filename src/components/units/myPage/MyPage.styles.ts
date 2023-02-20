@@ -181,3 +181,63 @@ export const ProductName = styled.div`
   font-size: 16px;
   color: #555555;
 `
+
+// 구매/판매 내역
+export const BuyWrapper = styled.div`
+  display: flex;
+  width: 92%;
+  margin-left: 4%;
+  border-bottom: 1px solid #E3E3E3;
+`
+
+export const PointWrapper = styled.div`
+  display: flex;
+  width: 92%;
+  height: 100px;
+  margin-left: 4%;
+  border-bottom: 1px solid #E3E3E3;
+`
+
+export const PointCount = styled.div`
+  color: green;
+  font-size: 20px;
+  margin: 3% 0 0 3%;
+`
+
+export const PointDate = styled.div`
+  font-size: 18px;
+  margin: 3% 0 0 82%
+`
+
+export const BuyImage = styled.img`
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: gray;
+  margin: 15px 0 15px 0px;
+`
+
+export const BuyInfoWrapper = styled.div`
+  margin-top: 4%;
+  margin-left: 2%;
+`
+
+export const BuyProductName = styled.div`
+  font-size: 20px;
+  height: fit-content;
+`
+
+export const BuyPrice = styled.div`
+  font-size: 20px;
+  font-weight: 700;
+  color: gray;
+  height: fit-content;
+`
+
+export const BuyDate = styled.div`
+  font-size: 18px;
+  height: fit-content;
+  margin: 5% 0 0 62%;
+`
+
+

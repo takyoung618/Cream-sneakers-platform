@@ -10,7 +10,8 @@ export interface IBucketContainerProps {
 export default function BucketContainer(props: IBucketContainerProps) {
     const router = useRouter()
     const [baskets, setBaskets] = useState<IUseditem[]>([]);
-
+    const [empty, setEmpty] = useState(false)
+    
     const handleImageError = (event: any) => {
         event.target.src = '/default.png';
     };
@@ -28,12 +29,21 @@ export default function BucketContainer(props: IBucketContainerProps) {
         router.push("main")
     }
 
+    const isEmpty = (event : any) => {
+        if(setBaskets.length === 0 ){
+            setEmpty(true)
+        }
+    }
+
+    
+
     return (
         <BucketPresenter
             baskets={baskets}
             handleImageError={handleImageError}
             onClickDetail={onClickDetail}
             onClickShop={onClickShop}
+            isEmpty={isEmpty}
         />
     )
 }
