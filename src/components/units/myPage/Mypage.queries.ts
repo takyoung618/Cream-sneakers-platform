@@ -28,4 +28,19 @@ export const FETCH_BOARDS_OF_MINE = gql`
     }
 `
 
+export const FETCH_USED_ITEMS_I_PICKED = gql`
+    query fetchUseditemsIPicked($search: String $page: Int) {
+        fetchUseditemsIPicked(search: $search page: $page) {
+            _id
+            name
+            remarks
+            contents
+            price
+            tags
+            images
+            createAt
+        }
+    }
+`
+
 

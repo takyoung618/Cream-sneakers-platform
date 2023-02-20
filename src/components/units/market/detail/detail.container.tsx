@@ -4,7 +4,7 @@ import { useRecoilState } from "recoil";
 import { getUserInfo } from "../../../../commons/libraries/getUserInfo";
 import { IMutation, IMutationCreatePointTransactionOfBuyingAndSellingArgs, IMutationDeleteUseditemArgs, IQuery, IQueryFetchUseditemArgs } from "../../../../commons/types/generated/types";
 import DetailPresenter from "./detail.presenter";
-import { CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING, DELETE_USED_ITEM, FETCH_USED_ITEM } from "./detail.queries";
+import { CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING, DELETE_USED_ITEM, FETCH_USED_ITEM, TOGGLE_USED_ITEM_PICK } from "./detail.queries";
 import { isBucketActiveState } from "../../../../commons/store";
 import { message, Modal } from "antd";
 import { IDetailContainerProps } from "./detail.types";
@@ -22,6 +22,8 @@ export default function DetailContainer(props: IDetailContainerProps){
           useditemId: String(router.query._id)
         },
     });
+
+    const [toggleUseditemPick] = useMutation(TOGGLE_USED_ITEM_PICK)
 
     const [deleteUseditem] = useMutation<
     Pick<IMutation, "deleteUseditem">,
@@ -79,8 +81,23 @@ export default function DetailContainer(props: IDetailContainerProps){
 
     const onClickEdit = () => {
       router.push(`/brand/${router.query._id}/edit`);
-    }  
+    } 
 
+    // 상품 찜
+    const onClickItemPick = async () => {
+      await toggleUseditemPick({
+        variables: {
+          useditemId: router.query._id
+        },
+        refetchQueries: [
+          {
+            query: FETCH_USED_ITEM,
+            variables: { useditemId: router.query._id }
+          }
+        ]
+      })
+      message.success("관심 상품에 성공적으로 추가되었습니다.")
+    }
 
 
     return (
@@ -91,6 +108,7 @@ export default function DetailContainer(props: IDetailContainerProps){
         onClickBuy={onClickBuy}
         onClickDeleteUseditem={onClickDeleteUseditem}
         onClickEdit={onClickEdit}
+        onClickItemPick={onClickItemPick}
         />
     )
 }

@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { UPLOAD_FILE } from "../../commons/uploadImage/UploadImage.queries";
 import { checkValidationImage } from "../../commons/uploadImage/UploadImage.validation";
 import MyPagePresenter from "./MyPage.presenter";
-import { FETCH_BOARDS_OF_MINE, RESET_USER_PASSWORD, UPDATE_USER } from "./Mypage.queries";
+import { FETCH_BOARDS_OF_MINE, FETCH_USED_ITEMS_I_PICKED, RESET_USER_PASSWORD, UPDATE_USER } from "./Mypage.queries";
 import * as yup from "yup";
 import { getUserInfo } from "../../../commons/libraries/getUserInfo";
 import { FETCH_USER_LOGGED_IN } from "../join_login/login/Login.queries";
@@ -29,8 +29,8 @@ export default function MyPageContainer(props: any) {
 
   const [uploadFile] = useMutation(UPLOAD_FILE);
   const [updateUser] = useMutation(UPDATE_USER);
-  // const [fetchBoardsOfMine] = useQuery(FETCH_BOARDS_OF_MINE);
   const [resetUserPassword] = useMutation(RESET_USER_PASSWORD);
+  const {data: useditemIPicked} = useQuery(FETCH_USED_ITEMS_I_PICKED)
   const {data} = useQuery(FETCH_USER_LOGGED_IN);
 
   const UserInfo = getUserInfo();
@@ -145,6 +145,7 @@ export default function MyPageContainer(props: any) {
       onChangeName={onChangeName}
       onChangePassword={onChangePassword}
       data={data}
+      useditemIPicked={useditemIPicked}
       handleImageError={handleImageError}
     />
   )

@@ -124,6 +124,7 @@ export const Heart = styled.img`
     width: 20px;
     height: 20px;
     margin-left: 350px;
+    cursor: pointer;
 `
 
 export const Ggim = styled.div`

@@ -98,58 +98,24 @@ export default function MyPagePresenter(props: any) {
                     내 게시글
                 </S.InfoHeader>
                 <S.ProductListWrapper>
-                    {/* {props.data?.fetchUseditems.slice(0,8).map((el : any) => (    */}
+                    {props.useditemIPicked?.fetchUseditemsIPicked.map((el : any) => (   
                         <S.ProductWrapper>
                             <S.Image
+                            src={
+                            el.images?.[0] || el.images?.[1]
+                              ? `http://storage.googleapis.com/${el.images?.[0]}`
+                              : `images/기본이미지.png`
+                            }
                             />
                             <S.PriceWrapper>
-                                <S.Tag>태그</S.Tag>
+                                <S.Tag>{el.tags}</S.Tag>
                             </S.PriceWrapper>
-                            <S.ProductName>이름</S.ProductName>
-                            <S.Price>111원</S.Price>
+                            <S.ProductName>{el.name}</S.ProductName>
+                            <S.Price>{el.price}원</S.Price>
                             <S.PriceTag>즉시 구매가</S.PriceTag>
                         </S.ProductWrapper>
-                    {/* ))}     */}
-                        <S.ProductWrapper>
-                            <S.Image
-                            />
-                            <S.PriceWrapper>
-                                <S.Tag>태그</S.Tag>
-                            </S.PriceWrapper>
-                            <S.ProductName>이름</S.ProductName>
-                            <S.Price>111원</S.Price>
-                            <S.PriceTag>즉시 구매가</S.PriceTag>
-                        </S.ProductWrapper>
-                        <S.ProductWrapper>
-                            <S.Image
-                            />
-                            <S.PriceWrapper>
-                                <S.Tag>태그</S.Tag>
-                            </S.PriceWrapper>
-                            <S.ProductName>이름</S.ProductName>
-                            <S.Price>111원</S.Price>
-                            <S.PriceTag>즉시 구매가</S.PriceTag>
-                        </S.ProductWrapper>
-                        <S.ProductWrapper>
-                            <S.Image
-                            />
-                            <S.PriceWrapper>
-                                <S.Tag>태그</S.Tag>
-                            </S.PriceWrapper>
-                            <S.ProductName>이름</S.ProductName>
-                            <S.Price>111원</S.Price>
-                            <S.PriceTag>즉시 구매가</S.PriceTag>
-                        </S.ProductWrapper>
-                        <S.ProductWrapper>
-                            <S.Image
-                            />
-                            <S.PriceWrapper>
-                                <S.Tag>태그</S.Tag>
-                            </S.PriceWrapper>
-                            <S.ProductName>이름</S.ProductName>
-                            <S.Price>111원</S.Price>
-                            <S.PriceTag>즉시 구매가</S.PriceTag>
-                        </S.ProductWrapper>
+                    ))}
+                        
                 </S.ProductListWrapper>
 
             </S.Wrapper>
