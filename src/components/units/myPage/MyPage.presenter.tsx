@@ -1,11 +1,7 @@
-import { OmitProps } from "antd/lib/transfer/ListBody";
 import { getUserInfo } from "../../../commons/libraries/getUserInfo";
 import * as S from "./MyPage.styles";
 import { v4 as uuidv4 } from "uuid";
-import { useEffect } from "react";
 import { AiOutlineClose, AiFillCamera } from "react-icons/ai";
-
-
 
 export default function MyPagePresenter(props: any) {
     const UserInfo = getUserInfo();
@@ -62,7 +58,6 @@ export default function MyPagePresenter(props: any) {
                                     onChange={props.onChangeName}
                                 />
                                 <S.ImageDeleteBtn 
-                                // onClick={props.onClickUpdateButton}
                                 type="submit"
                                 >
                                 변경</S.ImageDeleteBtn>
@@ -80,7 +75,6 @@ export default function MyPagePresenter(props: any) {
                             <S.InfoWrapper>
                                 <S.Email
                                     onChange={props.onChangePassword}
-                                    // type='password'
                                     placeholder="*******"
                                 />
                                 <S.ImageDeleteBtn 
@@ -97,8 +91,8 @@ export default function MyPagePresenter(props: any) {
                     내 관심상품
                 </S.InfoHeader>
                 <S.ProductListWrapper>
-                    {props.useditemIPicked?.fetchUseditemsIPicked.map((el : any) => (   
-                        <S.ProductWrapper key={el._id} id={el._id}>
+                    {props.useditemIPicked?.fetchUseditemsIPicked.map((el: any) => (   
+                        <S.ProductWrapper key={el._id}>
                             <S.Image
                             src={
                             el.images?.[0] || el.images?.[1]

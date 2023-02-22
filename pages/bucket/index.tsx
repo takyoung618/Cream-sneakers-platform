@@ -1,7 +1,10 @@
+import { withAuth } from "../../src/components/commons/hocs/withAuth";
 import BucketContainer from "../../src/components/units/bucket/bucket.container";
 
-export default function BucketPage(){
+function BucketPage(){
     return (
         <BucketContainer/>
     )
 }
+
+export default withAuth(BucketPage)

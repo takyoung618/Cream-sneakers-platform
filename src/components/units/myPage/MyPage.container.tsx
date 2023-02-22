@@ -10,7 +10,6 @@ import { FETCH_BOARDS_OF_MINE, FETCH_USED_ITEMS_I_PICKED, RESET_USER_PASSWORD, U
 import * as yup from "yup";
 import { getUserInfo } from "../../../commons/libraries/getUserInfo";
 import { FETCH_USER_LOGGED_IN } from "../join_login/login/Login.queries";
-import { QueryClient } from "@tanstack/react-query";
 
   const schema = yup.object({
     name: yup.string()
@@ -31,7 +30,12 @@ export default function MyPageContainer(props: any) {
   const [uploadFile] = useMutation(UPLOAD_FILE);
   const [updateUser] = useMutation(UPDATE_USER);
   const [resetUserPassword] = useMutation(RESET_USER_PASSWORD);
-  const {data: useditemIPicked} = useQuery(FETCH_USED_ITEMS_I_PICKED)
+  const {data: useditemIPicked} = useQuery(FETCH_USED_ITEMS_I_PICKED, {
+    variables: {
+      page: 1,
+      search: ''
+    }
+  })
   const {data} = useQuery(FETCH_USER_LOGGED_IN);
 
   const [modalImageIsOpen, setModalImageIsOpen] = useState(false)
@@ -85,18 +89,7 @@ export default function MyPageContainer(props: any) {
   // 이미지 삭제 
   const onClickImageDelete = () => {
     setFileUrl('')
-    refetchQueries: [
-      {
-        query: FETCH_USER_LOGGED_IN
-      }
-    ]
-    
   }
-
-  // const onClickImageDelete = () => {
-  //   setFileUrl('images/기본이미지.png');
-  // }
-
 
   // 유저 프로필 업데이트
   const { register, handleSubmit, formState, reset} = useForm({ resolver: yupResolver(schema), mode: "onChange"})
@@ -114,7 +107,6 @@ export default function MyPageContainer(props: any) {
           query: FETCH_USER_LOGGED_IN
         }
       ]
-  
     })
     console.log(UserInfo?.picture)
     setModalImageIsOpen(false);
@@ -145,7 +137,6 @@ export default function MyPageContainer(props: any) {
       message.success("비밀번호 수정이 완료되었습니다.")
     }
   }
-
 
   return (
     <MyPagePresenter

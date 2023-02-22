@@ -4,6 +4,7 @@ import {
   IQuery,
   IQueryFetchBoardArgs,
 } from "../../../../src/commons/types/generated/types";
+import { withAuth } from "../../../../src/components/commons/hocs/withAuth";
 import BoardWrite from "../../../../src/components/units/board/write/BoardWrite.container";
 
 const FETCH_BOARD = gql`
@@ -23,7 +24,7 @@ const FETCH_BOARD = gql`
   }
 `;
 
-export default function BoardsEditPage() {
+function BoardsEditPage() {
   const router = useRouter();
   const { data } = useQuery<Pick<IQuery, "fetchBoard">, IQueryFetchBoardArgs>(
     FETCH_BOARD,
@@ -32,3 +33,5 @@ export default function BoardsEditPage() {
 
   return <BoardWrite isEdit={true} data={data} />;
 }
+
+export default withAuth(BoardsEditPage)
