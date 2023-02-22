@@ -38,7 +38,9 @@ export const FETCH_USED_ITEMS_I_PICKED = gql`
             price
             tags
             images
-            createAt
+            createdAt
+            updatedAt
+            pickedCount
         }
     }
 `

@@ -91,8 +91,8 @@ export default function MyPagePresenter(props: any) {
                     내 관심상품
                 </S.InfoHeader>
                 <S.ProductListWrapper>
-                    {props.useditemIPicked?.fetchUseditemsIPicked.map((el: any) => (   
-                        <S.ProductWrapper key={el._id}>
+                    {props.IPicked?.fetchUseditemsIPicked.map((el: any) => (   
+                        <S.ProductWrapper key={el._id} id={el._id}>
                             <S.Image
                             src={
                             el.images?.[0] || el.images?.[1]

@@ -30,12 +30,14 @@ export default function MyPageContainer(props: any) {
   const [uploadFile] = useMutation(UPLOAD_FILE);
   const [updateUser] = useMutation(UPDATE_USER);
   const [resetUserPassword] = useMutation(RESET_USER_PASSWORD);
-  const {data: useditemIPicked} = useQuery(FETCH_USED_ITEMS_I_PICKED, {
-    variables: {
-      page: 1,
-      search: ''
-    }
+  const { data: IPicked } = useQuery(FETCH_USED_ITEMS_I_PICKED, 
+    {
+      variables: {
+        page: 1,
+        search: '',
+      },
   })
+
   const {data} = useQuery(FETCH_USER_LOGGED_IN);
 
   const [modalImageIsOpen, setModalImageIsOpen] = useState(false)
@@ -154,7 +156,7 @@ export default function MyPageContainer(props: any) {
       onChangeName={onChangeName}
       onChangePassword={onChangePassword}
       data={data}
-      useditemIPicked={useditemIPicked}
+      IPicked={IPicked}
       handleImageError={handleImageError}
       onClickImageModal={onClickImageModal}
       modalImageIsOpen={modalImageIsOpen}
