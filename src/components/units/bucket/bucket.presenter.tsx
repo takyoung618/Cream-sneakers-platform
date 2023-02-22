@@ -29,6 +29,8 @@ export default function BucketPresenter(props: any) {
                     {props.baskets.map((el: any) => (
                         <S.ProductWrapper 
                         key={el._id}
+                        id={el._id}
+                        onClick={props.onClickDetail}
                         >
                             <S.CheckBox
                                 type="checkbox"
@@ -41,11 +43,9 @@ export default function BucketPresenter(props: any) {
                                     : `images/기본이미지.png`
                                 }
                                 onError={props.handleImageError}
-                                onClick={props.onClickDetail}
+                                
                             />
-                            <S.ColumnWrapper
-                            onClick={props.onClickDetail}
-                            >
+                            <S.ColumnWrapper>
                                 <S.FreeBtn>무료배송</S.FreeBtn>
                                 <S.ProductTitle>{String(el.name).slice(0,30)}</S.ProductTitle>
                             </S.ColumnWrapper>
