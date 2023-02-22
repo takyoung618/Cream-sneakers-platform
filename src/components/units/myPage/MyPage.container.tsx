@@ -10,6 +10,7 @@ import { FETCH_BOARDS_OF_MINE, FETCH_USED_ITEMS_I_PICKED, RESET_USER_PASSWORD, U
 import * as yup from "yup";
 import { getUserInfo } from "../../../commons/libraries/getUserInfo";
 import { FETCH_USER_LOGGED_IN } from "../join_login/login/Login.queries";
+import { QueryClient } from "@tanstack/react-query";
 
   const schema = yup.object({
     name: yup.string()
@@ -33,11 +34,17 @@ export default function MyPageContainer(props: any) {
   const {data: useditemIPicked} = useQuery(FETCH_USED_ITEMS_I_PICKED)
   const {data} = useQuery(FETCH_USER_LOGGED_IN);
 
+  const [modalImageIsOpen, setModalImageIsOpen] = useState(false)
+
   const UserInfo = getUserInfo();
 
   const [name, setName] = useState('');
 
   const [password, setPassword] = useState('')
+
+  const onClickImageModal = () => {
+    setModalImageIsOpen(true)
+  }
   
   // 이미지 업로드
   const handleImageError = (event: any) => {
@@ -77,15 +84,19 @@ export default function MyPageContainer(props: any) {
 
   // 이미지 삭제 
   const onClickImageDelete = () => {
-    setFileUrl("")
+    setFileUrl('')
     refetchQueries: [
       {
         query: FETCH_USER_LOGGED_IN
       }
     ]
-    console.log(fileUrl)
-    message.success("프로필 이미지가 삭제되었습니다.")
+    
   }
+
+  // const onClickImageDelete = () => {
+  //   setFileUrl('images/기본이미지.png');
+  // }
+
 
   // 유저 프로필 업데이트
   const { register, handleSubmit, formState, reset} = useForm({ resolver: yupResolver(schema), mode: "onChange"})
@@ -97,9 +108,16 @@ export default function MyPageContainer(props: any) {
           name,
           picture: fileUrl
         }
-      }
+      },
+      refetchQueries: [
+        {
+          query: FETCH_USER_LOGGED_IN
+        }
+      ]
+  
     })
     console.log(UserInfo?.picture)
+    setModalImageIsOpen(false);
     message.success("프로필 수정이 완료되었습니다!")
   }
 
@@ -147,6 +165,9 @@ export default function MyPageContainer(props: any) {
       data={data}
       useditemIPicked={useditemIPicked}
       handleImageError={handleImageError}
+      onClickImageModal={onClickImageModal}
+      modalImageIsOpen={modalImageIsOpen}
+      setModalImageIsOpen={setModalImageIsOpen}
     />
   )
 }

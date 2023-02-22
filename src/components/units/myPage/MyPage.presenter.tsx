@@ -3,6 +3,8 @@ import { getUserInfo } from "../../../commons/libraries/getUserInfo";
 import * as S from "./MyPage.styles";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
+import { AiOutlineClose, AiFillCamera } from "react-icons/ai";
+
 
 
 export default function MyPagePresenter(props: any) {
@@ -12,40 +14,37 @@ export default function MyPagePresenter(props: any) {
        <form onSubmit = {props.handleSubmit(props.onClickUpdateButton)}> 
             <S.Wrapper>
                 <S.ProfileWrapper>
-                    {props.fileUrl ? (
-                        <S.ProfileImage 
-                        src={`https://storage.googleapis.com/${props.fileUrl}`}
-                        onClick={props.onClickUpload}
-                        />
-                        ) : (
+                    
                         <S.PhotoInput
                             src={`https://storage.googleapis.com/${props.data?.fetchUserLoggedIn?.picture}`}
-                            onClick={props.onClickUpload}
+                            
                             onError={props.handleImageError}
                         >
                         </S.PhotoInput>
-                        )}
+                       
                         <S.UploadFileHidden
                             type="file"
                             ref={props.fileRef}
                             onChange={props.onChangeFile}
                         >
                         </S.UploadFileHidden>
-                    
+
                     <S.UserWrapper>
                         <S.UserId onChange={props.onChangeName}>{UserInfo?.fetchUserLoggedIn.name}</S.UserId>
                         <S.ImageWrapper>
                             <S.ImageEditBtn
-                                // onClick={props.onClickUpdateButton}
-                                type="submit"
+                                type="button"
+                                onClick={() => props.setModalImageIsOpen(true)}
+                                
                             >
                             이미지 변경</S.ImageEditBtn>
                             <S.ImageDeleteBtn 
                                 onClick={props.onClickImageDelete}
-                                // type="button"
+                                
                             >삭제</S.ImageDeleteBtn>
                         </S.ImageWrapper>
                     </S.UserWrapper>
+                
                 </S.ProfileWrapper>
                 <S.HeaderWrapper>
                     <S.LoginHeader>
@@ -95,11 +94,11 @@ export default function MyPagePresenter(props: any) {
 
                 </S.LoginWrapper>
                 <S.InfoHeader>
-                    내 게시글
+                    내 관심상품
                 </S.InfoHeader>
                 <S.ProductListWrapper>
                     {props.useditemIPicked?.fetchUseditemsIPicked.map((el : any) => (   
-                        <S.ProductWrapper>
+                        <S.ProductWrapper key={el._id} id={el._id}>
                             <S.Image
                             src={
                             el.images?.[0] || el.images?.[1]
@@ -117,8 +116,68 @@ export default function MyPagePresenter(props: any) {
                     ))}
                         
                 </S.ProductListWrapper>
-
             </S.Wrapper>
+
+            <S.ModalStyle isOpen={props.modalImageIsOpen}>
+                <S.ModalImageWrapper>
+                <S.ModalCloseButton onClick={() => props.setModalImageIsOpen(false)}>
+                    <AiOutlineClose style={{width: "16px", height: "16px"}}/>
+                </S.ModalCloseButton>
+                <S.ProfileWrapper>
+                    {props.fileUrl ? (
+                        <>
+                        <S.ProfileImage 
+                        src={`https://storage.googleapis.com/${props.fileUrl}`}
+                        onClick={props.onClickUpload}
+                        
+                        />
+                        <S.UploadImageBtn
+                            onClick={props.onClickUpload}
+                        >
+                            <AiFillCamera style={{width: "26px", height: "26px"}}/>
+                        </S.UploadImageBtn>
+                        
+                        </>
+                        
+                        ) : (
+                        <>  
+                        <S.PhotoInput
+                            src={`https://storage.googleapis.com/${props.data?.fetchUserLoggedIn?.picture}`}
+                            onClick={props.onClickUpload}
+                            onError={props.handleImageError}
+                        >
+                        </S.PhotoInput>
+                        <S.UploadImageBtn
+                            onClick={props.onClickUpload}
+                        >
+                            <AiFillCamera style={{width: "26px", height: "26px"}}/>
+                        </S.UploadImageBtn>
+                        
+                        </>
+                        
+                        )}
+                        <S.UploadFileHidden
+                            type="file"
+                            ref={props.fileRef}
+                            onChange={props.onChangeFile}
+                        >
+                        </S.UploadFileHidden>
+
+                    <S.UserWrapper>
+                        
+                        <S.ImageWrapper>
+                            <S.ImageEditBtn
+                                onClick={props.onClickUpdateButton}
+                                type="button"
+                                
+                            >
+                            이미지 변경</S.ImageEditBtn>
+                        </S.ImageWrapper>
+                    </S.UserWrapper>
+                
+                </S.ProfileWrapper>
+                </S.ModalImageWrapper>
+            </S.ModalStyle>
         </form>
     )
 }

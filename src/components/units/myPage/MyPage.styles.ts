@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import Modal from "react-modal";
 
 export const Wrapper = styled.div`
     width: 80rem;
@@ -9,7 +10,7 @@ export const Wrapper = styled.div`
     margin-bottom: 10rem;
     border: 2px solid #E3E3E3;
     border-radius: 20px;
-    box-shadow: 10px;
+    box-shadow: 10px 5px 10px #E3E3E3;
 `
 
 export const ProfileWrapper = styled.div`
@@ -31,6 +32,15 @@ export const PhotoInput = styled.img`
     
 `
 
+export const UploadImageBtn = styled.div`
+  position: relative;
+  right: 26%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`
+
 export const UploadFileHidden = styled.input`
   display: none;
 `
@@ -40,6 +50,7 @@ export const ProfileImage = styled.img`
     height: 8rem;
     border-radius: 100px;
     cursor: pointer;
+  
 `
 
 export const UserWrapper = styled.div`
@@ -207,7 +218,7 @@ export const PointCount = styled.div`
 
 export const PointDate = styled.div`
   font-size: 18px;
-  margin: 3% 0 0 82%
+  margin: 3% 0 0 82%;
 `
 
 export const BuyImage = styled.img`
@@ -239,6 +250,34 @@ export const BuyDate = styled.div`
   font-size: 18px;
   height: fit-content;
   margin: 5% 0 0 62%;
+`
+
+export const ModalStyle = styled(Modal)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const ModalImageWrapper = styled.div`
+  background-color: white;
+  width: 464px;
+  height: 280px;
+  border: 2px solid #E3E3E3;
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background-color: #ffffff;
+  margin-top: 300px;
+`
+
+export const ModalCloseButton = styled.div`
+  width: 16px;
+  height: 16px;
+
+  background-color: transparent;
+  border: none;
+  margin: 10px 0px 0px 432px;
+  cursor: pointer;
 `
 
 
