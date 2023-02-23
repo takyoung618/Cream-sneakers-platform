@@ -109,6 +109,35 @@ export const InfoHeader = styled.div`
     margin: 4rem 0 0 3.5rem;
 `
 
+export const EmptyWrapper = styled.div`
+  margin: auto;
+`
+
+export const EmptyCartIcon = styled.img`
+  width: 300px;
+  margin: 50px 0 50px 60px;
+`
+
+export const EmptyTitle = styled.div`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+`
+
+export const MoveToShopBtn = styled.button`
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    margin: auto;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+`
+
 export const EmailWrapper = styled.div`
     width: 25rem;
     margin: 2rem 0 0 3.5rem;

@@ -5,6 +5,7 @@ import { AiOutlineClose, AiFillCamera } from "react-icons/ai";
 
 export default function MyPagePresenter(props: any) {
     const UserInfo = getUserInfo();
+    const isEmpty = props.IPicked?.fetchUseditemsIPicked.length === 0;
 
     return (
        <form onSubmit = {props.handleSubmit(props.onClickUpdateButton)}> 
@@ -90,7 +91,17 @@ export default function MyPagePresenter(props: any) {
                 <S.InfoHeader>
                     내 관심상품
                 </S.InfoHeader>
-                <S.ProductListWrapper>
+                {isEmpty ? (
+                    <S.EmptyWrapper>
+                        <S.EmptyCartIcon src = 'images/myPage/wishlist.png'/>
+                        <S.EmptyTitle>관심 상품에 담긴 상품이 없습니다.</S.EmptyTitle>
+                        <S.MoveToShopBtn 
+                            type="button" 
+                            onClick={props.onClickMoveToShop}
+                        >쇼핑하려 가기</S.MoveToShopBtn>
+                    </S.EmptyWrapper>
+                ) : (
+                    <S.ProductListWrapper>
                     {props.IPicked?.fetchUseditemsIPicked.map((el: any) => (   
                         <S.ProductWrapper 
                             key={el._id} id={el._id}
@@ -113,8 +124,8 @@ export default function MyPagePresenter(props: any) {
                             <S.PriceTag>즉시 구매가</S.PriceTag>
                         </S.ProductWrapper>
                     ))}
-                        
-                </S.ProductListWrapper>
+                    </S.ProductListWrapper>
+                )}
             </S.Wrapper>
 
             <S.ModalStyle isOpen={props.modalImageIsOpen}>

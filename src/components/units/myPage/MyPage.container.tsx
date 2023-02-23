@@ -147,6 +147,12 @@ export default function MyPageContainer(props: any) {
     router.push(`/brand/${event.currentTarget.id}`);
   }
 
+  const onClickMoveToShop = (event: any) => {
+    router.push(`/main`)
+  }
+
+  
+
   return (
     <MyPagePresenter
       fileRef={fileRef}
@@ -169,6 +175,7 @@ export default function MyPageContainer(props: any) {
       modalImageIsOpen={modalImageIsOpen}
       setModalImageIsOpen={setModalImageIsOpen}
       onClickMoveToDetail={onClickMoveToDetail}
+      onClickMoveToShop={onClickMoveToShop}
     />
   )
 }
