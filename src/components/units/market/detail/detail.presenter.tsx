@@ -56,10 +56,10 @@ export default function DetailPresenter(props: IDetailPresenterProps){
                             >즉시 구매하기</S.BuyButton>
                             <S.ShoppingButton
                                 onClick={props.onClickBasket(props.data?.fetchUseditem)}
-                            >관심상품에 추가</S.ShoppingButton>
+                            >장바구니에 추가</S.ShoppingButton>
                         </S.ButtonWrapper>
                         <S.ButtonWrapper>
-                            <S.DeleteButton
+                            {/* <S.DeleteButton
                                 onClick={props.onClickDeleteUseditem}
                             >
                                 삭제하기
@@ -68,7 +68,7 @@ export default function DetailPresenter(props: IDetailPresenterProps){
                                 onClick={props.onClickEdit}
                             >
                                 수정하기
-                            </S.EditButton>
+                            </S.EditButton> */}
                         </S.ButtonWrapper>
                     </S.ButtonsWrapper>
                    

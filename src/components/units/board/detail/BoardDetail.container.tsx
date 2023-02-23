@@ -9,6 +9,7 @@ import {
   IQuery,
   IQueryFetchBoardArgs,
 } from "../../../../commons/types/generated/types";
+import { FETCH_USED_ITEMS_I_PICKED } from "../../myPage/Mypage.queries";
 import { FETCH_BOARDS } from "../list/BoardList.queries";
 import BoardDetailUI from "./BoardDetail.presenter";
 import {
@@ -77,6 +78,7 @@ export default function BoardDetail() {
           query: FETCH_BOARD,
           variables: { boardId: router.query.boardId },
         },
+        
       ],
     });
   };
