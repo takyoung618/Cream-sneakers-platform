@@ -166,6 +166,7 @@ export const Image = styled.img`
   background-color: #ECF3F2;;
   border-radius: 10px;
   margin-top: 2rem;
+  cursor: pointer;
 `
 
 export const PriceWrapper = styled.div`

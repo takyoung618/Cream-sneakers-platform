@@ -10,6 +10,7 @@ import { FETCH_BOARDS_OF_MINE, FETCH_USED_ITEMS_I_PICKED, RESET_USER_PASSWORD, U
 import * as yup from "yup";
 import { getUserInfo } from "../../../commons/libraries/getUserInfo";
 import { FETCH_USER_LOGGED_IN } from "../join_login/login/Login.queries";
+import { useRouter } from "next/router";
 
   const schema = yup.object({
     name: yup.string()
@@ -47,6 +48,8 @@ export default function MyPageContainer(props: any) {
   const [name, setName] = useState('');
 
   const [password, setPassword] = useState('')
+
+  const router = useRouter();
 
   const onClickImageModal = () => {
     setModalImageIsOpen(true)
@@ -140,6 +143,10 @@ export default function MyPageContainer(props: any) {
     }
   }
 
+  const onClickMoveToDetail = (event: any) => {
+    router.push(`/brand/${event.currentTarget.id}`);
+  }
+
   return (
     <MyPagePresenter
       fileRef={fileRef}
@@ -161,6 +168,7 @@ export default function MyPageContainer(props: any) {
       onClickImageModal={onClickImageModal}
       modalImageIsOpen={modalImageIsOpen}
       setModalImageIsOpen={setModalImageIsOpen}
+      onClickMoveToDetail={onClickMoveToDetail}
     />
   )
 }

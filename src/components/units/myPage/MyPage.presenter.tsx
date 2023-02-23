@@ -92,8 +92,13 @@ export default function MyPagePresenter(props: any) {
                 </S.InfoHeader>
                 <S.ProductListWrapper>
                     {props.IPicked?.fetchUseditemsIPicked.map((el: any) => (   
-                        <S.ProductWrapper key={el._id} id={el._id}>
+                        <S.ProductWrapper 
+                            key={el._id} id={el._id}
+                            onClick={props.onClickMoveToDetail}
+                        >
                             <S.Image
+                            key={el._id}
+                            
                             src={
                             el.images?.[0] || el.images?.[1]
                               ? `http://storage.googleapis.com/${el.images?.[0]}`
