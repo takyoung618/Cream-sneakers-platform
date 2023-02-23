@@ -34,4 +34,4 @@ function BoardsEditPage() {
   return <BoardWrite isEdit={true} data={data} />;
 }
 
-export default withAuth(BoardsEditPage)
+export default withAuth(BoardsEditPage);

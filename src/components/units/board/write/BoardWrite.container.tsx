@@ -13,7 +13,7 @@ import {
   IQueryFetchBoardsCountArgs,
 } from "../../../../commons/types/generated/types";
 import { message, Modal } from "antd";
-import { FETCH_BOARDS} from "../list/BoardList.queries";
+import { FETCH_BOARDS } from "../list/BoardList.queries";
 
 const initialInputs = { writer: "", password: "", title: "", contents: "" };
 
@@ -132,12 +132,12 @@ export default function BoardWrite(props: IBoardWriteProps) {
           refetchQueries: [
             {
               query: FETCH_BOARDS,
-            }
-          ]
+            },
+          ],
         });
         console.log(result.data?.createBoard._id);
         router.push(`/boards/${result.data?.createBoard._id}`);
-        message.success("게시글이 등록되었습니다.")
+        message.success("게시글이 등록되었습니다.");
       } catch (error) {
         if (error instanceof Error) Modal.error({ content: error.message });
       }
@@ -191,11 +191,11 @@ export default function BoardWrite(props: IBoardWriteProps) {
         refetchQueries: [
           {
             query: FETCH_BOARDS,
-          }
-        ]
+          },
+        ],
       });
       router.push(`/boards/${result.data?.updateBoard._id}`);
-      message.success("게시글이 수정되었습니다.")
+      message.success("게시글이 수정되었습니다.");
     } catch (error) {
       if (error instanceof Error) alert(error.message);
     }

@@ -8,7 +8,6 @@ export default function PaginationsPresenter(props: IPaginations01UIProps) {
       {new Array(10).fill(1).map(
         (_, index) =>
           props.startPage + index <= props.lastPage && (
-            
             // index에 StartPage를 더해준다.
             <Page
               key={props.startPage + index}

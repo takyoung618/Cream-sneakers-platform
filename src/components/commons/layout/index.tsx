@@ -7,36 +7,33 @@ import FooterContainer from "./footer/Footer.container";
 import SideBar from "./sideBar";
 
 interface ILayoutProps {
-    children: ReactChild;
+  children: ReactChild;
 }
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-`
+  display: flex;
+  flex-direction: column;
+`;
 
-const Body = styled.div`
-`
+const Body = styled.div``;
 
-const HIDDEN_LANDING = [
-    "/",
-]
+const HIDDEN_LANDING = ["/"];
 
 export default function Layout(props: ILayoutProps) {
-    const router = useRouter();
-    const isHiddenLanding = HIDDEN_LANDING.includes(router.asPath)
-    
-    return (
+  const router = useRouter();
+  const isHiddenLanding = HIDDEN_LANDING.includes(router.asPath);
+
+  return (
+    <Wrapper>
+      {!isHiddenLanding && (
         <Wrapper>
-            {!isHiddenLanding && (
-                <Wrapper>
-                    <HeaderContainer/>
-                    <NavigationContainer/>
-                </Wrapper> 
-            )}
-            <Body>{props.children}</Body>
-            <FooterContainer/>
-            {/* <SideBar/> */}
+          <HeaderContainer />
+          <NavigationContainer />
         </Wrapper>
-    )
+      )}
+      <Body>{props.children}</Body>
+      <FooterContainer />
+      {/* <SideBar/> */}
+    </Wrapper>
+  );
 }

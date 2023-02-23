@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 
 export default function BoardWriteUI(props: IBoardWriteUIProps) {
-
   return (
     <>
       {props.isOpen && (

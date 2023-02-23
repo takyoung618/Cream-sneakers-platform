@@ -23,11 +23,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background: radial-gradient(
-    circle,
-    #2E2C2B 0%,
-    black 100%
-  );
+  background: radial-gradient(circle, #2e2c2b 0%, black 100%);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -56,7 +52,7 @@ export const ShopBtn = styled.button`
   color: white;
   background-color: transparent;
   padding: 2rem 5rem;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 1rem;
   transition: all 0.3s ease-in-out;
   letter-spacing: 2px;
@@ -93,121 +89,120 @@ export const ScrollIcon = styled.img`
 `;
 
 export const Logo = styled.div`
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 70px;
   color: white;
   margin-bottom: 50px;
   animation: text-focus-in 4s infinite;
   @keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
+    0% {
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+      opacity: 1;
+    }
   }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-`
+`;
 
 export const ContainerB = styled.div`
   background-color: black;
-`
+`;
 
 export const TopContents = styled.div`
   display: flex;
   height: 50%;
   width: 100%;
   background-color: white;
-`
+`;
 
 export const TopLeft = styled.div`
   height: 100%;
   width: 50%;
-  background-color: #F1F1F1;
-`
+  background-color: #f1f1f1;
+`;
 
 export const TopImage = styled.img`
   height: 100%;
   width: 50%;
-  background-image: src="images/landingPage/snikers.png";
-`
+  background-image: src= "images/landingPage/snikers.png";
+`;
 
 export const BottomContents = styled.div`
   display: flex;
   height: 50%;
   width: 100%;
   background-color: black;
-`
-
+`;
 
 export const BottomRight = styled.div`
   height: 100%;
   width: 50%;
   background-color: black;
-`
+`;
 
 export const BottomImage = styled.div`
   height: 100%;
   width: 50%;
   background-color: red;
-`
+`;
 
 export const TextBox = styled.div`
   margin: 30px 40px 0px 40px;
-`
+`;
 
 export const TextTitle = styled.div`
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 50px;
-`
+`;
 
 export const Text = styled.div`
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 20px;
-`
+`;
 
 export const TopButton = styled.button`
   width: 300px;
   height: 70px;
   margin: 30px 0px 0px 40px;
-  background-color: #F1F1F1;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: #f1f1f1;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 20px;
   border: solid 1.5px;
   cursor: pointer;
-`
+`;
 
 export const TextTitle2 = styled.div`
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 50px;
   color: white;
-`
+`;
 
 export const Text2 = styled.div`
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 20px;
   color: white;
-`
+`;
 
 export const BottomButton = styled.button`
   width: 300px;
   height: 70px;
   margin: 30px 0px 0px 40px;
   background-color: black;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 20px;
   color: white;
   border: solid 1.5px white;
   cursor: pointer;
-`
+`;
 
 export const MainTitle = styled.div`
   width: 31.25rem;
   height: 12.5rem;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 50px;
   font-weight: 1000;
   display: flex;
@@ -217,19 +212,15 @@ export const MainTitle = styled.div`
   margin: 3.125rem 62.5rem 0px 0px;
   animation: text-focus-in 2s forwards;
   @keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
+    0% {
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+      opacity: 1;
+    }
   }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-  }
-
-`
-
-
-
+`;

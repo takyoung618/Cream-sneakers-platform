@@ -5,14 +5,14 @@ import { useRecoilState } from "recoil";
 import { logInStatusState } from "../../../commons/store";
 
 export const withAuth = (Component: any) => (props: any) => {
-    const [isLogout] = useRecoilState(logInStatusState);
+  const [isLogout] = useRecoilState(logInStatusState);
 
-    const router = useRouter();
-    useEffect(() => {
-        if (!isLogout) {
-            Modal.error({ content: "로그인 후 이용 가능합니다!!" });
-            router.push("/home");
-        }
-    }, []);
-    return <Component {...props} />;
+  const router = useRouter();
+  useEffect(() => {
+    if (!isLogout) {
+      Modal.error({ content: "로그인 후 이용 가능합니다!!" });
+      router.push("/home");
+    }
+  }, []);
+  return <Component {...props} />;
 };

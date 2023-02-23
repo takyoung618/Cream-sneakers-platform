@@ -18,7 +18,6 @@ export default function PaginationsContainer(props: IPaginations01Props) {
 
   // 이전페이지는 -10
   const onClickPrevPage = () => {
-
     // StartPage가 1일 때, 이전 페이지는 클릭시 작동x
     if (startPage <= 1) return;
     setStartPage((prev) => prev - 10);
@@ -28,7 +27,6 @@ export default function PaginationsContainer(props: IPaginations01Props) {
 
   // 다음페이지는 +10
   const onClickNextPage = () => {
-
     // start 페이지가 last 페이지보다 작을 때만 실행
     if (startPage + 10 > lastPage) return;
     setStartPage((prev) => prev + 10);

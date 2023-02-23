@@ -3,15 +3,21 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { useRecoilState } from "recoil";
-import { accessTokenState, logInStatusState, userInfoState } from "../../../../commons/store";
+import {
+  accessTokenState,
+  logInStatusState,
+  userInfoState,
+} from "../../../../commons/store";
 import LoginPresenter from "./Login.presenter";
 import * as yup from "yup";
-import { IMutation, IMutationLoginUserArgs } from "../../../../commons/types/generated/types";
+import {
+  IMutation,
+  IMutationLoginUserArgs,
+} from "../../../../commons/types/generated/types";
 import { FETCH_USER_LOGGED_IN, LOGIN_USER } from "./Login.queries";
 import { message, Modal } from "antd";
 import { Session } from "inspector";
 import { ILoginContainerProps } from "./Login.types";
-
 
 export const schema = yup.object({
   email: yup
@@ -23,13 +29,13 @@ export const schema = yup.object({
 
 export default function LoginContainer(props: ILoginContainerProps) {
   // sessionStorage.clear()
-  
-    const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
-    const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
-    const [userInfo, setUserInfo] = useRecoilState(userInfoState);
 
-    const router = useRouter();
-    const client = useApolloClient();
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
+  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
+
+  const router = useRouter();
+  const client = useApolloClient();
 
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(schema),
@@ -76,19 +82,16 @@ export default function LoginContainer(props: ILoginContainerProps) {
   };
 
   const onClickMoveJoin = () => {
-    router.push("join")
-  }
+    router.push("join");
+  };
 
-
-  
-
-    return (
-        <LoginPresenter
-            register={register}
-            handleSubmit={handleSubmit}
-            formState={formState}
-            onClickLogin={onClickLogin}
-            onClickMoveJoin={onClickMoveJoin}
-        />
-    )
+  return (
+    <LoginPresenter
+      register={register}
+      handleSubmit={handleSubmit}
+      formState={formState}
+      onClickLogin={onClickLogin}
+      onClickMoveJoin={onClickMoveJoin}
+    />
+  );
 }

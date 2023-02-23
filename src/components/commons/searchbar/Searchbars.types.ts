@@ -1,6 +1,10 @@
 import { ApolloQueryResult } from "@apollo/client";
 import { ChangeEvent } from "react";
-import { IQuery, IQueryFetchBoardsArgs, IQueryFetchBoardsCountArgs } from "../../../commons/types/generated/types";
+import {
+  IQuery,
+  IQueryFetchBoardsArgs,
+  IQueryFetchBoardsCountArgs,
+} from "../../../commons/types/generated/types";
 
 export interface ISearchbarProps {
   refetch: (

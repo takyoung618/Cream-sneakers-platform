@@ -10,7 +10,7 @@ function BoardDetailPage() {
       <BoardCommentWrite />
       <BoardCommentList />
     </>
-  )
+  );
 }
 
-export default withAuth(BoardDetailPage)
+export default withAuth(BoardDetailPage);

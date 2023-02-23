@@ -6,7 +6,7 @@ import LandingPageC from "./landingPageC";
 const LandingPageUi = () => {
   return (
     <Wrapper>
-      <LandingPageA/>
+      <LandingPageA />
       <LandingPageB />
       <LandingPageC />
     </Wrapper>
@@ -33,7 +33,3 @@ const Wrapper = styled.main`
     height: 100vh;
   }
 `;
-
-
-
-

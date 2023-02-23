@@ -12,7 +12,7 @@ export const FETCH_USEDITEMS_OF_THE_BEST = gql`
       images
     }
   }
-`
+`;
 
 export const FETCH_USEDITEMS = gql`
   query fetchUseditems($isSoldout: Boolean, $search: String, $page: Int) {

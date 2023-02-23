@@ -65,9 +65,6 @@ export default function ApolloSetting(props: IApolloSettingProps) {
   return <ApolloProvider client={client}>{props.children}</ApolloProvider>;
 }
 
-
-
-
 // import {
 //   ApolloClient,
 //   ApolloLink,
@@ -144,4 +141,3 @@ export default function ApolloSetting(props: IApolloSettingProps) {
 
 //   return <ApolloProvider client={client}>{props.children}</ApolloProvider>;
 // }
-

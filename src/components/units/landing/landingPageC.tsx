@@ -11,9 +11,7 @@ const LandingPageC = () => {
     <S.Container>
       <S.MainTextBox>
         <S.Logo>where is my sneakers?</S.Logo>
-        <S.ShopBtn onClick={onClickToCrewList}>
-          쇼핑하러가기
-        </S.ShopBtn>
+        <S.ShopBtn onClick={onClickToCrewList}>쇼핑하러가기</S.ShopBtn>
       </S.MainTextBox>
     </S.Container>
   );

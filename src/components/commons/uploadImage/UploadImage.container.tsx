@@ -7,8 +7,9 @@ import { UPLOAD_FILE } from "./UploadImage.queries";
 import { IUploadImageContainerProps } from "./UploadImage.types";
 import { checkValidationImage } from "./UploadImage.validation";
 
-
-export default function UploadImageContainer(props: IUploadImageContainerProps) {
+export default function UploadImageContainer(
+  props: IUploadImageContainerProps
+) {
   const [uploadFile] = useMutation(UPLOAD_FILE);
 
   // DOM 취득 목표
@@ -34,15 +35,12 @@ export default function UploadImageContainer(props: IUploadImageContainerProps) 
     }
   };
 
-  
-
   return (
     <UploadImagePresenter
       fileRef={fileRef}
       fileUrl={props.fileUrl}
       onClickUpload={onClickUpload}
       onChangeFile={onChangeFile}
-    >
-    </UploadImagePresenter>
+    ></UploadImagePresenter>
   );
 }

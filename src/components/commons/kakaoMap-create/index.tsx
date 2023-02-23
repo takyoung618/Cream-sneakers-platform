@@ -16,7 +16,6 @@ interface IKakaoMapProps {
   address: string;
 }
 
-
 export default function KaKaoMap(props: IKakaoMapProps) {
   useEffect(() => {
     const script = document.createElement("script");

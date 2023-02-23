@@ -59,8 +59,8 @@ export default function BoardDetail() {
         refetchQueries: [
           {
             query: FETCH_BOARDS,
-          }
-        ]
+          },
+        ],
       });
       message.success("게시글이 정상적으로 삭제되었습니다.");
       router.push("/boards");
@@ -78,7 +78,6 @@ export default function BoardDetail() {
           query: FETCH_BOARD,
           variables: { boardId: router.query.boardId },
         },
-        
       ],
     });
   };

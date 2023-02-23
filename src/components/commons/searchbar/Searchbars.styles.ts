@@ -4,7 +4,7 @@ export const Searchbar = styled.div`
   width: 776px;
   height: 52px;
   border-radius: 12px;
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   padding: 0px 20px;
   display: flex;
   flex-direction: row;

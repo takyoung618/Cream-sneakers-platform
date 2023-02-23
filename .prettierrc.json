@@ -1,1 +1,7 @@
-{}
+{
+  "extends": ["plugin:react/recommended", "standard", "prettier"],
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": false
+}

@@ -44,8 +44,8 @@ export default function BoardCommentListUIItem(
             variables: { boardId: router.query.boardId },
           },
         ],
-      }); 
-      message.error("댓글이 삭제되었습니다")
+      });
+      message.error("댓글이 삭제되었습니다");
     } catch (error) {
       if (error instanceof Error) Modal.error({ content: error.message });
     }
@@ -66,7 +66,11 @@ export default function BoardCommentListUIItem(
   return (
     <>
       {isOpenDeleteModal && (
-        <Modal visible={true} onCancel={onClickDeleteModal} onOk={onClickDelete}>
+        <Modal
+          visible={true}
+          onCancel={onClickDeleteModal}
+          onOk={onClickDelete}
+        >
           <div>비밀번호 입력: </div>
           <S.PasswordInput type="password" onChange={onChangeDeletePassword} />
         </Modal>

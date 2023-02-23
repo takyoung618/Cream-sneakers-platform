@@ -4,11 +4,9 @@ import { FETCH_USER_LOGGED_IN } from "../../src/components/units/join_login/logi
 import MyPageContainer from "../../src/components/units/myPage/MyPage.container";
 
 function MyPage() {
-    const {data} = useQuery(FETCH_USER_LOGGED_IN)
+  const { data } = useQuery(FETCH_USER_LOGGED_IN);
 
-    return (
-        <MyPageContainer data={data}/>
-    )
+  return <MyPageContainer data={data} />;
 }
 
-export default withAuth(MyPage)
+export default withAuth(MyPage);
