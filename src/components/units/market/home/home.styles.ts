@@ -4,11 +4,10 @@ export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 30px 0 10px 0;
+  margin: 50px 0 0px 0;
 `;
 
 export const Title = styled.div`
-  width: fit-content;
   font-weight: 700;
   font-size: 30px;
 `;
@@ -19,12 +18,15 @@ export const ProductTitle = styled.div`
   color: gray;
 `;
 
-export const Wrapper = styled.div`
-  width: fit-content;
+export const HomeWrapper = styled.div`
+  width: 100vw;
   display: flex;
+  justify-content: center;
+`;
+
+export const Wrapper = styled.div`
   flex-direction: column;
-  align-items: flex-start;
-  margin: auto;
+  justify-content: space-between;
 `;
 
 export const ProductListWrapper = styled.div`
@@ -45,8 +47,8 @@ export const Image = styled.img`
   width: 18rem;
   height: 18rem;
   background-color: #ecf3f2;
-  border-radius: 20px;
-  margin-top: 2rem;
+  border-radius: 10px;
+  margin-top: 1rem;
 `;
 
 export const Heart = styled.img``;

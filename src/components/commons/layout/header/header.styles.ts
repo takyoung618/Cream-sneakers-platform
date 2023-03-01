@@ -23,21 +23,21 @@ export const HeaderWrapper = styled.div`
   display: flex;
   -webkit-box-align: center;
   align-items: center;
-  margin-left: auto;
 `;
 
 export const Login = styled.div`
-  font-weight: 400;
   font-size: 14px;
-  margin-right: 66px;
+  margin: 0 15px 0 95rem;
+  font-weight: 700;
+  color: gray;
   cursor: pointer;
 `;
 
 export const Signup = styled.div`
-  font-weight: 400;
   font-size: 14px;
-  margin-right: 56px;
   cursor: pointer;
+  font-weight: 700;
+  color: gray;
 `;
 
 export const Basket = styled.div`
@@ -45,10 +45,12 @@ export const Basket = styled.div`
   font-size: 14px;
   margin-right: 10px;
   cursor: pointer;
+  font-weight: 700;
+  color: gray;
 `;
 
 export const BasketCount = styled.div`
-  background-color: red;
+  background-color: gray;
   height: 20px;
   width: 20px;
   border-radius: 10px;
@@ -63,20 +65,26 @@ export const Count = styled.div`
 `;
 
 export const Point = styled.div`
-  font-weight: 400;
   font-size: 14px;
+  font-weight: 700;
+  color: gray;
+  margin-left: 79rem;
 `;
 
 export const ChargeButton = styled.div`
-  font-weight: 400;
   font-size: 14px;
   margin-left: 16px;
+  font-weight: 700;
+  color: gray;
+  cursor: pointer;
 `;
 
 export const LogOut = styled.div`
-  font-weight: 400;
   font-size: 14px;
   margin: 0px 45px 0px 54px;
+  font-weight: 700;
+  color: gray;
+  cursor: pointer;
 `;
 
 // 포인트 충전 모달

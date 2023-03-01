@@ -5,11 +5,11 @@ import HomeSliderPage from "./slider";
 
 export default function HomePresenter(props: IHomePagePresenterProps) {
   return (
-    <>
+    <S.HomeWrapper>
       <S.Wrapper>
         <S.TitleWrapper>
           <S.Title>just Uploaded</S.Title>
-          <S.ProductTitle>발매 상품</S.ProductTitle>
+          <S.ProductTitle>신규 상품</S.ProductTitle>
         </S.TitleWrapper>
         <S.ProductListWrapper>
           {props.data?.fetchUseditems.slice(0, 8).map((el: any) => (
@@ -32,6 +32,6 @@ export default function HomePresenter(props: IHomePagePresenterProps) {
           ))}
         </S.ProductListWrapper>
       </S.Wrapper>
-    </>
+    </S.HomeWrapper>
   );
 }

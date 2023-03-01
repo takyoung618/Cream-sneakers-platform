@@ -18,10 +18,6 @@ export default function HeaderPresenter(props: ILayoutHeaderUIProps) {
           <>
             <S.Login onClick={props.onClickLogin}>로그인</S.Login>
             <S.Signup onClick={props.onClickJoin}>회원가입</S.Signup>
-            <S.Basket>장바구니</S.Basket>
-            <S.BasketCount>
-              <S.Count>0</S.Count>
-            </S.BasketCount>
           </>
         ) : (
           <>

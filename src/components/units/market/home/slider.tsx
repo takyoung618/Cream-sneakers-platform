@@ -19,13 +19,14 @@ export const SlideWrapper = styled.div`
 
 export const Img = styled.img`
   width: 100%;
-  height: 60%;
+  height: 35rem;
   cursor: pointer;
 `;
 
 export default function HomeSliderPage() {
   const settings = {
     dots: true,
+    arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -38,13 +39,13 @@ export default function HomeSliderPage() {
     <SlideWrapper>
       <Slider {...settings}>
         <div>
-          <Img src="/images/carousel/a_8c8fe6e3c7b3429a809dee9bd4cb18d4.webp"></Img>
+          <Img src="/images/carousel/carousel5.jpg"></Img>
         </div>
         <div>
-          <Img src="/images/carousel/a_0024f2a40f3e4274826cc8819e7e8441.webp"></Img>
+          <Img src="/images/carousel/carousel4.jpg"></Img>
         </div>
         <div>
-          <Img src="/images/carousel/a_24779e723a574c4488c3288f8bd236b6.webp"></Img>
+          <Img src="/images/carousel/carousel3.jpg"></Img>
         </div>
       </Slider>
     </SlideWrapper>

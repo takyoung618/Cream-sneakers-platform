@@ -53,6 +53,7 @@ const BlankTitle = styled.div`
 const BlankImage = styled.img`
   width: 40px;
   height: 40px;
+  margin-top: 30px;
 `;
 
 export default function SideBar() {
