@@ -6,6 +6,10 @@ import DaumPostcodeEmbed from "react-daum-postcode";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
+export const CreateWrapper = styled.div`
+  width: 100vw;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
