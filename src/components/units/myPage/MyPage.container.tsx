@@ -60,7 +60,7 @@ export default function MyPageContainer(props: any) {
 
   // 이미지 업로드
   const handleImageError = (event: any) => {
-    event.target.src = `images/기본이미지.png`;
+    event.target.src = `images/프로필이미지.png`;
   };
 
   const fileRef = useRef<HTMLInputElement>(null);

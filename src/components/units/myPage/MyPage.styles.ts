@@ -1,6 +1,11 @@
 import styled from "@emotion/styled";
 import Modal from "react-modal";
 
+export const MyPageWrapper = styled.div`
+  width: 100vw;
+  justify-content: center;
+`;
+
 export const Wrapper = styled.div`
   width: 80rem;
   display: flex;

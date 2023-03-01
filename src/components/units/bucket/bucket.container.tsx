@@ -13,7 +13,7 @@ export default function BucketContainer(props: IBucketContainerProps) {
   const [baskets, setBaskets] = useState<IUseditem[]>([]);
 
   const handleImageError = (event: any) => {
-    event.target.src = "/default.png";
+    event.target.src = "/images/기본이미지.png";
   };
 
   useEffect(() => {
