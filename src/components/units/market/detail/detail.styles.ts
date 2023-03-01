@@ -1,8 +1,14 @@
 import styled from "@emotion/styled";
 
+export const DetailPageWrapper = styled.div`
+  width: 100vw;
+  justify-content: center;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin: auto;
 `;
 
 export const HeaderWrapper = styled.div`
