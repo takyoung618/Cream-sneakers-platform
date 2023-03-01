@@ -122,6 +122,9 @@ export default function MyPagePresenter(props: any) {
           <S.ModalCloseButton onClick={() => props.setModalImageIsOpen(false)}>
             <AiOutlineClose style={{ width: "16px", height: "16px" }} />
           </S.ModalCloseButton>
+          <S.ImageTitle>
+            사진을 선택후 이미지 변경 버튼을 눌러주세요!!
+          </S.ImageTitle>
           <S.ProfileWrapper>
             {props.fileUrl ? (
               <>

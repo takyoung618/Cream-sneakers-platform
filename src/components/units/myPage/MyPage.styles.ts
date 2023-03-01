@@ -22,7 +22,7 @@ export const ProfileWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: fit-content;
-  margin: 3rem 0 3rem 3.5rem;
+  margin: 2rem 0 2rem 3.5rem;
 `;
 
 export const ImageContainer = styled.div``;
@@ -301,6 +301,12 @@ export const ModalImageWrapper = styled.div`
   border-radius: 20px;
   background-color: #ffffff;
   margin-top: 300px;
+`;
+
+export const ImageTitle = styled.div`
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0px 0 0 60px;
 `;
 
 export const ModalCloseButton = styled.div`
