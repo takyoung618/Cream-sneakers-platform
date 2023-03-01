@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
 
+export const MainWrapper = styled.div`
+  width: 100vw;
+  justify-content: center;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -11,8 +16,8 @@ export const BestWrapper = styled.div`
 
 export const BestTitle = styled.div`
   margin: auto;
-  margin-top: 45px;
-  margin-bottom: 60px;
+  margin-top: 90px;
+  margin-bottom: 30px;
   font-weight: 700;
   font-size: 30px;
   width: fit-content;
@@ -29,15 +34,15 @@ export const ProductWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
-  margin: 0 2rem 0 2rem;
   margin-top: 2rem;
+  margin: 0 10px 20px 10px;
 `;
 
 export const Image = styled.img`
   width: 18rem;
   height: 18rem;
   background-color: #c4c4c4;
-  border-radius: 20px;
+  border-radius: 10px;
 `;
 
 export const Heart = styled.img``;
@@ -91,7 +96,7 @@ export const ProductContents = styled.div`
 
 export const CreateWrapper = styled.div`
   display: flex;
-  width: 85rem;
+  width: 77rem;
   margin: auto;
   border-bottom: 1px solid gray;
   padding-bottom: 17.5px;
@@ -126,7 +131,7 @@ export const SearchInput = styled.input`
 `;
 
 export const InfiniteScrollDiv = styled.div`
-  width: 89rem;
+  width: 78rem;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -138,7 +143,3 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const BestItemsWrapper = styled.div``;
-
-export const TextToken = styled.span`
-  color: ${(props: ITextTokenProps) => (props.isMatched ? "red" : "black")};
-`;

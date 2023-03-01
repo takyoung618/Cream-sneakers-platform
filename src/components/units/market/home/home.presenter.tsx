@@ -8,8 +8,8 @@ export default function HomePresenter(props: IHomePagePresenterProps) {
     <S.HomeWrapper>
       <S.Wrapper>
         <S.TitleWrapper>
-          <S.Title>just Uploaded</S.Title>
-          <S.ProductTitle>신규 상품</S.ProductTitle>
+          <S.Title>New In</S.Title>
+          <S.ProductTitle>신규 등록 상품</S.ProductTitle>
         </S.TitleWrapper>
         <S.ProductListWrapper>
           {props.data?.fetchUseditems.slice(0, 8).map((el: any) => (
