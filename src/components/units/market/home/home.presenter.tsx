@@ -1,37 +1,11 @@
 import * as S from "./home.styles";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import InfiniteScroll from "react-infinite-scroller";
 import { IHomePagePresenterProps } from "./home.types";
+import HomeSliderPage from "./slider";
 
 export default function HomePresenter(props: IHomePagePresenterProps) {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-  };
-
   return (
     <>
-      <S.SlideWrapper>
-        <Slider {...settings}>
-          <div>
-            <S.Img src="/images/carousel/a_8c8fe6e3c7b3429a809dee9bd4cb18d4.webp"></S.Img>
-          </div>
-          <div>
-            <S.Img src="/images/carousel/a_0024f2a40f3e4274826cc8819e7e8441.webp"></S.Img>
-          </div>
-          <div>
-            <S.Img src="/images/carousel/a_24779e723a574c4488c3288f8bd236b6.webp"></S.Img>
-          </div>
-        </Slider>
-      </S.SlideWrapper>
-
       <S.Wrapper>
         <S.TitleWrapper>
           <S.Title>just Uploaded</S.Title>

@@ -1,25 +1,5 @@
 import styled from "@emotion/styled";
 
-export const SlideWrapper = styled.div`
-  .slick-dots {
-    bottom: 10px;
-  }
-  .slick-dots li button:before {
-    opacity: 0.25;
-    color: white;
-  }
-  .slick-dots li.slick-active button:before {
-    opacity: 1;
-    color: white;
-  }
-`;
-
-export const Img = styled.img`
-  width: 100%;
-  height: 60%;
-  cursor: pointer;
-`;
-
 export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;

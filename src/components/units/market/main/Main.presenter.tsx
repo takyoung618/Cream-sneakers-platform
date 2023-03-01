@@ -15,7 +15,7 @@ export default function MainPresenter(props: IMainPresenterProps) {
             <S.BestItemsWrapper
               key={el._id}
               id={el._id}
-              onClick={props.onClickList}
+              onClick={props.onClickList(el)}
             >
               <S.ProductWrapper>
                 <S.Image
@@ -48,7 +48,11 @@ export default function MainPresenter(props: IMainPresenterProps) {
       >
         <S.InfiniteScrollDiv>
           {props.useditemsData?.fetchUseditems.map((el) => (
-            <S.ListWrapper key={el._id} id={el._id} onClick={props.onClickList}>
+            <S.ListWrapper
+              key={el._id}
+              id={el._id}
+              onClick={props.onClickList(el)}
+            >
               <S.ProductWrapper>
                 <S.Image
                   src={

@@ -5,6 +5,7 @@ import HeaderContainer from "./header/header.container";
 import NavigationContainer from "./navigation/Navigation.container";
 import FooterContainer from "./footer/Footer.container";
 import SideBar from "./sideBar";
+import HomeSliderPage from "../../units/market/home/slider";
 
 interface ILayoutProps {
   children: ReactChild;
@@ -19,9 +20,15 @@ const Body = styled.div``;
 
 const HIDDEN_LANDING = ["/"];
 
+const HIDDEN_HOME = ["/home"];
+
+const HIDDEN_SIDEBAR = ["/", "/home", "/join", "/login"];
+
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
   const isHiddenLanding = HIDDEN_LANDING.includes(router.asPath);
+  const isHiddenSideBar = HIDDEN_SIDEBAR.includes(router.asPath);
+  const isHiddenHome = HIDDEN_HOME.includes(router.asPath);
 
   return (
     <Wrapper>
@@ -31,9 +38,12 @@ export default function Layout(props: ILayoutProps) {
           <NavigationContainer />
         </Wrapper>
       )}
-      <Body>{props.children}</Body>
+      {isHiddenHome && <HomeSliderPage />}
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        {!isHiddenSideBar && <SideBar />}
+        <Body>{props.children}</Body>
+      </div>
       <FooterContainer />
-      {/* <SideBar/> */}
     </Wrapper>
   );
 }

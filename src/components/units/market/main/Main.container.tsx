@@ -1,11 +1,14 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { TodayState } from "../../../../commons/store";
 import {
   IQuery,
   IQueryFetchUseditemsArgs,
   IUseditem,
 } from "../../../../commons/types/generated/types";
+import { localStorageDate } from "../../../commons/libraries/utils";
 import MainPresenter from "./Main.presenter";
 import { FETCH_USEDITEMS, FETCH_USEDITEMS_OF_THE_BEST } from "./Main.queries";
 
@@ -13,6 +16,8 @@ export default function ProductListContainer() {
   const router = useRouter();
   const date = new Date();
   const [keyword, setKeyWord] = useState("");
+
+  const [lookToday, setLookToday] = useRecoilState(TodayState);
 
   const { data: useditemsBestData } = useQuery<
     Pick<IQuery, "fetchUseditemsOfTheBest">,
@@ -59,10 +64,36 @@ export default function ProductListContainer() {
     router.push("/brand/create");
   };
 
-  const onClickList = (event: any) => {
+  //
+  const onClickList = (today: IUseditem) => (event: any) => {
     router.push(`/brand/${event.currentTarget.id}`);
+
+    const todays = JSON.parse(
+      sessionStorage.getItem(String(localStorageDate(date))) || "[]"
+    );
+
+    const temp = todays.filter((el: IUseditem) => el._id === today._id);
+
+    if (temp.length === 1) {
+      setLookToday((prev) => !prev);
+      return;
+    }
+    const { __typename, ...newToday } = today;
+    todays.push(newToday);
+
+    if (todays.length > 2) {
+      todays.shift();
+    }
+
+    sessionStorage.setItem(
+      String(localStorageDate(date)),
+      JSON.stringify(todays)
+    );
+
+    setLookToday((prev) => !prev);
   };
 
+  //
   const onChangeKeyword = (value: string) => {
     setKeyWord(value);
   };
