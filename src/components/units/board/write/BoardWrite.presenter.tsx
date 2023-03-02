@@ -90,14 +90,6 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
               }
             />
           </S.InputWrapper>
-          <S.InputWrapper>
-            <S.Label>유튜브</S.Label>
-            <S.Youtube
-              placeholder="링크를 복사해주세요."
-              onChange={props.onChangeYoutubeUrl}
-              defaultValue={props.data?.fetchBoard.youtubeUrl || ""}
-            />
-          </S.InputWrapper>
           <S.ImageWrapper>
             <S.Label>사진첨부</S.Label>
             {props.fileUrls.map((el, index) => (
@@ -109,13 +101,6 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
               />
             ))}
           </S.ImageWrapper>
-          <S.OptionWrapper>
-            <S.Label>메인설정</S.Label>
-            <S.RadioButton type="radio" id="youtube" name="radio-button" />
-            <S.RadioLabel htmlFor="youtube">유튜브</S.RadioLabel>
-            <S.RadioButton type="radio" id="image" name="radio-button" />
-            <S.RadioLabel htmlFor="image">사진</S.RadioLabel>
-          </S.OptionWrapper>
           <S.ButtonWrapper>
             <S.SubmitButton
               onClick={props.isEdit ? props.onClickUpdate : props.onClickSubmit}

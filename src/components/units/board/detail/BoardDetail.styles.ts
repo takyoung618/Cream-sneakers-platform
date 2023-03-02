@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { LikeOutlined, DislikeOutlined } from "@ant-design/icons";
-// import ReactPlayer from "react-player";
 
 export const BoardDetailWrapper = styled.div`
   width: 100vw;
@@ -93,10 +92,6 @@ export const Button = styled.button`
 export const IconWrapper = styled.div`
   text-align: center;
 `;
-
-// export const Youtube = styled(ReactPlayer)`
-//   margin: auto;
-// `;
 
 export const LikeWrapper = styled.div`
   padding-top: 160px;

@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
 
   width: 100%;
   height: 68px;
-  margin-right: 1500px;
 `;
 
 export const CategoryWrapper = styled.div`

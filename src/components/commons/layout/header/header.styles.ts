@@ -4,9 +4,9 @@ import Modal from "react-modal";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: right;
   width: 100%;
   height: 31px;
-  justify-content: space-between;
   align-items: center;
   margin-right: 1500px;
 `;
@@ -21,16 +21,14 @@ export const LogoImage = styled.div`
 
 export const HeaderWrapper = styled.div`
   display: flex;
-  -webkit-box-align: center;
-  align-items: center;
 `;
 
 export const Login = styled.div`
   font-size: 14px;
-  margin: 0 15px 0 95rem;
   font-weight: 700;
   color: gray;
   cursor: pointer;
+  margin-right: 1rem;
 `;
 
 export const Signup = styled.div`
@@ -38,6 +36,7 @@ export const Signup = styled.div`
   cursor: pointer;
   font-weight: 700;
   color: gray;
+  margin-right: 2.5rem;
 `;
 
 export const Basket = styled.div`
@@ -55,7 +54,7 @@ export const BasketCount = styled.div`
   width: 20px;
   border-radius: 10px;
   margin-right: 2rem;
-  margin: 0 2rem 0.1rem 0;
+  margin: 0 2.5rem 0.1rem 0;
 `;
 export const Count = styled.div`
   color: white;
@@ -68,7 +67,6 @@ export const Point = styled.div`
   font-size: 14px;
   font-weight: 700;
   color: gray;
-  margin-left: 79rem;
 `;
 
 export const ChargeButton = styled.div`
@@ -81,7 +79,7 @@ export const ChargeButton = styled.div`
 
 export const LogOut = styled.div`
   font-size: 14px;
-  margin: 0px 45px 0px 54px;
+  margin: 0px 2rem 0px 2rem;
   font-weight: 700;
   color: gray;
   cursor: pointer;
