@@ -38,7 +38,7 @@ export const CommentCreateButton = styled.div`
   font-size: 20px;
   cursor: pointer;
   margin: 17px 0px 0px 0;
-  border-radius: 10px;
+  border-radius: 8px;
   margin: 20px 0px 20px 59.5rem;
   /* margin-top: 20px;
     margin-left: 59.5rem; */

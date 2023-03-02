@@ -118,7 +118,7 @@ export default function DetailContainer(props: IDetailContainerProps) {
         },
       ],
     });
-    message.success("관심 상품에 성공적으로 추가되었습니다.");
+    message.success("관심 상품에 상품이 등록되었습니다.");
   };
 
   return (

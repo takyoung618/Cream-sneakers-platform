@@ -7,17 +7,26 @@ import { IDetailPresenterProps } from "./detail.types";
 import DOMPurify from "dompurify";
 
 export default function DetailPresenter(props: IDetailPresenterProps) {
+  const isImageEmpty = props.data?.fetchUseditem.images.length === 0;
+
   return (
     <S.DetailPageWrapper>
       <S.Wrapper>
         <S.HeaderWrapper>
           <S.ImageWrapper>
-            <S.Image
-              src={
-                props.data?.fetchUseditem.images?.[0] &&
-                `http://storage.googleapis.com/${props.data.fetchUseditem.images?.[0]}`
-              }
-            />
+            <S.Image>
+              {isImageEmpty ? (
+                <S.NoneImageIcon src="/images/기본이미지.png" />
+              ) : (
+                <S.ImageIcon
+                  src={
+                    props.data?.fetchUseditem.images?.[0] &&
+                    `http://storage.googleapis.com/${props.data.fetchUseditem.images?.[0]}`
+                  }
+                />
+              )}
+            </S.Image>
+
             <S.WarnWrapper>
               <S.ColWrapper>
                 <S.TextWrapper>
@@ -26,7 +35,7 @@ export default function DetailPresenter(props: IDetailPresenterProps) {
                 </S.TextWrapper>
                 <S.Text>반드시 보유한 상품만 판매하세요</S.Text>
               </S.ColWrapper>
-              <S.Arrow>→</S.Arrow>
+              <S.Arrow src="/images/market/detail/arrow.png" />
             </S.WarnWrapper>
           </S.ImageWrapper>
 
@@ -39,11 +48,6 @@ export default function DetailPresenter(props: IDetailPresenterProps) {
               <S.PriceTitle>판매가</S.PriceTitle>
               <S.Price>{props.data?.fetchUseditem.price}</S.Price>
               <S.PriceWon>원</S.PriceWon>
-              <S.Heart
-                src="/images/Heart.png"
-                onClick={props.onClickItemPick}
-              />
-              <S.Ggim>{props.data?.fetchUseditem.pickedCount}</S.Ggim>
             </S.PriceWrapper>
 
             {process.browser && (
@@ -55,30 +59,21 @@ export default function DetailPresenter(props: IDetailPresenterProps) {
                 }}
               ></S.Contents>
             )}
-            <S.ButtonsWrapper>
-              <S.ButtonWrapper>
-                <S.BuyButton onClick={props.onClickBuy}>
-                  즉시 구매하기
-                </S.BuyButton>
-                <S.ShoppingButton
-                  onClick={props.onClickBasket(props.data?.fetchUseditem)}
-                >
-                  장바구니에 추가
-                </S.ShoppingButton>
-              </S.ButtonWrapper>
-              <S.ButtonWrapper>
-                {/* <S.DeleteButton
-                                onClick={props.onClickDeleteUseditem}
-                            >
-                                삭제하기
-                            </S.DeleteButton>
-                            <S.EditButton
-                                onClick={props.onClickEdit}
-                            >
-                                수정하기
-                            </S.EditButton> */}
-              </S.ButtonWrapper>
-            </S.ButtonsWrapper>
+            <S.ButtonWrapper>
+              <S.BuyButton onClick={props.onClickBuy}>
+                즉시 구매하기
+              </S.BuyButton>
+              <S.ShoppingButton
+                onClick={props.onClickBasket(props.data?.fetchUseditem)}
+              >
+                장바구니에 추가
+              </S.ShoppingButton>
+            </S.ButtonWrapper>
+            <S.GgimBtnWrapper onClick={props.onClickItemPick}>
+              <S.BookmarkIcon src="/images/market/detail/bookmark.png" />
+              <S.GgimTitle>관심상품</S.GgimTitle>
+              <S.Ggim>{props.data?.fetchUseditem.pickedCount}</S.Ggim>
+            </S.GgimBtnWrapper>
           </S.WrapperColumn>
         </S.HeaderWrapper>
 

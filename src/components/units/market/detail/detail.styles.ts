@@ -28,21 +28,34 @@ export const ColWrapper = styled.div`
 
 export const RowWrapper = styled.div``;
 
-export const Image = styled.img`
+export const Image = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30rem;
   height: 30rem;
-  background-color: #ecf3f2;
+  background-color: #c4c4c4;
+`;
+
+export const NoneImageIcon = styled.img`
+  width: 20rem;
+  height: 20rem;
+`;
+
+export const ImageIcon = styled.img`
+  width: 30rem;
+  height: 30rem;
 `;
 
 export const WarnWrapper = styled.div`
   display: flex;
-  width: 300px;
+  width: 30rem;
   height: 70px;
   box-shadow: 2px 2px 2px 2px #e8e8e8;
-  background-color: #f9f8f8;
+  background-color: #fafaf8;
   margin-top: 20px;
-  box-shadow: #f1f1f1;
-  border-radius: 10px;
+  box-shadow: #f5f5f5;
+  border-radius: 5px;
 `;
 
 export const TextWrapper = styled.div`
@@ -71,9 +84,10 @@ export const Text = styled.div`
   margin: 5px 0 0 10px;
 `;
 
-export const Arrow = styled.div`
-  font-size: 50px;
-  margin: 0px 0 0 60px;
+export const Arrow = styled.img`
+  width: 50px;
+  height: 50px;
+  margin: 10px 0 0 225px;
 `;
 
 export const WrapperColumn = styled.div`
@@ -122,13 +136,6 @@ export const PriceWon = styled.div`
   margin-left: 5px;
 `;
 
-export const Heart = styled.img`
-  width: 20px;
-  height: 20px;
-  margin-left: 350px;
-  cursor: pointer;
-`;
-
 export const Ggim = styled.div`
   margin-left: 10px;
 `;
@@ -165,13 +172,13 @@ export const BuyButton = styled.div`
   align-items: center;
   justify-content: center;
   width: 270px;
-  height: 80px;
+  height: 70px;
   background-color: #e35839;
   color: white;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 22px;
   margin-right: 12px;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
 `;
 
@@ -180,12 +187,12 @@ export const ShoppingButton = styled.div`
   align-items: center;
   justify-content: center;
   width: 270px;
-  height: 80px;
+  height: 70px;
   color: white;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 22px;
   background-color: #6ac825;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
 `;
 
@@ -280,4 +287,29 @@ export const FooterWrapper = styled.div`
 export const CommentWriteWrapper = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+export const GgimBtnWrapper = styled.div`
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 22px;
+  width: 552px;
+  height: 70px;
+  border: 1.5px solid #dddddd;
+  border-radius: 10px;
+  margin: 10px 0 0 13px;
+  color: gray;
+  cursor: pointer;
+`;
+
+export const GgimTitle = styled.div``;
+
+export const BookmarkIcon = styled.img`
+  width: 30px;
+  height: 27px;
+  cursor: pointer;
+  margin-right: 5px;
 `;
