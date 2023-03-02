@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+export const LoginWrapper = styled.div`
+  width: 100vw;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -107,7 +111,7 @@ export const BtnWrapper = styled.div`
   width: 400px;
   height: 50px;
   border-radius: 13px;
-  border: 1px solid #c2c2c2;
+  border: 1px solid #dddddd;
   cursor: pointer;
   margin-top: 10px;
 `;

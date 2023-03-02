@@ -104,9 +104,6 @@ export default function MyPagePresenter(props: any) {
                         : `images/기본이미지.png`
                     }
                   />
-                  <S.PriceWrapper>
-                    <S.Tag>{el.tags}</S.Tag>
-                  </S.PriceWrapper>
                   <S.ProductName>{el.name}</S.ProductName>
                   <S.Price>{el.price}원</S.Price>
                   <S.PriceTag>즉시 구매가</S.PriceTag>

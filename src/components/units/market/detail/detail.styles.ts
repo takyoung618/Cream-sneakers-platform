@@ -164,7 +164,7 @@ export const ButtonWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 12px;
+  margin-top: 5rem;
 `;
 
 export const BuyButton = styled.div`
