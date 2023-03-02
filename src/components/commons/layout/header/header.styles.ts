@@ -98,8 +98,8 @@ export const ModalStyle = styled(Modal)`
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   background-color: #ffffff;
-  margin-top: 400px;
-  margin-left: 800px;
+  margin: auto;
+  margin-top: 15%;
 `;
 
 export const ModalCloseButton = styled.button`

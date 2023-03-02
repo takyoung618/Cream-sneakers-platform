@@ -3,6 +3,10 @@ import { Modal } from "antd";
 import { ISubmitButtonProps } from "./BoardWrite.types";
 import DaumPostcode from "react-daum-postcode";
 
+export const BoardWriteWrapper = styled.div`
+  width: 100vw;
+`;
+
 export const Wrapper = styled.div`
   width: 1200px;
   /* height: 1847px; */

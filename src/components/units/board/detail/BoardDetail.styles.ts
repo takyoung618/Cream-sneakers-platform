@@ -2,6 +2,10 @@ import styled from "@emotion/styled";
 import { LikeOutlined, DislikeOutlined } from "@ant-design/icons";
 // import ReactPlayer from "react-player";
 
+export const BoardDetailWrapper = styled.div`
+  width: 100vw;
+`;
+
 export const Wrapper = styled.div`
   width: 1200px;
   margin: auto;

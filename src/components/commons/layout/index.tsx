@@ -22,7 +22,14 @@ const HIDDEN_LANDING = ["/"];
 
 const HIDDEN_HOME = ["/home"];
 
-const HIDDEN_SIDEBAR = ["/", "/home", "/join", "/login", "/brand/create"];
+const HIDDEN_SIDEBAR = [
+  "/",
+  "/home",
+  "/join",
+  "/login",
+  "/brand/create",
+  "/boards/new",
+];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
