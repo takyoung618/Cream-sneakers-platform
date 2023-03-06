@@ -49,6 +49,7 @@ export const Info = styled.div`
 
 export const Btn = styled.button`
   background-color: black;
+  border: 1px solid black;
   color: white;
   font-size: 12px;
   font-weight: 400;
