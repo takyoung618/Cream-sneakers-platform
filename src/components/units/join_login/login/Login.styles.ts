@@ -32,9 +32,11 @@ export const EmailWrapper = styled.div`
 `;
 
 export const PasswordWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  float: left;
   margin-top: 30px;
   width: 400px;
-  justify-content: start;
 `;
 
 export const EmailTitle = styled.div`
@@ -70,19 +72,19 @@ export const EmailErrorMessage = styled.div`
 
 export const PasswordErrorMessage = styled.div`
   color: red;
-  width: 146px;
+  width: fit-content;
   margin-top: 5px;
 `;
 
 export const LoginBtn = styled.button`
-  background-color: black;
+  /* background-color: black;
   color: white;
   font-weight: 700;
   width: 400px;
   height: 50px;
   border-radius: 13px;
   cursor: pointer;
-  border: 1px solid black;
+  border: 1px solid black; */
 `;
 
 export const SignUpWrapper = styled.div`

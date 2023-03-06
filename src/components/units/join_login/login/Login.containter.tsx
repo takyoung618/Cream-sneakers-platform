@@ -25,7 +25,13 @@ export const schema = yup.object({
     .string()
     .required("ID를 입력해주세요.")
     .email("이메일 형식으로 입력해주세요."),
-  password: yup.string().required("비밀번호를 입력해주세요."),
+  password: yup
+    .string()
+    .required("비밀번호를 입력해주세요.")
+    .matches(
+      /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,16}$/,
+      "영문, 숫자 조합 8~16자리로 입력해주세요."
+    ),
 });
 
 export default function LoginContainer(props: ILoginContainerProps) {

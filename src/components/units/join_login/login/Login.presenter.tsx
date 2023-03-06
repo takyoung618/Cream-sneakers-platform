@@ -1,4 +1,5 @@
 import { useFormState } from "react-hook-form";
+import ButtonLogin from "../../../commons/buttons/buttonLogin";
 import * as S from "./Login.styles";
 import { ILoginPresenterProps } from "./Login.types";
 
@@ -34,9 +35,13 @@ export default function LoginPresenter(props: ILoginPresenterProps) {
             </S.PasswordErrorMessage>
           </S.PasswordWrapper>
           <S.LogoWrapper>
-            <S.LoginBtn type="submit" isValid={useFormState.isValid}>
+            <ButtonLogin
+              type="submit"
+              isActive={props.formState.isValid}
+              title="로그인"
+            >
               로그인
-            </S.LoginBtn>
+            </ButtonLogin>
           </S.LogoWrapper>
           <S.SignUpWrapper onClick={props.onClickMoveJoin}>
             <S.SignUp>회원가입</S.SignUp>
