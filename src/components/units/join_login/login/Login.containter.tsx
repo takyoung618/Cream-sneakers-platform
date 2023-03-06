@@ -18,6 +18,7 @@ import { FETCH_USER_LOGGED_IN, LOGIN_USER } from "./Login.queries";
 import { message, Modal } from "antd";
 import { Session } from "inspector";
 import { ILoginContainerProps } from "./Login.types";
+import { useState } from "react";
 
 export const schema = yup.object({
   email: yup
@@ -28,14 +29,14 @@ export const schema = yup.object({
 });
 
 export default function LoginContainer(props: ILoginContainerProps) {
-  // sessionStorage.clear()
-
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
   const [userInfo, setUserInfo] = useRecoilState(userInfoState);
 
   const router = useRouter();
   const client = useApolloClient();
+
+  const [isLogin, setIsLogin] = useState(false);
 
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(schema),

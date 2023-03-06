@@ -26,7 +26,7 @@ export default function MainPresenter(props: IMainPresenterProps) {
                         : `images/기본이미지.png`
                     }
                   />
-                  <S.ProductName>{el.name}</S.ProductName>
+                  <S.ProductName>{String(el.name).slice(0, 24)}</S.ProductName>
                   <S.Price>{el.price}</S.Price>
                   <S.PriceTag>즉시 구매가</S.PriceTag>
                 </S.ProductWrapper>
