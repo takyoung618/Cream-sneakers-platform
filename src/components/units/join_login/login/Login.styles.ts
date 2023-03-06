@@ -76,17 +76,6 @@ export const PasswordErrorMessage = styled.div`
   margin-top: 5px;
 `;
 
-export const LoginBtn = styled.button`
-  /* background-color: black;
-  color: white;
-  font-weight: 700;
-  width: 400px;
-  height: 50px;
-  border-radius: 13px;
-  cursor: pointer;
-  border: 1px solid black; */
-`;
-
 export const SignUpWrapper = styled.div`
   display: flex;
   width: 400px;

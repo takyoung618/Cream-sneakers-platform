@@ -77,7 +77,7 @@ export const ErrorMessage = styled.div`
 `;
 
 export const LoginBtn = styled.button`
-  background-color: black;
+  /* background-color: black;
   color: white;
   font-weight: 700;
   width: 400px;
@@ -85,7 +85,7 @@ export const LoginBtn = styled.button`
   border-radius: 13px;
   cursor: pointer;
   margin-bottom: 15rem;
-  border: 1px solid black;
+  border: 1px solid black; */
 `;
 
 export const SignUpWrapper = styled.div`
@@ -121,7 +121,7 @@ export const AgreeWrapper = styled.div`
 export const FirstCheckWrapper = styled.div`
   display: flex;
   width: 400px;
-  margin: 2rem 0 1rem 0;
+  margin: 2rem 0 0rem 0;
 `;
 
 export const SecondCheckWrapper = styled.div`

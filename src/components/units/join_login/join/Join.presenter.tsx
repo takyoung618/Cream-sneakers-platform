@@ -1,3 +1,4 @@
+import ButtonJoin from "../../../commons/buttons/buttonJoin";
 import * as S from "./Join.styles";
 import { IJoinPresenterProps } from "./Join.types";
 
@@ -54,18 +55,18 @@ export default function JoinPresenter(props: IJoinPresenterProps) {
               {props.formState.errors.name?.message}
             </S.ErrorMessage>
           </S.PasswordWrapper>
-          <S.AgreeWrapper>
-            <S.FirstCheckWrapper>
-              <S.CheckBox type="checkbox" />
-              <S.Agree>[필수] 만 14세 이상이며 모두 동의합니다.</S.Agree>
-            </S.FirstCheckWrapper>
-            <S.SecondCheckWrapper>
-              <S.CheckBox type="checkbox" />
-              <S.Agree>[선택] 광고성 정보 수신에 모두 동의합니다.</S.Agree>
-            </S.SecondCheckWrapper>
-          </S.AgreeWrapper>
+
+          <S.FirstCheckWrapper>
+            <S.CheckBox type="checkbox" />
+            <S.Agree>[선택] 광고성 정보 수신에 모두 동의합니다.</S.Agree>
+          </S.FirstCheckWrapper>
+
           <S.LogoWrapper>
-            <S.LoginBtn type="submit">가입하기</S.LoginBtn>
+            <ButtonJoin
+              title="회원가입"
+              onClick={props.onClickJoin}
+              isActive={props.formState.isValid}
+            />
           </S.LogoWrapper>
         </S.Wrapper>
       </S.JoinWrapper>
