@@ -16,7 +16,7 @@ export default function HomePresenter(props: IHomePagePresenterProps) {
             <S.ProductWrapper
               key={el._id}
               id={el._id}
-              onClick={props.onClickList}
+              onClick={props.onClickList(el)}
             >
               <S.Image
                 src={

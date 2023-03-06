@@ -41,16 +41,11 @@ export default function ProductListContainer() {
         page: Math.ceil(useditemsData?.fetchUseditems.length / 10) + 1,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        // prev: 기존의 data
-        // {fetchMoreResult} : 추가로 요청해서 받아온 내용
-
-        // 새로 조회한 값이 없으면 기존 것으로 그냥 업데이트한다.
         if (!fetchMoreResult.fetchUseditems) {
           return { fetchUseditems: [...prev.fetchUseditems] };
         }
 
         return {
-          // 기존의 것과 추가로 받은 것을 합쳐서 return
           fetchUseditems: [
             ...prev.fetchUseditems,
             ...fetchMoreResult.fetchUseditems,
@@ -93,7 +88,6 @@ export default function ProductListContainer() {
     setLookToday((prev) => !prev);
   };
 
-  //
   const onChangeKeyword = (value: string) => {
     setKeyWord(value);
   };
