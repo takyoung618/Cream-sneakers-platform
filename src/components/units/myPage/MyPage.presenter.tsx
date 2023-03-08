@@ -67,7 +67,7 @@ export default function MyPagePresenter(props: any) {
                 <S.InfoWrapper>
                   <S.Email
                     onChange={props.onChangePassword}
-                    placeholder="*******"
+                    placeholder="⦁⦁⦁⦁⦁⦁⦁⦁"
                   />
                   <S.ImageDeleteBtn
                     onClick={props.onClickResetPassword}

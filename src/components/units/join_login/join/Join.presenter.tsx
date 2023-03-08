@@ -26,7 +26,7 @@ export default function JoinPresenter(props: IJoinPresenterProps) {
             <S.EmailInput
               type="password"
               {...props.register("password")}
-              placeholder="영문, 숫자, 특수문자 조합 8~16자"
+              placeholder="영문, 숫자 조합 8~16자"
               autoComplete="off"
             />
             <S.ErrorMessage>
@@ -38,7 +38,7 @@ export default function JoinPresenter(props: IJoinPresenterProps) {
             <S.EmailInput
               type="password"
               {...props.register("passwordCheck")}
-              placeholder="영문, 숫자, 특수문자 조합 8~16자 "
+              placeholder="영문, 숫자 조합 8~16자 "
             />
             <S.ErrorMessage>
               {props.formState.errors.passwordCheck?.message}

@@ -77,10 +77,6 @@ export default function MyPageContainer(props: any) {
     setFileUrl(fileUrl);
   };
 
-  const onChangeName = (event: ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
-  };
-
   const onChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = checkValidationImage(event.target.files?.[0]);
     if (!file) return;
@@ -106,25 +102,37 @@ export default function MyPageContainer(props: any) {
   });
 
   const onClickUpdateButton = async (data: any) => {
-    const result = await updateUser({
-      variables: {
-        updateUserInput: {
-          name,
-          picture: fileUrl,
+    let isCheck = true;
+
+    if (name.length === 0) {
+      isCheck = false;
+      message.error("이름을 한 글자 이상 입력해주세요.");
+    }
+
+    if (isCheck) {
+      const result = await updateUser({
+        variables: {
+          updateUserInput: {
+            name,
+            picture: fileUrl,
+          },
         },
-      },
-      refetchQueries: [
-        {
-          query: FETCH_USER_LOGGED_IN,
-        },
-      ],
-    });
-    console.log(UserInfo?.picture);
-    setModalImageIsOpen(false);
-    message.success("프로필 수정이 완료되었습니다!");
+        refetchQueries: [
+          {
+            query: FETCH_USER_LOGGED_IN,
+          },
+        ],
+      });
+      console.log(UserInfo?.picture);
+      setModalImageIsOpen(false);
+      message.success("프로필 수정이 완료되었습니다!");
+    }
   };
 
-  // 비밀번호 변경
+  const onChangeName = (event: ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
+  };
+
   const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
@@ -132,11 +140,21 @@ export default function MyPageContainer(props: any) {
   // 비번길이 8-16자, 영어숫자 포함, 기존 비밀번호와 같은지 확인
   const onClickResetPassword = async () => {
     let isCheck = true;
-    let regPass = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,16}$/;
+    let regPass = /^(?=.*[a-zA-Z])(?=.*[0-9])/;
 
     if (!regPass.test(password)) {
       isCheck = false;
-      message.error("비밀번호는 영문, 숫자 조합 8-16자리로 입력해주세요.");
+      message.error("비밀번호는 영문과, 숫자를 포함해주세요.");
+    }
+
+    if (password.length < 8 && regPass.test(password)) {
+      isCheck = false;
+      message.error("비밀번호는 8자 이상 입력해주세요");
+    }
+
+    if (password.length > 16 && regPass.test(password)) {
+      isCheck = false;
+      message.error("비밀번호는 16자 이내로 입력해주세요");
     }
 
     if (isCheck) {
