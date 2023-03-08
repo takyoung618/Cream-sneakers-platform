@@ -8,7 +8,7 @@ const CustomButton = styled.button`
   border-radius: 13px;
   cursor: pointer;
   margin-bottom: 15rem;
-  border: 1px solid black;
+  border: none;
 `;
 
 export default function ButtonJoin(props: any) {
@@ -16,7 +16,6 @@ export default function ButtonJoin(props: any) {
     <CustomButton
       style={{
         backgroundColor: props.isActive ? "black" : "#e3e3e3;",
-        borderColor: props.isActive ? "black" : "#e3e3e3;",
       }}
     >
       {props.title}
