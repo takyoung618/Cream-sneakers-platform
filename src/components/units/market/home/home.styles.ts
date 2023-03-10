@@ -84,3 +84,24 @@ export const ProductContents = styled.div`
   font-size: 12px;
   color: #555555;
 `;
+
+export const RowWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const GgimWrapper = styled.div`
+  display: flex;
+`;
+
+export const BookmarkIcon = styled.img`
+  height: 20px;
+  width: 20px;
+  margin: 0 2px 0 0px;
+  width: fit-content;
+`;
+
+export const Ggim = styled.div`
+  font-size: 13px;
+  color: gray;
+`;

@@ -106,7 +106,13 @@ export default function MyPagePresenter(props: any) {
                   />
                   <S.ProductName>{el.name}</S.ProductName>
                   <S.Price>{el.price}원</S.Price>
-                  <S.PriceTag>즉시 구매가</S.PriceTag>
+                  <S.RowWrapper>
+                    <S.PriceTag>즉시 구매가</S.PriceTag>
+                    <S.GgimWrapper>
+                      <S.BookmarkIcon src="/images/listBookmark.png" />
+                      <S.Ggim>{el.pickedCount}</S.Ggim>
+                    </S.GgimWrapper>
+                  </S.RowWrapper>
                 </S.ProductWrapper>
               ))}
             </S.ProductListWrapper>

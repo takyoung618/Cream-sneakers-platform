@@ -10,6 +10,7 @@ export const FETCH_USEDITEMS_OF_THE_BEST = gql`
       price
       tags
       images
+      pickedCount
     }
   }
 `;
