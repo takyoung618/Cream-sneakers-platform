@@ -41,6 +41,8 @@ export const ProductWrapper = styled.div`
   flex-direction: column;
   width: fit-content;
   margin-right: 15px;
+  margin-top: 1rem;
+  cursor: pointer;
 `;
 
 export const Image = styled.img`
@@ -48,7 +50,6 @@ export const Image = styled.img`
   height: 18rem;
   background-color: #c4c4c4;
   border-radius: 10px;
-  margin-top: 1rem;
 `;
 
 export const Heart = styled.img``;

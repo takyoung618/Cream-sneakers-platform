@@ -34,8 +34,6 @@ export const ProductWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
-  margin-top: 2rem;
-  margin: 0 10px 20px 10px;
 `;
 
 export const Image = styled.img`
@@ -85,12 +83,14 @@ export const Title = styled.div`
 export const ListWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  margin: 14px 0px 0px 17px;
+  cursor: pointer;
 `;
 
 export const ProductContents = styled.div`
   font-weight: 500;
   font-size: 14px;
-  margin: 14px 0px 0px 17px;
+
   color: #555555;
 `;
 
@@ -142,7 +142,10 @@ export const HeaderWrapper = styled.div`
   flex-direction: row;
 `;
 
-export const BestItemsWrapper = styled.div``;
+export const BestItemsWrapper = styled.div`
+  margin: 0 10px 20px 10px;
+  cursor: pointer;
+`;
 
 export const RowWrapper = styled.div`
   display: flex;

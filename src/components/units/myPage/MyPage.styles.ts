@@ -187,8 +187,7 @@ export const ProductWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
-  margin-left: 3rem;
-  margin-right: 0.2rem;
+  margin: 2rem 0.2rem 0 3rem;
   cursor: pointer;
 `;
 
@@ -197,7 +196,7 @@ export const Image = styled.img`
   height: 16rem;
   background-color: #c4c4c4;
   border-radius: 10px;
-  margin-top: 2rem;
+
   cursor: pointer;
 `;
 

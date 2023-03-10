@@ -53,11 +53,13 @@ export const Date = styled.div`
 export const EditIcon = styled.img`
   width: 18px;
   height: 18px;
+  cursor: pointer;
 `;
 
 export const DeleteIcon = styled.img`
   width: 14px;
   height: 14px;
+  cursor: pointer;
 `;
 
 export const IconWrapper = styled.div`
