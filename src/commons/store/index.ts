@@ -2,12 +2,12 @@ import { atom, selector } from "recoil";
 import { getAccessToken } from "../libraries/getAccessToken";
 import { recoilPersist } from "recoil-persist";
 
+const { persistAtom } = recoilPersist();
+
 export const isEditState = atom({
   key: "isEditState",
   default: false,
 });
-
-const { persistAtom } = recoilPersist();
 
 export const accessTokenState = atom({
   key: "accessTokenState",
@@ -18,6 +18,7 @@ export const accessTokenState = atom({
 export const logInStatusState = atom({
   key: "logInStatusState",
   default: false,
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const errorModalStatus = atom({
@@ -30,7 +31,12 @@ export const userInfoState = atom({
   default: {
     email: "",
     name: "",
+    picture: "",
+    userPoint: {
+      amount: "",
+    },
   },
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const isBucketActiveState = atom({
@@ -46,11 +52,6 @@ export const isWatchActiveState = atom({
 export const visitedPageState = atom({
   key: "visitedPageState",
   default: "/",
-});
-
-export const isLoadedState = atom({
-  key: "visitedPageState",
-  default: false,
 });
 
 export const restoreAccessTokenLoadable = selector({

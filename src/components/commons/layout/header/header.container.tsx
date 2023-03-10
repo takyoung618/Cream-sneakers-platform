@@ -7,6 +7,7 @@ import { getUserInfo } from "../../../../commons/libraries/getUserInfo";
 import {
   isBucketActiveState,
   logInStatusState,
+  userInfoState,
 } from "../../../../commons/store";
 import HeaderPresenter from "./header.presenter";
 import {
@@ -24,7 +25,8 @@ declare global {
 export default function HeaderContainer() {
   const router = useRouter();
 
-  const UserInfo = getUserInfo();
+  // const UserInfo = getUserInfo();
+  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
 
   const [logInStatus, setLogInStatus] = useRecoilState(logInStatusState);
 
@@ -66,7 +68,7 @@ export default function HeaderContainer() {
   }, [bucketIsActive]);
 
   useEffect(() => {
-    setCharged(UserInfo);
+    setCharged(userInfo);
   }, [charged]);
 
   const onClickLogOut = () => {
@@ -119,8 +121,8 @@ export default function HeaderContainer() {
         pay_method: "card",
         name: "금액 충전",
         amount: selected,
-        buyer_email: UserInfo?.fetchUserLoggedIn.email,
-        buyer_name: UserInfo?.fetchUserLoggedIn.name,
+        buyer_email: userInfo.email,
+        buyer_name: userInfo.name,
         buyer_tel: "010-1234-5678",
         buyer_addr: "서울특별시 구로구",
         buyer_postcode: "01181",

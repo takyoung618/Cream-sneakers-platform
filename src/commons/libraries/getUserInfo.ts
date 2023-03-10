@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { GraphQLClient } from "graphql-request";
 
 const FETCH_USER_LOGGED_IN = gql`
   query fetchUserLoggedIn {

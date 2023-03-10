@@ -7,7 +7,6 @@ import { UPLOAD_FILE } from "../../commons/uploadImage/UploadImage.queries";
 import { checkValidationImage } from "../../commons/uploadImage/UploadImage.validation";
 import MyPagePresenter from "./MyPage.presenter";
 import {
-  FETCH_BOARDS_OF_MINE,
   FETCH_USED_ITEMS_I_PICKED,
   RESET_USER_PASSWORD,
   UPDATE_USER,

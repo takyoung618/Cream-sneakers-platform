@@ -2,7 +2,7 @@ import "antd/dist/antd.css";
 import { AppProps } from "next/app";
 import { Global } from "@emotion/react";
 import Layout from "../src/components/commons/layout";
-import { RecoilRoot } from "recoil";
+import { RecoilRoot, useRecoilState } from "recoil";
 import ApolloSetting from "../src/components/commons/apollo";
 import { globalStyles } from "../src/commons/styles/globalStyles";
 import { useEffect, useState } from "react";
@@ -10,6 +10,7 @@ import animationData from "../public/walk-cycling-shoes.json";
 import Router from "next/router";
 import styled from "@emotion/styled";
 import Lottie from "react-lottie";
+import { logInStatusState } from "../src/commons/store";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState<boolean>(false);

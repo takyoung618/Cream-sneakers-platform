@@ -20,6 +20,7 @@ const APOLLO_CACHE = new InMemoryCache();
 
 export default function ApolloSetting(props: IApolloSettingProps) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [userInfo] = useRecoilState(userInfoState);
 
   useEffect(() => {
     getAccessToken().then((newAccessToken) => {
@@ -28,21 +29,26 @@ export default function ApolloSetting(props: IApolloSettingProps) {
   }, []);
 
   const errorLink = onError(({ graphQLErrors, operation, forward }) => {
+    if (!userInfo) return;
+    // 에러 캐치
     if (graphQLErrors) {
       for (const err of graphQLErrors) {
+        // 토큰 만료 에러인지 체크
         if (err.extensions.code === "UNAUTHENTICATED") {
           return fromPromise(
-            getAccessToken().then((newAccessToken) => {
+            // refreshToken으로 accessToken을 재발급 받기
+            getAccessToken().then((newAccessToken: string) => {
+              // 재발급 받은 accessToken 저장하기
               setAccessToken(newAccessToken);
-
+              // 재발급 받은 accessToken으로 방금 실패한 쿼리 재요청하기(토큰 바꿔치기)
               operation.setContext({
                 headers: {
-                  ...operation.getContext().headers,
-                  Authorization: `Bearer ${newAccessToken}`,
+                  ...operation.getContext().headers, // 만료된 토큰이 추가되어있는 상태
+                  Authorization: `Bearer ${newAccessToken}`, // 토큰만 새걸로 바꿔치기
                 },
               });
             })
-          ).flatMap(() => forward(operation));
+          ).flatMap(() => forward(operation)); // 재발급 받은 accessToken으로 방금 실패한 쿼리 재요청하기(변경된 operation 재요청하기!!!)
         }
       }
     }
@@ -50,9 +56,7 @@ export default function ApolloSetting(props: IApolloSettingProps) {
 
   const uploadLink = createUploadLink({
     uri: "https://backend10.codebootcamp.co.kr/graphql",
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-    },
+    headers: { Authorization: `Bearer ${accessToken}` },
     credentials: "include",
   });
 
