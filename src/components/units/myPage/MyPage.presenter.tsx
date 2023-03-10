@@ -52,6 +52,7 @@ export default function MyPagePresenter(props: any) {
                     defaultValue={props.data?.fetchUserLoggedIn?.name}
                     {...props.register("name")}
                     onChange={props.onChangeName}
+                    autoComplete="off"
                   />
                   <S.ImageDeleteBtn type="submit">변경</S.ImageDeleteBtn>
                 </S.InfoWrapper>

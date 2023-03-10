@@ -15,6 +15,7 @@ import {
   LOGOUT_USER,
 } from "./header.queries";
 import Head from "next/head";
+import { FETCH_USER_LOGGED_IN } from "../../../units/join_login/login/Login.queries";
 
 declare global {
   interface Window {
@@ -135,7 +136,12 @@ export default function HeaderContainer() {
           });
           setModalIsOpen(false);
           setCharged(true);
-          router.push(`/`);
+          refetchQueries: [
+            {
+              query: FETCH_USER_LOGGED_IN,
+            },
+          ];
+          router.push(`/main`);
           message.success("결제가 완료되었습니다.");
         } else {
           message.error("결제에 실패했습니다. 다시 시도해주세요.");

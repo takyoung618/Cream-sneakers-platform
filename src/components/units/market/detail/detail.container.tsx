@@ -20,6 +20,7 @@ import { isBucketActiveState } from "../../../../commons/store";
 import { message, Modal } from "antd";
 import { IDetailContainerProps } from "./detail.types";
 import { FETCH_USED_ITEMS_I_PICKED } from "../../myPage/Mypage.queries";
+import { FETCH_USER_LOGGED_IN } from "../../join_login/login/Login.queries";
 
 export default function DetailContainer(props: IDetailContainerProps) {
   const router = useRouter();
@@ -80,6 +81,11 @@ export default function DetailContainer(props: IDetailContainerProps) {
       Modal.success({
         content: `${data?.fetchUseditem.name} 구매가 완료되었습니다.`,
       });
+      refetchQueries: [
+        {
+          query: FETCH_USER_LOGGED_IN,
+        },
+      ];
     } catch (error) {
       if (error instanceof Error) Modal.error({ content: error.message });
     }
