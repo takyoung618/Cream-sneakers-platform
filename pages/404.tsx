@@ -2,11 +2,17 @@ import styled from "@emotion/styled";
 
 export default function ErrorPage() {
   return (
-    <Wrapper>
-      <ErrorImg src="images/404page.png" />
-    </Wrapper>
+    <ErrorWrapper>
+      <Wrapper>
+        <ErrorImg src="images/404page.png" />
+      </Wrapper>
+    </ErrorWrapper>
   );
 }
+
+const ErrorWrapper = styled.div`
+  width: 100vw;
+`;
 
 const Wrapper = styled.div`
   width: fit-content;
