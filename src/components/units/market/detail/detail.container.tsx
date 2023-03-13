@@ -77,15 +77,15 @@ export default function DetailContainer(props: IDetailContainerProps) {
     try {
       await createPointTransactionOfBuyingAndSelling({
         variables: { useritemId: router.query._id },
+        refetchQueries: [
+          {
+            query: FETCH_USER_LOGGED_IN,
+          },
+        ],
       });
       Modal.success({
         content: `${data?.fetchUseditem.name} 구매가 완료되었습니다.`,
       });
-      refetchQueries: [
-        {
-          query: FETCH_USER_LOGGED_IN,
-        },
-      ];
     } catch (error) {
       if (error instanceof Error) Modal.error({ content: error.message });
     }
