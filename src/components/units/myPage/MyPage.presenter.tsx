@@ -24,9 +24,7 @@ export default function MyPagePresenter(props: any) {
             ></S.UploadFileHidden>
 
             <S.UserWrapper>
-              <S.UserId onChange={props.onChangeName}>
-                {UserInfo?.fetchUserLoggedIn.name}
-              </S.UserId>
+              <S.UserId>{UserInfo?.fetchUserLoggedIn.email}</S.UserId>
               <S.ImageWrapper>
                 <S.ImageEditBtn
                   type="button"
@@ -177,7 +175,7 @@ export default function MyPagePresenter(props: any) {
           </S.ModalCloseButton>
           <S.ColumnWrapper>
             <S.PasswordWrapper>
-              <S.EmailTitle>비밀번호</S.EmailTitle>
+              <S.EmailTitle>비밀번호 입력</S.EmailTitle>
               <S.InfoWrapper>
                 <S.Email
                   onChange={props.onChangeDefaultPassword}
