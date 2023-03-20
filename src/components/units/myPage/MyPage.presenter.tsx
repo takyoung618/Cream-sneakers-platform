@@ -66,13 +66,11 @@ export default function MyPagePresenter(props: any) {
               <S.EmailWrapper>
                 <S.EmailTitle>비밀번호</S.EmailTitle>
                 <S.InfoWrapper>
-                  <S.Email
-                    onChange={props.onChangePassword}
-                    placeholder="⦁⦁⦁⦁⦁⦁⦁⦁"
-                  />
+                  <S.Email readOnly placeholder="⦁⦁⦁⦁⦁⦁⦁⦁" />
                   <S.ImageDeleteBtn
-                    onClick={props.onClickResetPassword}
+                    // onClick={props.onClickResetPassword}
                     type="button"
+                    onClick={() => props.setModalPassIsOpen(true)}
                   >
                     변경
                   </S.ImageDeleteBtn>
@@ -86,7 +84,7 @@ export default function MyPagePresenter(props: any) {
               <S.EmptyCartIcon src="images/myPage/wishlist.png" />
               <S.EmptyTitle>관심 상품에 담긴 상품이 없습니다.</S.EmptyTitle>
               <S.MoveToShopBtn type="button" onClick={props.onClickMoveToShop}>
-                쇼핑하려 가기
+                쇼핑하러 가기
               </S.MoveToShopBtn>
             </S.EmptyWrapper>
           ) : (
@@ -169,6 +167,37 @@ export default function MyPagePresenter(props: any) {
               </S.ImageWrapper>
             </S.UserWrapper>
           </S.ProfileWrapper>
+        </S.ModalImageWrapper>
+      </S.ModalStyle>
+
+      <S.ModalStyle isOpen={props.modalPassIsOpen}>
+        <S.ModalImageWrapper>
+          <S.ModalCloseButton onClick={() => props.setModalPassIsOpen(false)}>
+            <AiOutlineClose style={{ width: "16px", height: "16px" }} />
+          </S.ModalCloseButton>
+          <S.ColumnWrapper>
+            <S.PasswordWrapper>
+              <S.EmailTitle>비밀번호</S.EmailTitle>
+              <S.InfoWrapper>
+                <S.Email
+                  onChange={props.onChangeDefaultPassword}
+                  type="password"
+                />
+              </S.InfoWrapper>
+            </S.PasswordWrapper>
+            <S.PasswordWrapper>
+              <S.EmailTitle>비밀번호 확인</S.EmailTitle>
+              <S.InfoWrapper>
+                <S.Email onChange={props.onChangePassword} type="text" />
+                <S.ImageDeleteBtn
+                  onClick={props.onClickResetPassword}
+                  type="button"
+                >
+                  변경
+                </S.ImageDeleteBtn>
+              </S.InfoWrapper>
+            </S.PasswordWrapper>
+          </S.ColumnWrapper>
         </S.ModalImageWrapper>
       </S.ModalStyle>
     </form>

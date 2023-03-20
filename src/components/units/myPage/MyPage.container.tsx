@@ -15,6 +15,8 @@ import * as yup from "yup";
 import { getUserInfo } from "../../../commons/libraries/getUserInfo";
 import { FETCH_USER_LOGGED_IN } from "../join_login/login/Login.queries";
 import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
+import { defaultPasswordState } from "../../../commons/store";
 
 const schema = yup.object({
   name: yup.string(),
@@ -44,11 +46,11 @@ export default function MyPageContainer(props: any) {
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
 
   const [modalImageIsOpen, setModalImageIsOpen] = useState(false);
+  const [modalPassIsOpen, setModalPassIsOpen] = useState(false);
 
   const UserInfo = getUserInfo();
-
   const [name, setName] = useState("");
-
+  const [defaultPassword, setDefaultPassword] = useState("");
   const [password, setPassword] = useState("");
 
   const router = useRouter();
@@ -132,26 +134,31 @@ export default function MyPageContainer(props: any) {
     setName(event.target.value);
   };
 
+  const onChangeDefaultPassword = (event: ChangeEvent<HTMLInputElement>) => {
+    setDefaultPassword(event.target.value);
+  };
+
   const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
 
-  // 비번길이 8-16자, 영어숫자 포함, 기존 비밀번호와 같은지 확인
   const onClickResetPassword = async () => {
     let isCheck = true;
     let regPass = /^(?=.*[a-zA-Z])(?=.*[0-9])/;
 
-    if (!regPass.test(password)) {
+    if (password.length === 0) {
+      isCheck = false;
+      message.error({ content: "비밀번호를 입력해주세요!" });
+    } else if (defaultPassword !== password) {
+      isCheck = false;
+      message.error({ content: "비밀번호가 일치하지 않습니다!" });
+    } else if (!regPass.test(password)) {
       isCheck = false;
       message.error("비밀번호는 영문과, 숫자를 포함해주세요.");
-    }
-
-    if (password.length < 8 && regPass.test(password)) {
+    } else if (password.length < 8 && regPass.test(password)) {
       isCheck = false;
       message.error("비밀번호는 8자 이상 입력해주세요");
-    }
-
-    if (password.length > 16 && regPass.test(password)) {
+    } else if (password.length > 16 && regPass.test(password)) {
       isCheck = false;
       message.error("비밀번호는 16자 이내로 입력해주세요");
     }
@@ -162,7 +169,9 @@ export default function MyPageContainer(props: any) {
           password,
         },
       });
+      console.log(defaultPassword);
       message.success("비밀번호 수정이 완료되었습니다.");
+      setModalPassIsOpen(false);
     }
   };
 
@@ -188,6 +197,7 @@ export default function MyPageContainer(props: any) {
       handleSubmit={handleSubmit}
       formState={formState}
       onChangeName={onChangeName}
+      onChangeDefaultPassword={onChangeDefaultPassword}
       onChangePassword={onChangePassword}
       data={data}
       IPicked={IPicked}
@@ -195,6 +205,8 @@ export default function MyPageContainer(props: any) {
       onClickImageModal={onClickImageModal}
       modalImageIsOpen={modalImageIsOpen}
       setModalImageIsOpen={setModalImageIsOpen}
+      modalPassIsOpen={modalPassIsOpen}
+      setModalPassIsOpen={setModalPassIsOpen}
       onClickMoveToDetail={onClickMoveToDetail}
       onClickMoveToShop={onClickMoveToShop}
     />

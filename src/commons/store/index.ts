@@ -21,6 +21,13 @@ export const logInStatusState = atom({
   effects_UNSTABLE: [persistAtom],
 });
 
+export const defaultPasswordState = atom({
+  key: "defaultPasswordState",
+  default: {
+    defaultPassword: "",
+  },
+});
+
 export const errorModalStatus = atom({
   key: "errorModalStatusKey",
   default: false,
@@ -44,14 +51,9 @@ export const isBucketActiveState = atom({
   default: false,
 });
 
-export const isWatchActiveState = atom({
-  key: "isWatchActiveStateKey",
+export const isPickActiveState = atom({
+  key: "isPickActiveStateKey",
   default: false,
-});
-
-export const visitedPageState = atom({
-  key: "visitedPageState",
-  default: "/",
 });
 
 export const restoreAccessTokenLoadable = selector({

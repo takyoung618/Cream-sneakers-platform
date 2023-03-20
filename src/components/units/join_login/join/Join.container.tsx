@@ -11,6 +11,8 @@ import { CREATE_USER } from "./Join.queries";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { message, Modal } from "antd";
+import { useRecoilState } from "recoil";
+import { defaultPasswordState } from "../../../../commons/store";
 
 export const schema = yup.object({
   email: yup
@@ -34,6 +36,9 @@ export const schema = yup.object({
 export default function JoinContainer() {
   const router = useRouter();
 
+  const [defalutPassword, setDefaultPassword] =
+    useRecoilState(defaultPasswordState);
+
   const [createUser] = useMutation<
     Pick<IMutation, "createUser">,
     IMutationCreateUserArgs
@@ -55,6 +60,9 @@ export default function JoinContainer() {
           },
         },
       });
+
+      setDefaultPassword(String(data.password));
+
       message.success("회원가입이 완료되었습니다.");
       router.push("/login");
     } catch (error) {

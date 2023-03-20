@@ -107,7 +107,7 @@ export const LoginWrapper = styled.div`
 export const InfoHeader = styled.div`
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 4rem 0 0 3.5rem;
+  margin: 6rem 0 0 3.5rem;
 `;
 
 export const EmptyWrapper = styled.div`
@@ -145,6 +145,12 @@ export const EmailWrapper = styled.div`
   border-bottom: 1px solid #e3e3e3;
 `;
 
+export const PasswordWrapper = styled.div`
+  width: 25rem;
+  border-bottom: 1px solid #e3e3e3;
+  margin: 1.5rem;
+`;
+
 export const EmailTitle = styled.div`
   color: #787878;
   font-weight: 500;
@@ -172,7 +178,6 @@ export const ErrorMessage = styled.div`
 export const ColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 11rem;
 `;
 
 // 관심 상품
