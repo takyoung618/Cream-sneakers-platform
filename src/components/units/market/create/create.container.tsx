@@ -143,6 +143,7 @@ export default function CreateContainer(props: any) {
         variables: {
           updateUseditemInput: {
             ...data,
+            images: [...fileUrls],
           },
           useditemId: String(router.query._id),
         },

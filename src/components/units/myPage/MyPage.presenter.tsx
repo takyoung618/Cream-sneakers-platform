@@ -24,6 +24,7 @@ export default function MyPagePresenter(props: any) {
             ></S.UploadFileHidden>
 
             <S.UserWrapper>
+              <S.UserName>{UserInfo?.fetchUserLoggedIn.name}</S.UserName>
               <S.UserId>{UserInfo?.fetchUserLoggedIn.email}</S.UserId>
               <S.ImageWrapper>
                 <S.ImageEditBtn

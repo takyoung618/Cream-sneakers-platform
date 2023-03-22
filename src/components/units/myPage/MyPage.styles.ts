@@ -55,12 +55,18 @@ export const ProfileImage = styled.img`
 `;
 
 export const UserWrapper = styled.div`
-  margin: 1.5rem 0 0 3rem;
+  margin: 1rem 0 0 3rem;
+`;
+
+export const UserName = styled.div`
+  font-size: 20px;
+  font-weight: 600;
 `;
 
 export const UserId = styled.div`
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
+  color: #787878;
 `;
 
 export const ImageWrapper = styled.div`
