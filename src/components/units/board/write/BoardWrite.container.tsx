@@ -14,6 +14,7 @@ import {
 } from "../../../../commons/types/generated/types";
 import { message, Modal } from "antd";
 import { FETCH_BOARDS } from "../list/BoardList.queries";
+import { FETCH_BOARD } from "../detail/BoardDetail.queries";
 
 const initialInputs = { writer: "", password: "", title: "", contents: "" };
 
@@ -40,10 +41,10 @@ export default function BoardWrite(props: IBoardWriteProps) {
     IMutationUpdateBoardArgs
   >(UPDATE_BOARD);
 
-  const { data, refetch } = useQuery<
-    Pick<IQuery, "fetchBoards">,
-    IQueryFetchBoardsArgs
-  >(FETCH_BOARDS);
+  // const { data, refetch } = useQuery<
+  //   Pick<IQuery, "fetchBoards">,
+  //   IQueryFetchBoardsArgs
+  // >(FETCH_BOARDS);
 
   const onChangeInputs = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -131,10 +132,11 @@ export default function BoardWrite(props: IBoardWriteProps) {
           },
           refetchQueries: [
             {
-              query: FETCH_BOARDS,
+              query: FETCH_BOARD,
             },
           ],
         });
+
         console.log(result.data?.createBoard._id);
         router.push(`/boards/${result.data?.createBoard._id}`);
         message.success("게시글이 등록되었습니다.");
@@ -188,11 +190,6 @@ export default function BoardWrite(props: IBoardWriteProps) {
           password: inputs.password,
           updateBoardInput,
         },
-        refetchQueries: [
-          {
-            query: FETCH_BOARDS,
-          },
-        ],
       });
       router.push(`/boards/${result.data?.updateBoard._id}`);
       message.success("게시글이 수정되었습니다.");

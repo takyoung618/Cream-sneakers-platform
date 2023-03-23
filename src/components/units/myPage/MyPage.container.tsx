@@ -149,9 +149,6 @@ export default function MyPageContainer(props: any) {
     if (password.length === 0) {
       isCheck = false;
       message.error({ content: "비밀번호를 입력해주세요!" });
-    } else if (defaultPassword !== password) {
-      isCheck = false;
-      message.error({ content: "비밀번호가 일치하지 않습니다!" });
     } else if (!regPass.test(password)) {
       isCheck = false;
       message.error("비밀번호는 영문과, 숫자를 포함해주세요.");
@@ -161,6 +158,9 @@ export default function MyPageContainer(props: any) {
     } else if (password.length > 16 && regPass.test(password)) {
       isCheck = false;
       message.error("비밀번호는 16자 이내로 입력해주세요");
+    } else if (defaultPassword !== password) {
+      isCheck = false;
+      message.error({ content: "비밀번호가 일치하지 않습니다!" });
     }
 
     if (isCheck) {
