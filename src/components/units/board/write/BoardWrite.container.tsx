@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import BoardWriteUI from "./BoardWrite.presenter";
 import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries";
@@ -8,16 +8,11 @@ import {
   IMutation,
   IMutationCreateBoardArgs,
   IMutationUpdateBoardArgs,
-  IQuery,
-  IQueryFetchBoardsArgs,
-  IQueryFetchBoardsCountArgs,
 } from "../../../../commons/types/generated/types";
-import { message, Modal } from "antd";
-import { FETCH_BOARDS } from "../list/BoardList.queries";
+import { Modal } from "antd";
 import { FETCH_BOARD } from "../detail/BoardDetail.queries";
 
 const initialInputs = { writer: "", password: "", title: "", contents: "" };
-
 export default function BoardWrite(props: IBoardWriteProps) {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
@@ -40,11 +35,6 @@ export default function BoardWrite(props: IBoardWriteProps) {
     Pick<IMutation, "updateBoard">,
     IMutationUpdateBoardArgs
   >(UPDATE_BOARD);
-
-  // const { data, refetch } = useQuery<
-  //   Pick<IQuery, "fetchBoards">,
-  //   IQueryFetchBoardsArgs
-  // >(FETCH_BOARDS);
 
   const onChangeInputs = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -85,7 +75,6 @@ export default function BoardWrite(props: IBoardWriteProps) {
     setZipcode(data.zonecode);
     setIsOpen(false);
   };
-  //
 
   const onChangeFileUrls = (fileUrl: string, index: number) => {
     const newFileUrls = [...fileUrls];
@@ -99,7 +88,6 @@ export default function BoardWrite(props: IBoardWriteProps) {
     }
   }, [props.data]);
 
-  //
   const onClickSubmit = async () => {
     const errors = {
       writer: "작성자를 입력해주세요.",
@@ -110,7 +98,7 @@ export default function BoardWrite(props: IBoardWriteProps) {
     (Object.keys(inputs) as Array<keyof typeof inputs>).forEach((el) => {
       if (!inputs[el]) {
         setInputsError({
-          ...errors,
+          ...inputsError,
           [el]: errors[el],
         });
       }
@@ -130,16 +118,9 @@ export default function BoardWrite(props: IBoardWriteProps) {
               images: [...fileUrls],
             },
           },
-          refetchQueries: [
-            {
-              query: FETCH_BOARD,
-            },
-          ],
         });
-
         console.log(result.data?.createBoard._id);
         router.push(`/boards/${result.data?.createBoard._id}`);
-        message.success("게시글이 등록되었습니다.");
       } catch (error) {
         if (error instanceof Error) Modal.error({ content: error.message });
       }
@@ -190,9 +171,13 @@ export default function BoardWrite(props: IBoardWriteProps) {
           password: inputs.password,
           updateBoardInput,
         },
+        refetchQueries: [
+          {
+            query: FETCH_BOARD,
+          },
+        ],
       });
       router.push(`/boards/${result.data?.updateBoard._id}`);
-      message.success("게시글이 수정되었습니다.");
     } catch (error) {
       if (error instanceof Error) alert(error.message);
     }

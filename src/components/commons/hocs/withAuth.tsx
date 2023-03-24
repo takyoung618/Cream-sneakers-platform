@@ -11,7 +11,7 @@ export const withAuth = (Component: any) => (props: any) => {
   useEffect(() => {
     if (!isLogout) {
       Modal.error({ content: "로그인 후 이용 가능합니다!!" });
-      router.push("/home");
+      router.push("/login");
     }
   }, []);
   return <Component {...props} />;
