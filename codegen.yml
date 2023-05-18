@@ -1,5 +1,5 @@
 # prettier-ignore
-schema: http://backend10.codebootcamp.co.kr/graphql16
+schema: http://backend11.codebootcamp.co.kr/graphql16
 generates:
   ./src/commons/types/generated/types.ts:
     plugins: 
